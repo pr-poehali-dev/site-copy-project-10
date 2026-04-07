@@ -53,6 +53,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				iberia: {
+					dark: '#1e3a5f',
+					orange: '#f05a28',
+					'light-bg': '#e8f0f8',
+					'card-bg': '#dce9f5',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
