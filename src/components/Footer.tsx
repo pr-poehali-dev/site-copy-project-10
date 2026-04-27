@@ -6,10 +6,11 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-8">
           <div className="flex items-center gap-3 mb-6">
-            <div className="text-left">
-              <div className="font-bold text-white text-2xl leading-none">Saginadze Estate</div>
-              <div className="text-xs text-white/40 leading-none">эксперты в недвижимости</div>
-            </div>
+            <img
+              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/73703746-f374-48ae-820b-9925f900d621.png"
+              alt="Saginadze Estate"
+              className="h-20 w-auto"
+            />
           </div>
 
           <p className="text-white/50 text-sm mb-1">I/E 145971605 Georgii Saginadze</p>

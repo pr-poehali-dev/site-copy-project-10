@@ -18,10 +18,11 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         <a href="#" className="flex items-center gap-2">
           <div className="flex items-center gap-2">
-            <div>
-              <div className="font-bold text-iberia-dark text-lg leading-none">Saginadze Estate</div>
-              <div className="text-xs text-gray-500 leading-none">эксперты в недвижимости</div>
-            </div>
+            <img
+              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/73703746-f374-48ae-820b-9925f900d621.png"
+              alt="Saginadze Estate"
+              className="h-10 w-auto"
+            />
           </div>
         </a>
 
