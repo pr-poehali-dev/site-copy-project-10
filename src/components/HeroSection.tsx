@@ -45,7 +45,7 @@ const HeroSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/c24ebdab-2f86-421e-baa1-609efdc370c9.jpg')`,
+          backgroundImage: `url('https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/c1573eae-07ba-49f3-abab-4a5d51f3f122.jpg')`,
         }}
       >
         <div className="absolute inset-0 bg-iberia-dark/70" />
