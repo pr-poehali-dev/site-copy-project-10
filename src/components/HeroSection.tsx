@@ -52,9 +52,9 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 w-full">
-        <div className="max-w-2xl mb-10">
+        <div className="max-w-4xl mb-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-            Недвижимость в Грузии у моря
+            <span className="whitespace-nowrap">Недвижимость в Грузии у моря</span>
             <br />напрямую от застройщиков
             <br />в рассрочку 0% от{' '}
             <span className="text-iberia-orange">44.500$</span>
