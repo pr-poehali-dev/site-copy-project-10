@@ -43,12 +43,13 @@ const HeroSection = () => {
       `}</style>
 
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url('https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/1727026b-13e9-4889-8549-bd3d767ae710.jpg')`,
+          backgroundPosition: 'center 20%',
         }}
       >
-        <div className="absolute inset-0 bg-iberia-dark/70" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(17,24,39,0.75) 0%, rgba(17,24,39,0.5) 50%, rgba(17,24,39,0) 100%)' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 w-full">
