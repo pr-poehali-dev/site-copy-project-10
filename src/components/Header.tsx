@@ -19,7 +19,7 @@ const Header = () => {
         <a href="#" className="flex items-center gap-2">
           <div className="flex items-center gap-2">
             <div>
-              <div className="font-bold text-iberia-dark text-lg leading-none">Georgii Saginadze</div>
+              <div className="font-bold text-iberia-dark text-lg leading-none">Saginadze Estate</div>
               <div className="text-xs text-gray-500 leading-none">эксперты в недвижимости</div>
             </div>
           </div>

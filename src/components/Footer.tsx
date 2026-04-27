@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col items-center text-center mb-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="text-left">
-              <div className="font-bold text-white text-2xl leading-none">Georgii Saginadze</div>
+              <div className="font-bold text-white text-2xl leading-none">Saginadze Estate</div>
               <div className="text-xs text-white/40 leading-none">эксперты в недвижимости</div>
             </div>
           </div>
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 pt-6 text-center">
-          <p className="text-white/30 text-xs">© 2025 Georgii Saginadze. Все права защищены. Агентство недвижимости в Батуми, Грузия.</p>
+          <p className="text-white/30 text-xs">© 2025 Saginadze Estate. Все права защищены. Агентство недвижимости в Батуми, Грузия.</p>
         </div>
       </div>
     </footer>

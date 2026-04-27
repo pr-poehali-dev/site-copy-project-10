@@ -10,7 +10,7 @@ const TeamSection = () => {
     <section id="team" className="py-20 bg-iberia-dark">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
-          Georgii Saginadze — это команда{' '}
+          Saginadze Estate — это команда{' '}
           <span className="text-iberia-orange">экспертов недвижимости</span>{' '}
           из 5 стран
         </h2>
@@ -23,7 +23,7 @@ const TeamSection = () => {
             >
               <img
                 src={src}
-                alt={`Команда Georgii Saginadze ${i + 1}`}
+                alt={`Команда Saginadze Estate ${i + 1}`}
                 className="w-full h-full object-cover"
               />
             </div>

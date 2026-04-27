@@ -5,7 +5,7 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-iberia-dark mb-12">
-          Georgii Saginadze — агентство недвижимости в Батуми
+          Saginadze Estate — агентство недвижимости в Батуми
           <br />
           <span className="text-iberia-orange">с большим опытом работы и экспертизой</span>
         </h2>
