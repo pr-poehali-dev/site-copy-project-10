@@ -74,7 +74,6 @@ const HeroSection = () => {
             <div className="flex items-center gap-2 text-white/90 text-sm">
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full relative flex-shrink-0">
                 <Icon name="Home" size={15} className="text-white" />
-                <span className="absolute -top-1 -right-1 text-white text-[9px] font-bold leading-none">$</span>
               </span>
               <span>Для жизни<br />и инвестиций</span>
             </div>
@@ -91,7 +90,6 @@ const HeroSection = () => {
             <div className="flex items-start gap-2 text-white/90 text-sm">
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full relative flex-shrink-0 mt-0.5">
                 <Icon name="Tag" size={15} className="text-white" />
-                <span className="absolute -top-1 -right-1 text-white text-[9px] font-bold leading-none">%</span>
               </span>
               <div>
                 <span>Закрытые скидки<br />от застройщиков</span>
