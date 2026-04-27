@@ -33,7 +33,7 @@ const HeroSection = () => {
           top: 0; left: 0;
           width: 60%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.75), transparent);
           transform: translateX(-110%) skewX(-15deg);
           opacity: 0;
         }
@@ -62,7 +62,7 @@ const HeroSection = () => {
         </div>
 
         {/* Форма каталога — оригинальный max-w-xl */}
-        <div className="relative bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6 max-w-xl mb-10 overflow-hidden">
+        <div className="relative bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6 w-fit mb-10 overflow-hidden">
 
           <h3 className="text-white font-semibold text-lg mb-4">
             Получите каталог топ-15 новых проектов в Батуми!
