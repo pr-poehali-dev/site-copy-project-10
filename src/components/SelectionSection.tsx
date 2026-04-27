@@ -57,7 +57,7 @@ const SelectionSection = () => {
                   <path d="M8 2 L8 14 M2 8 L14 8 M4 4 L12 12 M12 4 L4 12" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
               </div>
-              <span className="text-iberia-dark font-bold text-xs">IBERIA</span>
+              <span className="text-iberia-dark font-bold text-xs">Georgii Saginadze</span>
             </div>
           </div>
 

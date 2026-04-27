@@ -18,14 +18,8 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         <a href="#" className="flex items-center gap-2">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 flex items-center justify-center">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <rect width="32" height="32" rx="4" fill="#1e3a5f"/>
-                <path d="M16 4 L16 28 M4 16 L28 16 M8 8 L24 24 M24 8 L8 24" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
-              </svg>
-            </div>
             <div>
-              <div className="font-bold text-iberia-dark text-lg leading-none">IBERIA</div>
+              <div className="font-bold text-iberia-dark text-lg leading-none">Georgii Saginadze</div>
               <div className="text-xs text-gray-500 leading-none">эксперты в недвижимости</div>
             </div>
           </div>
@@ -45,10 +39,11 @@ const Header = () => {
 
         <div className="flex items-center gap-3">
           <a
-            href="#consultation"
-            className="hidden sm:inline-flex items-center px-5 py-2.5 bg-iberia-dark text-white text-sm font-semibold rounded-xl hover:bg-opacity-90 transition-all"
+            href="tel:+995599254769"
+            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-iberia-orange text-white text-sm font-semibold rounded-xl hover:bg-orange-600 transition-all"
           >
-            Консультация
+            <Icon name="Phone" size={16} />
+            +995-599-254-769
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -72,10 +67,10 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="#consultation"
-            className="mt-3 block text-center px-5 py-2.5 bg-iberia-dark text-white text-sm font-semibold rounded-xl"
+            href="tel:+995599254769"
+            className="mt-3 block text-center px-5 py-2.5 bg-iberia-orange text-white text-sm font-semibold rounded-xl"
           >
-            Консультация
+            +995-599-254-769
           </a>
         </div>
       )}

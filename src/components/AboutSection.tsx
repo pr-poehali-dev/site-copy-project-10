@@ -5,7 +5,7 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-iberia-dark mb-12">
-          IBERIA™ - агентство недвижимости в Батуми
+          Georgii Saginadze — агентство недвижимости в Батуми
           <br />
           <span className="text-iberia-orange">с большим опытом работы и экспертизой</span>
         </h2>
@@ -14,7 +14,7 @@ const AboutSection = () => {
           <div className="relative rounded-3xl overflow-hidden bg-gray-100 min-h-[420px]">
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/cd6da211-7ddc-4a01-bf75-3ed28e5de159.jpg"
-              alt="Директор IBERIA"
+              alt="Georgii Saginadze"
               className="w-full h-full object-cover absolute inset-0"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-iberia-dark/60 via-transparent to-transparent" />
@@ -30,7 +30,7 @@ const AboutSection = () => {
               <p className="text-sm leading-relaxed mb-2">
                 Покупка недвижимости для большинства людей — это шаг к достижению важной цели. Наша миссия — помочь клиентам приблизиться к ней и предложить лучшие решения на основе их запросов.
               </p>
-              <p className="text-xs text-white/70">Кристина Яворская, директор компании IBERIA™</p>
+              <p className="text-xs text-white/70">Georgii Saginadze</p>
             </div>
           </div>
 
