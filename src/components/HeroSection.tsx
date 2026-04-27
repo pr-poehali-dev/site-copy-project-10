@@ -133,17 +133,17 @@ const HeroSection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { icon: 'Home', text: 'Первый взнос от 10.500$' },
-            { icon: 'Percent', text: 'Рассрочка 0% до 46 мес.' },
-            { icon: 'TrendingUp', text: 'Доходность от 13.5%' },
-            { icon: 'Building2', text: 'Топовые застройщики' },
+            { img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/f92e3d0a-1707-4882-96ae-870729782e50.png', text: 'Первый взнос от 10.500$' },
+            { img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/85447260-b51b-4f13-a115-5735d6e4d765.png', text: 'Рассрочка 0% до 46 мес.' },
+            { img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/e8d47f55-8dd0-47a0-b414-a1aea52c337d.png', text: 'Доходность от 13.5%' },
+            { img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7a37c39-1b41-43ae-b286-6a2b37194b6b.png', text: 'Топовые застройщики' },
           ].map((item) => (
             <div
               key={item.text}
               className="bg-white rounded-2xl p-4 flex flex-col gap-3"
             >
-              <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-iberia-light-bg">
-                <Icon name={item.icon} size={20} className="text-iberia-dark" />
+              <div className="w-10 h-10 flex items-center justify-center">
+                <img src={item.img} alt="" className="w-10 h-10 object-contain" />
               </div>
               <p className="font-semibold text-iberia-dark text-sm">{item.text}</p>
             </div>
