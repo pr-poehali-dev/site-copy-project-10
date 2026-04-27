@@ -62,7 +62,7 @@ const HeroSection = () => {
         </div>
 
         {/* Форма каталога — оригинальный max-w-xl */}
-        <div className="relative bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6 max-w-xl mb-10 overflow-visible">
+        <div className="relative bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6 max-w-xl mb-10 overflow-hidden">
 
           <h3 className="text-white font-semibold text-lg mb-4">
             Получите каталог топ-15 новых проектов в Батуми!
@@ -101,7 +101,7 @@ const HeroSection = () => {
                     src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/6cbb2e9d-db5a-495d-a6ab-4ba304bcd77c.png"
                     alt="Каталог"
                     className="w-52 object-contain drop-shadow-2xl"
-                    style={{ transform: 'translate(-35%, 12px) rotate(4deg)', transformOrigin: 'bottom right' }}
+                    style={{ transform: 'translate(-35%, 28px) rotate(4deg)', transformOrigin: 'bottom right' }}
                   />
                 </div>
               </div>
