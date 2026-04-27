@@ -16,13 +16,25 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex items-center gap-2">
-            <img
-              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/73703746-f374-48ae-820b-9925f900d621.png"
-              alt="Saginadze Estate"
-              className="h-10 w-auto"
-            />
+        <a href="#" className="flex items-center gap-3">
+          <img
+            src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/73703746-f374-48ae-820b-9925f900d621.png"
+            alt="Saginadze Estate"
+            className="h-10 w-auto"
+          />
+          <div className="flex flex-col leading-tight">
+            <span
+              className="font-bold tracking-widest uppercase text-base"
+              style={{ color: '#C9A84C', fontFamily: "'Cinzel', serif", letterSpacing: '0.12em' }}
+            >
+              Saginadze
+            </span>
+            <span
+              className="font-light tracking-[0.3em] uppercase text-xs"
+              style={{ color: '#A07830', fontFamily: "'Cinzel', serif" }}
+            >
+              Estate
+            </span>
           </div>
         </a>
 
