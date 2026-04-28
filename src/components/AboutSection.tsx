@@ -24,7 +24,7 @@ const AboutSection = () => {
             />
             {/* ПК — горизонтальное фото с лицом */}
             <img
-              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/93889dfc-38c0-4bb6-a126-5ef3222796d2.jpg"
+              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/6e2e1739-770f-493a-9258-a35a14ac9f30.jpg"
               alt="Георгий Сагинадзе"
               className="hidden lg:block w-full h-full object-cover absolute inset-0 object-[center_5%]"
             />
@@ -43,7 +43,7 @@ const AboutSection = () => {
             {/* Кнопка планшет — ниже, скрыта на мобильной и ПК */}
             <button
               onClick={() => setVideoOpen(true)}
-              className="absolute bottom-[120px] right-4 hidden md:flex lg:hidden items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-5 py-3 text-iberia-dark font-medium hover:bg-white transition-all shadow-lg"
+              className="absolute bottom-[148px] right-4 hidden md:flex lg:hidden items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-5 py-3 text-iberia-dark font-medium hover:bg-white transition-all shadow-lg"
             >
               <div className="w-10 h-10 flex items-center justify-center bg-iberia-orange rounded-full">
                 <Icon name="Play" size={14} className="text-white ml-0.5" />
