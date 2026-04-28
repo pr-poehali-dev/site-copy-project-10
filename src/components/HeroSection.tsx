@@ -114,7 +114,7 @@ const HeroSection = () => {
                 }}
               />
               <img
-                src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/2cb183a2-5aaf-4e33-8059-c847e5336e6f.png"
+                src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/594b66ac-cb3d-4f4f-b2c3-e1ebdaf60362.png"
                 alt="Каталог"
                 className="relative z-10 w-44 object-contain drop-shadow-2xl"
                 style={{ transform: 'rotate(4deg)' }}
