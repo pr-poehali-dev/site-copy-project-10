@@ -11,21 +11,22 @@ const AboutSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-          <div className="flex flex-col gap-4">
-            <div className="rounded-3xl overflow-hidden bg-black" style={{aspectRatio: '9/16'}}>
+          <div className="flex justify-center">
+            <div className="relative rounded-3xl overflow-hidden bg-black w-full max-w-[340px]" style={{aspectRatio: '9/16'}}>
               <iframe
-                src="https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239022&hd=2"
-                className="w-full h-full"
+                src="https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239022&hd=2&autoplay=0&js=0&nofullscreen=0&nobigplay=1&norec=1"
+                className="w-full h-full scale-[1.01]"
                 allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
                 allowFullScreen
                 frameBorder="0"
+                scrolling="no"
               />
-            </div>
-            <div className="p-5 rounded-2xl bg-iberia-card-bg text-iberia-dark">
-              <p className="text-sm leading-relaxed mb-3">
-                Покупка недвижимости для большинства людей — это шаг к достижению важной цели. Наша миссия — помочь клиентам приблизиться к ней и предложить лучшие решения на основе их запросов.
-              </p>
-              <p className="text-xs text-iberia-dark/60 text-right">Георгий Сагинадзе, основатель Saginadze Estate</p>
+              <div className="absolute bottom-0 left-0 right-0 mx-3 mb-3 p-4 rounded-2xl bg-iberia-card-bg/95 backdrop-blur-sm text-iberia-dark">
+                <p className="text-sm leading-relaxed mb-2">
+                  Покупка недвижимости для большинства людей — это шаг к достижению важной цели. Наша миссия — помочь клиентам приблизиться к ней и предложить лучшие решения на основе их запросов.
+                </p>
+                <p className="text-xs text-iberia-dark/60 text-right">Георгий Сагинадзе, основатель Saginadze Estate</p>
+              </div>
             </div>
           </div>
 
