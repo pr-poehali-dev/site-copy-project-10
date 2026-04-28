@@ -16,11 +16,11 @@ const reviews = [
     videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239020&hd=2',
   },
   {
-    name: 'Наталья Перец',
-    subtitle: 'Россия',
-    desc: 'Благодарность за помощь в покупке 1 комнатной квартиры',
+    name: 'Сергей и Светлана',
+    subtitle: 'Литва',
+    desc: 'Благодарность за помощь в подборе инвестиционной недвижимости',
     img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80',
-    videoUrl: null,
+    videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239019&hd=2',
   },
 ];
 
