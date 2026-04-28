@@ -17,8 +17,6 @@ const AboutSection = () => {
               alt="Georgii Saginadze"
               className="w-full h-full object-cover absolute inset-0"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-iberia-dark/60 via-transparent to-transparent" />
-
             <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-5 py-3 text-iberia-dark font-medium hover:bg-white transition-all shadow-lg">
               <div className="w-10 h-10 flex items-center justify-center bg-iberia-orange rounded-full">
                 <Icon name="Play" size={16} className="text-white ml-0.5" />
@@ -26,11 +24,11 @@ const AboutSection = () => {
               <span className="text-sm">Видеообращение<br />от директора</span>
             </button>
 
-            <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-              <p className="text-sm leading-relaxed mb-2">
+            <div className="absolute bottom-0 left-0 right-0 mx-4 mb-4 p-5 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 text-white">
+              <p className="text-sm leading-relaxed mb-3">
                 Покупка недвижимости для большинства людей — это шаг к достижению важной цели. Наша миссия — помочь клиентам приблизиться к ней и предложить лучшие решения на основе их запросов.
               </p>
-              <p className="text-xs text-white/70">Georgii Saginadze</p>
+              <p className="text-xs text-white/80 text-right">Георгий Сагинадзе, основатель Saginadze Estate</p>
             </div>
           </div>
 
