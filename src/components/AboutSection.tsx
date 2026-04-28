@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
 const AboutSection = () => {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -13,11 +16,15 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="relative rounded-3xl overflow-hidden bg-gray-100 min-h-[420px]">
             <img
-              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/cd6da211-7ddc-4a01-bf75-3ed28e5de159.jpg"
-              alt="Georgii Saginadze"
-              className="w-full h-full object-cover absolute inset-0"
+              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/0c797aa3-c3c1-4752-b56a-e6f2f55345e6.jpg"
+              alt="Георгий Сагинадзе"
+              className="w-full h-full object-cover object-center absolute inset-0"
             />
-            <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-5 py-3 text-iberia-dark font-medium hover:bg-white transition-all shadow-lg">
+
+            <button
+              onClick={() => setVideoOpen(true)}
+              className="absolute bottom-[140px] right-5 flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-5 py-3 text-iberia-dark font-medium hover:bg-white transition-all shadow-lg"
+            >
               <div className="w-10 h-10 flex items-center justify-center bg-iberia-orange rounded-full">
                 <Icon name="Play" size={16} className="text-white ml-0.5" />
               </div>
@@ -63,6 +70,33 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
+
+      {videoOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          onClick={() => setVideoOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-[360px] rounded-2xl overflow-hidden bg-black"
+            style={{ aspectRatio: '9/16' }}
+            onClick={e => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setVideoOpen(false)}
+              className="absolute top-3 right-3 z-10 w-8 h-8 bg-black/60 rounded-full flex items-center justify-center text-white hover:bg-black transition-colors"
+            >
+              <Icon name="X" size={16} className="text-white" />
+            </button>
+            <iframe
+              src="https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239022&hd=2&autoplay=1"
+              className="w-full h-full"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              allowFullScreen
+              frameBorder="0"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
