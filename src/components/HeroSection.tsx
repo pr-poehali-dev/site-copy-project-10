@@ -54,24 +54,24 @@ const HeroSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 w-full">
         <div className="max-w-4xl mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-            <span className="whitespace-nowrap">Недвижимость в Грузии у моря</span>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+            Недвижимость в Грузии у моря
             <br />напрямую от застройщиков
             <br />в рассрочку 0% от{' '}
             <span className="text-iberia-orange">44.500$</span>
           </h1>
         </div>
 
-        {/* Форма каталога — оригинальный max-w-xl */}
+        {/* Форма каталога */}
         <div className="relative bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6 w-fit mb-10 overflow-hidden">
 
           <h3 className="text-white font-semibold text-lg mb-4">
             Получите каталог топ-15 новых проектов в Батуми!
           </h3>
 
-          {/* Буллеты */}
-          <div className="flex flex-wrap gap-4 mb-5">
-            {/* Для жизни и инвестиций — домик с $ */}
+          {/* Буллеты — 2 колонки на мобайл, на десктопе как было */}
+          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-4 mb-5">
+            {/* Для жизни и инвестиций */}
             <div className="flex items-center gap-2 text-white/90 text-sm">
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full relative flex-shrink-0">
                 <Icon name="Home" size={15} className="text-white" />
@@ -79,32 +79,57 @@ const HeroSection = () => {
               <span>Для жизни<br />и инвестиций</span>
             </div>
 
-            {/* В каталоге прайсы и планировки */}
+            {/* Закрытые скидки */}
             <div className="flex items-center gap-2 text-white/90 text-sm">
+              <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
+                <Icon name="Tag" size={15} className="text-white" />
+              </span>
+              <span>Закрытые скидки<br />от застройщиков</span>
+            </div>
+
+            {/* В каталоге прайсы и планировки */}
+            <div className="flex items-center gap-2 text-white/90 text-sm col-span-2 md:col-span-1">
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                 <Icon name="FileText" size={15} className="text-white" />
               </span>
               <span>В каталоге прайсы<br />и планировки</span>
             </div>
+          </div>
 
-            {/* Закрытые скидки — знак % + каталог снизу */}
-            <div className="flex items-start gap-2 text-white/90 text-sm">
-              <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full relative flex-shrink-0 mt-0.5">
-                <Icon name="Tag" size={15} className="text-white" />
-              </span>
-              <div>
-                <span>Закрытые скидки<br />от застройщиков</span>
-                {/* Картинка каталога — прибита к низу формы */}
-                <div className="absolute bottom-0 right-0 hidden md:block pointer-events-none">
-                  <img
-                    src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/6cbb2e9d-db5a-495d-a6ab-4ba304bcd77c.png"
-                    alt="Каталог"
-                    className="w-52 object-contain drop-shadow-2xl"
-                    style={{ transform: 'translate(-8%, 28px) rotate(4deg)', transformOrigin: 'bottom right' }}
-                  />
-                </div>
-              </div>
+          {/* Буклет-каталог на мобайле — под буллетами */}
+          <div className="flex justify-center mb-5 md:hidden">
+            <div className="relative">
+              {/* Синебирюзовый кружок-подложка */}
+              <div
+                className="absolute rounded-full"
+                style={{
+                  width: '160px',
+                  height: '160px',
+                  background: 'radial-gradient(circle, #0ea5e9 0%, #0891b2 60%, #0e7490 100%)',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -45%)',
+                  opacity: 0.85,
+                  zIndex: 0,
+                }}
+              />
+              <img
+                src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/4190c979-bf55-4233-be0c-579fc594efec.png"
+                alt="Каталог"
+                className="relative z-10 w-44 object-contain drop-shadow-2xl"
+                style={{ transform: 'rotate(4deg)' }}
+              />
             </div>
+          </div>
+
+          {/* Картинка каталога — только на десктопе */}
+          <div className="absolute bottom-0 right-0 hidden md:block pointer-events-none">
+            <img
+              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/6cbb2e9d-db5a-495d-a6ab-4ba304bcd77c.png"
+              alt="Каталог"
+              className="w-52 object-contain drop-shadow-2xl"
+              style={{ transform: 'translate(-8%, 28px) rotate(4deg)', transformOrigin: 'bottom right' }}
+            />
           </div>
 
           {/* Кнопка с волной */}
@@ -132,7 +157,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/f92e3d0a-1707-4882-96ae-870729782e50.png', text: 'Первый взнос от 10.500$' },
             { img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/85447260-b51b-4f13-a115-5735d6e4d765.png', text: 'Рассрочка 0% до 46 мес.' },
@@ -141,9 +166,9 @@ const HeroSection = () => {
           ].map((item) => (
             <div
               key={item.text}
-              className="bg-white rounded-2xl p-4 flex flex-col gap-3"
+              className="bg-white rounded-2xl p-4 flex md:flex-col flex-row items-center md:items-start gap-3"
             >
-              <div className="w-10 h-10 flex items-center justify-center">
+              <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <img src={item.img} alt="" className="w-10 h-10 object-contain" />
               </div>
               <p className="font-semibold text-iberia-dark text-sm">{item.text}</p>
