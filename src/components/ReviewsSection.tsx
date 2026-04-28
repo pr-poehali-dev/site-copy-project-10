@@ -22,6 +22,13 @@ const reviews = [
     img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80',
     videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239019&hd=2',
   },
+  {
+    name: 'Самуил',
+    subtitle: 'Израиль',
+    desc: 'Благодарность за помощь в подборе инвестиционной недвижимости',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
+    videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239017&hd=2',
+  },
 ];
 
 const ReviewsSection = () => {
