@@ -24,11 +24,11 @@ const AboutSection = () => {
               <span className="text-sm">Видеообращение<br />от директора</span>
             </button>
 
-            <div className="absolute bottom-0 left-0 right-0 mx-4 mb-4 p-5 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 text-white">
+            <div className="absolute bottom-0 left-0 right-0 mx-4 mb-4 p-5 rounded-2xl bg-iberia-card-bg text-iberia-dark">
               <p className="text-sm leading-relaxed mb-3">
                 Покупка недвижимости для большинства людей — это шаг к достижению важной цели. Наша миссия — помочь клиентам приблизиться к ней и предложить лучшие решения на основе их запросов.
               </p>
-              <p className="text-xs text-white/80 text-right">Георгий Сагинадзе, основатель Saginadze Estate</p>
+              <p className="text-xs text-iberia-dark/60 text-right">Георгий Сагинадзе, основатель Saginadze Estate</p>
             </div>
           </div>
 
