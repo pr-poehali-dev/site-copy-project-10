@@ -26,18 +26,40 @@ const AboutSection = () => {
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/93889dfc-38c0-4bb6-a126-5ef3222796d2.jpg"
               alt="Георгий Сагинадзе"
-              className="hidden lg:block w-full h-full object-cover absolute inset-0 object-[center_20%]"
+              className="hidden lg:block w-full h-full object-cover absolute inset-0 object-[center_5%]"
             />
 
-            {/* Кнопка: мобильная — над плашкой по центру; планшет/ПК — правее и выше */}
+            {/* Кнопка мобильная — высоко по центру, скрыта на md+ */}
             <button
               onClick={() => setVideoOpen(true)}
-              className="absolute bottom-[48%] left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:bottom-[140px] md:right-4 lg:bottom-[160px] lg:right-5 flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2.5 md:px-5 md:py-3 text-iberia-dark font-medium hover:bg-white transition-all shadow-lg"
+              className="absolute bottom-[48%] left-1/2 -translate-x-1/2 flex md:hidden items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2.5 text-iberia-dark font-medium hover:bg-white transition-all shadow-lg"
             >
-              <div className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center bg-iberia-orange rounded-full">
+              <div className="w-9 h-9 flex items-center justify-center bg-iberia-orange rounded-full">
                 <Icon name="Play" size={14} className="text-white ml-0.5" />
               </div>
-              <span className="text-xs md:text-sm">Видеообращение<br />от директора</span>
+              <span className="text-xs">Видеообращение<br />от директора</span>
+            </button>
+
+            {/* Кнопка планшет — ниже, скрыта на мобильной и ПК */}
+            <button
+              onClick={() => setVideoOpen(true)}
+              className="absolute bottom-[120px] right-4 hidden md:flex lg:hidden items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-5 py-3 text-iberia-dark font-medium hover:bg-white transition-all shadow-lg"
+            >
+              <div className="w-10 h-10 flex items-center justify-center bg-iberia-orange rounded-full">
+                <Icon name="Play" size={14} className="text-white ml-0.5" />
+              </div>
+              <span className="text-sm">Видеообращение<br />от директора</span>
+            </button>
+
+            {/* Кнопка ПК */}
+            <button
+              onClick={() => setVideoOpen(true)}
+              className="absolute bottom-[160px] right-5 hidden lg:flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-5 py-3 text-iberia-dark font-medium hover:bg-white transition-all shadow-lg"
+            >
+              <div className="w-10 h-10 flex items-center justify-center bg-iberia-orange rounded-full">
+                <Icon name="Play" size={14} className="text-white ml-0.5" />
+              </div>
+              <span className="text-sm">Видеообращение<br />от директора</span>
             </button>
 
             {/* Плашка: мобильная — занимает ~1/3 снизу, меньший шрифт; планшет/ПК — стандартная */}
