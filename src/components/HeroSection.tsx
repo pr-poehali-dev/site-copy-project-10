@@ -96,32 +96,6 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Буклет-каталог на мобайле — под буллетами */}
-          <div className="flex justify-center mb-5 md:hidden">
-            <div className="relative">
-              {/* Синебирюзовый кружок-подложка */}
-              <div
-                className="absolute rounded-full"
-                style={{
-                  width: '160px',
-                  height: '160px',
-                  background: 'radial-gradient(circle, #0ea5e9 0%, #0891b2 60%, #0e7490 100%)',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -45%)',
-                  opacity: 0.85,
-                  zIndex: 0,
-                }}
-              />
-              <img
-                src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/2cb183a2-5aaf-4e33-8059-c847e5336e6f.png"
-                alt="Каталог"
-                className="relative z-10 w-44 object-contain drop-shadow-2xl"
-                style={{ transform: 'rotate(4deg)' }}
-              />
-            </div>
-          </div>
-
           {/* Картинка каталога — только на десктопе */}
           <div className="absolute bottom-0 right-0 hidden md:block pointer-events-none">
             <img
@@ -132,10 +106,49 @@ const HeroSection = () => {
             />
           </div>
 
-          {/* Кнопка с волной */}
+          {/* Кнопка + буклет на мобайле */}
+          <div className="relative md:hidden" style={{ minHeight: '120px' }}>
+            {/* Синебирюзовый кружок */}
+            <div
+              className="absolute rounded-full pointer-events-none"
+              style={{
+                width: '200px',
+                height: '200px',
+                background: 'radial-gradient(circle, #0ea5e9 0%, #0891b2 60%, #0e7490 100%)',
+                right: '-24px',
+                bottom: '-24px',
+                opacity: 0.8,
+                zIndex: 0,
+              }}
+            />
+            {/* Буклет за кнопкой */}
+            <img
+              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/2cb183a2-5aaf-4e33-8059-c847e5336e6f.png"
+              alt="Каталог"
+              className="absolute pointer-events-none object-contain drop-shadow-2xl"
+              style={{
+                width: '180px',
+                right: '-16px',
+                bottom: '-16px',
+                transform: 'rotate(6deg)',
+                zIndex: 1,
+              }}
+            />
+            {/* Кнопка поверх буклета */}
+            <button
+              ref={btnRef}
+              className="wave-btn relative flex items-center gap-2 bg-iberia-orange text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition-colors justify-center"
+              style={{ zIndex: 2 }}
+            >
+              <Icon name="Download" size={18} />
+              Получить каталог
+            </button>
+          </div>
+
+          {/* Кнопка только на десктопе */}
           <button
             ref={btnRef}
-            className="wave-btn flex items-center gap-2 bg-iberia-orange text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition-colors w-full sm:w-auto justify-center"
+            className="wave-btn hidden md:flex items-center gap-2 bg-iberia-orange text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition-colors sm:w-auto justify-center"
           >
             <Icon name="Download" size={18} />
             Получить каталог
