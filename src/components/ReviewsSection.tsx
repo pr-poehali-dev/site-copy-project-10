@@ -9,11 +9,11 @@ const reviews = [
     videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239018&hd=2',
   },
   {
-    name: 'Игорь Стутман',
-    subtitle: 'Новая Зеландия',
-    desc: 'Благодарность за помощь в покупке двух 3-х комнатных квартир',
+    name: 'Эдгар',
+    subtitle: 'Москва',
+    desc: 'Благодарность за помощь в подборе инвестиционной недвижимости',
     img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
-    videoUrl: null,
+    videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239020&hd=2',
   },
   {
     name: 'Наталья Перец',
