@@ -10,23 +10,25 @@ const AboutSection = () => {
           <span className="text-iberia-orange">с большим опытом работы и экспертизой</span>
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-          <div className="flex justify-center">
-            <div className="relative rounded-3xl overflow-hidden bg-black w-full max-w-[340px]" style={{aspectRatio: '9/16'}}>
-              <iframe
-                src="https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239022&hd=2&autoplay=0&js=0&nofullscreen=0&nobigplay=1&norec=1"
-                className="w-full h-full scale-[1.01]"
-                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-                allowFullScreen
-                frameBorder="0"
-                scrolling="no"
-              />
-              <div className="absolute bottom-0 left-0 right-0 mx-3 mb-3 p-4 rounded-2xl bg-iberia-card-bg/95 backdrop-blur-sm text-iberia-dark">
-                <p className="text-sm leading-relaxed mb-2">
-                  Покупка недвижимости для большинства людей — это шаг к достижению важной цели. Наша миссия — помочь клиентам приблизиться к ней и предложить лучшие решения на основе их запросов.
-                </p>
-                <p className="text-xs text-iberia-dark/60 text-right">Георгий Сагинадзе, основатель Saginadze Estate</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="relative rounded-3xl overflow-hidden bg-gray-100 min-h-[420px]">
+            <img
+              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/cd6da211-7ddc-4a01-bf75-3ed28e5de159.jpg"
+              alt="Georgii Saginadze"
+              className="w-full h-full object-cover absolute inset-0"
+            />
+            <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-5 py-3 text-iberia-dark font-medium hover:bg-white transition-all shadow-lg">
+              <div className="w-10 h-10 flex items-center justify-center bg-iberia-orange rounded-full">
+                <Icon name="Play" size={16} className="text-white ml-0.5" />
               </div>
+              <span className="text-sm">Видеообращение<br />от директора</span>
+            </button>
+
+            <div className="absolute bottom-0 left-0 right-0 mx-4 mb-4 p-5 rounded-2xl bg-iberia-card-bg text-iberia-dark">
+              <p className="text-sm leading-relaxed mb-3">
+                Покупка недвижимости для большинства людей — это шаг к достижению важной цели. Наша миссия — помочь клиентам приблизиться к ней и предложить лучшие решения на основе их запросов.
+              </p>
+              <p className="text-xs text-iberia-dark/60 text-right">Георгий Сагинадзе, основатель Saginadze Estate</p>
             </div>
           </div>
 
