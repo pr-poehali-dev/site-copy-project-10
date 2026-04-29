@@ -3,31 +3,31 @@ const params = [
     num: '01',
     title: 'Стандарты строительства',
     desc: 'Вникаем в процессы строительства на всех ее этапах и сопоставляем проект дома от застройщика с проектом в мэрии Батуми',
-    img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/5314b4e8-3f31-41d0-9028-d972e5416c2c.jpg',
   },
   {
     num: '02',
     title: 'Надежность застройщика',
     desc: 'Оцениваем ее по 37 параметрам, включая проверку на наличие скрытых платежей в договорах и судебных тяжб',
-    img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/a7388257-69d7-43da-b767-f581aaecc653.jpg',
   },
   {
     num: '03',
     title: 'Соответствие обещаниям',
     desc: 'Мы получаем в мэрии Батуми реальные проекты дома и сопоставляем их с рекламными рендерами и обещаниями',
-    img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/5f12c86a-f138-46f3-9de5-5315a075b54b.png',
   },
   {
     num: '04',
     title: 'Изменения инфраструктуры',
     desc: 'Изучаем план строительства всего жилого комплекса и района, чтобы понимать, как он будет меняться в ближайшие годы',
-    img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/300b9ece-e399-4cc3-90b5-120ffd681400.png',
   },
   {
     num: '05',
     title: 'Эффективность инвестиций',
     desc: 'Делаем глубокий анализ и подробный расчет ликвидности объекта, который станет для вас источником дохода',
-    img: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=400&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/58382049-952b-4577-8ab4-2d1c13f46e58.png',
   },
 ];
 
@@ -54,18 +54,16 @@ const AdvantagesSection = () => {
           {params.map((p) => (
             <div
               key={p.num}
-              className="bg-iberia-dark/50 border border-white rounded-3xl overflow-hidden flex flex-col"
+              className="bg-iberia-dark/50 border border-white/20 rounded-3xl flex flex-col relative pt-16 pb-6 px-6"
             >
-              <div className="relative h-40 overflow-hidden">
+              <div className="absolute top-4 left-4 bg-white text-iberia-dark font-bold text-sm px-3 py-1.5 rounded-full z-10">
+                {p.num}
+              </div>
+              <div className="absolute top-0 right-0 w-28 h-28 rounded-full overflow-hidden border-4 border-iberia-dark translate-x-3 -translate-y-3">
                 <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
-                <div className="absolute top-3 left-3 bg-white text-iberia-dark font-bold text-sm px-3 py-1.5 rounded-full">
-                  {p.num}
-                </div>
               </div>
-              <div className="p-5 flex-1">
-                <h3 className="text-white font-bold text-lg mb-2">{p.title}</h3>
-                <p className="text-white text-sm leading-relaxed">{p.desc}</p>
-              </div>
+              <h3 className="text-white font-bold text-lg mb-2">{p.title}</h3>
+              <p className="text-white/80 text-sm leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
