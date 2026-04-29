@@ -74,7 +74,7 @@ const AdvantagesSection = () => {
                 <img
                   src={p.img}
                   alt={p.title}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                   style={{ objectPosition: p.objectPosition }}
                 />
               </div>
