@@ -4,30 +4,35 @@ const params = [
     title: 'Стандарты строительства',
     desc: 'Вникаем в процессы строительства на всех ее этапах и сопоставляем проект дома от застройщика с проектом в мэрии Батуми',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/5314b4e8-3f31-41d0-9028-d972e5416c2c.jpg',
+    objectPosition: 'center',
   },
   {
     num: '02',
     title: 'Надежность застройщика',
     desc: 'Оцениваем ее по 37 параметрам, включая проверку на наличие скрытых платежей в договорах и судебных тяжб',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/a7388257-69d7-43da-b767-f581aaecc653.jpg',
+    objectPosition: 'center 30%',
   },
   {
     num: '03',
     title: 'Соответствие обещаниям',
     desc: 'Мы получаем в мэрии Батуми реальные проекты дома и сопоставляем их с рекламными рендерами и обещаниями',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/5f12c86a-f138-46f3-9de5-5315a075b54b.png',
+    objectPosition: 'center 25%',
   },
   {
     num: '04',
     title: 'Изменения инфраструктуры',
     desc: 'Изучаем план строительства всего жилого комплекса и района, чтобы понимать, как он будет меняться в ближайшие годы',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/300b9ece-e399-4cc3-90b5-120ffd681400.png',
+    objectPosition: 'center',
   },
   {
     num: '05',
     title: 'Эффективность инвестиций',
     desc: 'Делаем глубокий анализ и подробный расчет ликвидности объекта, который станет для вас источником дохода',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/58382049-952b-4577-8ab4-2d1c13f46e58.png',
+    objectPosition: 'center 30%',
   },
 ];
 
@@ -54,7 +59,7 @@ const AdvantagesSection = () => {
           {params.map((p) => (
             <div
               key={p.num}
-              className="bg-iberia-dark/50 border border-white/20 rounded-3xl flex flex-col overflow-hidden relative pt-32 pb-6 px-6"
+              className="bg-iberia-dark/50 border border-white/20 rounded-3xl flex flex-col overflow-hidden relative pt-36 pb-8 px-7"
             >
               <div
                 className="absolute overflow-hidden"
@@ -66,12 +71,17 @@ const AdvantagesSection = () => {
                   right: '-40px',
                 }}
               >
-                <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: p.objectPosition }}
+                />
               </div>
               <div className="absolute top-5 left-5 bg-white text-iberia-dark font-bold text-sm px-3 py-1.5 rounded-full z-10">
                 {p.num}
               </div>
-              <h3 className="text-white font-bold text-lg mb-2">{p.title}</h3>
+              <h3 className="text-white font-bold text-lg mb-3">{p.title}</h3>
               <p className="text-white/80 text-sm leading-relaxed">{p.desc}</p>
             </div>
           ))}
