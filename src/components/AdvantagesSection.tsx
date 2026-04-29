@@ -33,20 +33,20 @@ const params = [
 
 const AdvantagesSection = () => {
   return (
-    <section id="advantages" className="py-20 bg-iberia-dark">
+    <section id="advantages" className="py-15 bg-iberia-dark">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-15">
           Предлагаем нашим клиентам только ликвидные объекты
           <br />недвижимости, отобранные по{' '}
           <span className="text-iberia-orange">5 параметрам</span>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <div className="hidden lg:flex items-end">
-            <div className="w-full aspect-square flex items-center justify-center">
+          <div className="hidden lg:flex">
+            <div className="w-full flex items-center justify-center">
               <img
                 src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/d6de76bf-f0d4-454f-8f2f-69a916f6b1bd.png"
                 alt="Иллюстрация"
-                className="w-full h-full object-contain opacity-70"
+                className="w-full h-full object-contain brightness-0 invert"
               />
             </div>
           </div>
