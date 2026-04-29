@@ -56,15 +56,16 @@ const AdvantagesSection = () => {
               key={p.num}
               className="bg-iberia-dark/50 border border-white/20 rounded-3xl flex flex-col overflow-hidden relative"
             >
-              <div className="relative" style={{ height: '150px' }}>
+              <div className="relative" style={{ height: '160px' }}>
                 <div
                   className="absolute overflow-hidden"
                   style={{
                     borderRadius: '50%',
-                    width: '115%',
-                    height: '190px',
+                    width: '110%',
+                    height: '200px',
                     top: '-30px',
                     right: '-20px',
+                    left: 'auto',
                   }}
                 >
                   <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
