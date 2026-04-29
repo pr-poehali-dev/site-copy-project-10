@@ -33,9 +33,9 @@ const params = [
 
 const AdvantagesSection = () => {
   return (
-    <section id="advantages" className="py-15 bg-iberia-dark">
+    <section id="advantages" className="py-16 bg-iberia-dark">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-15">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-16">
           Предлагаем нашим клиентам только ликвидные объекты
           <br />недвижимости, отобранные по{' '}
           <span className="text-iberia-orange">5 параметрам</span>
