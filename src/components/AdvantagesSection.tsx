@@ -18,7 +18,7 @@ const params = [
     title: 'Соответствие обещаниям',
     desc: 'Мы получаем в мэрии Батуми реальные проекты дома и сопоставляем их с рекламными рендерами и обещаниями',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/6e6dcc60-ebb4-4025-9b45-fc46248a9c55.jpeg',
-    objectPosition: 'center 40%',
+    objectPosition: '70% 35%',
   },
   {
     num: '04',
