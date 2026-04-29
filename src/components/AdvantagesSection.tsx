@@ -11,14 +11,14 @@ const params = [
     title: 'Надежность застройщика',
     desc: 'Оцениваем ее по 37 параметрам, включая проверку на наличие скрытых платежей в договорах и судебных тяжб',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/a7388257-69d7-43da-b767-f581aaecc653.jpg',
-    objectPosition: 'center 30%',
+    objectPosition: 'center 55%',
   },
   {
     num: '03',
     title: 'Соответствие обещаниям',
     desc: 'Мы получаем в мэрии Батуми реальные проекты дома и сопоставляем их с рекламными рендерами и обещаниями',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/5f12c86a-f138-46f3-9de5-5315a075b54b.png',
-    objectPosition: 'center 25%',
+    objectPosition: 'center 50%',
   },
   {
     num: '04',
@@ -32,7 +32,7 @@ const params = [
     title: 'Эффективность инвестиций',
     desc: 'Делаем глубокий анализ и подробный расчет ликвидности объекта, который станет для вас источником дохода',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/58382049-952b-4577-8ab4-2d1c13f46e58.png',
-    objectPosition: 'center 30%',
+    objectPosition: 'center 55%',
   },
 ];
 
