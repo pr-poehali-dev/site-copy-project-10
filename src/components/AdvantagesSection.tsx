@@ -54,23 +54,25 @@ const AdvantagesSection = () => {
           {params.map((p) => (
             <div
               key={p.num}
-              className="bg-iberia-dark/50 border border-white/20 rounded-3xl flex flex-col overflow-hidden relative"
+              className="bg-iberia-dark/50 border border-white/20 rounded-3xl flex flex-col overflow-hidden relative pt-32 pb-6 px-6"
             >
-              <div className="relative px-6 pt-6 pb-4">
-                <div className="absolute top-4 left-4 bg-white text-iberia-dark font-bold text-sm px-3 py-1.5 rounded-full z-10">
-                  {p.num}
-                </div>
-                <div
-                  className="overflow-hidden"
-                  style={{ borderRadius: '50%', width: '100%', height: '130px' }}
-                >
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
-                </div>
+              <div
+                className="absolute overflow-hidden"
+                style={{
+                  borderRadius: '50%',
+                  width: '75%',
+                  height: '180px',
+                  top: '-40px',
+                  right: '-40px',
+                }}
+              >
+                <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
               </div>
-              <div className="px-6 pb-6 flex-1 flex flex-col">
-                <h3 className="text-white font-bold text-lg mb-2">{p.title}</h3>
-                <p className="text-white/80 text-sm leading-relaxed">{p.desc}</p>
+              <div className="absolute top-5 left-5 bg-white text-iberia-dark font-bold text-sm px-3 py-1.5 rounded-full z-10">
+                {p.num}
               </div>
+              <h3 className="text-white font-bold text-lg mb-2">{p.title}</h3>
+              <p className="text-white/80 text-sm leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
