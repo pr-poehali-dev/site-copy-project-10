@@ -55,7 +55,7 @@ export default {
 				},
 				iberia: {
 					dark: '#1e3a5f',
-					orange: '#f05a28',
+					orange: '#f08274',
 					'light-bg': '#e8f0f8',
 					'card-bg': '#dce9f5',
 				},

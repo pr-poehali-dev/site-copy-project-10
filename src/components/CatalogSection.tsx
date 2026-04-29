@@ -26,7 +26,7 @@ const CatalogSection = () => {
               ))}
             </div>
 
-            <button className="flex items-center gap-2 bg-iberia-orange text-white font-bold px-8 py-3.5 rounded-xl hover:bg-orange-600 transition-colors uppercase tracking-wider text-sm">
+            <button className="flex items-center gap-2 bg-iberia-orange text-white font-bold px-8 py-3.5 rounded-xl hover:bg-[#e26e60] transition-colors uppercase tracking-wider text-sm">
               <Icon name="Download" size={18} />
               Получить каталог
             </button>

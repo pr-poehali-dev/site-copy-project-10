@@ -53,7 +53,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <a
             href="tel:+995599254769"
-            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-iberia-orange text-white text-sm font-semibold rounded-xl hover:bg-orange-600 transition-all"
+            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-iberia-orange text-white text-sm font-semibold rounded-xl hover:bg-[#e26e60] transition-all"
           >
             <Icon name="Phone" size={16} />
             +995-599-254-769
