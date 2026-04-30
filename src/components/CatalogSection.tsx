@@ -46,11 +46,12 @@ const CatalogSection = () => {
         <div className="relative bg-[#f0b8a8] rounded-3xl overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 min-h-[420px] md:min-h-[400px]">
 
           {/* Иконка Group_35 в правом верхнем углу */}
-          <div className="absolute top-5 right-5 z-20">
+          <div className="absolute top-5 right-5 z-20" style={{ top: '20px', right: '20px' }}>
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/33068750-22a7-4d07-9014-f977933239a0.png"
               alt="PDF"
-              className="w-14 h-14 object-contain drop-shadow-lg"
+              className="object-contain drop-shadow-lg"
+              style={{ width: '112px', height: '112px' }}
             />
           </div>
 
@@ -106,7 +107,7 @@ const CatalogSection = () => {
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7b7e3f5-309b-4fe7-a15f-240eeca75040.png"
               alt="Каталог"
               className="object-contain drop-shadow-xl"
-              style={{ width: '220px', transform: 'rotate(4deg)' }}
+              style={{ width: '660px', transform: 'rotate(4deg)' }}
             />
           </div>
           {/* Десктоп: Горгий — прижат к правому краю, на всю высоту */}
