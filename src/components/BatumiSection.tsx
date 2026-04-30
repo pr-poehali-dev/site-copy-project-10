@@ -8,18 +8,20 @@ const BatumiSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          <div className="relative rounded-3xl overflow-hidden min-h-[380px] bg-iberia-dark row-span-2 md:row-span-1 lg:row-span-2">
+          <div className="relative rounded-3xl overflow-hidden min-h-[380px] bg-iberia-dark row-span-2 md:row-span-1 lg:row-span-2 flex flex-col">
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/89c2fe0a-a049-4ce3-9c36-ba0594776c6a.jpg"
               alt="Статуи Али и Нино, Батуми"
               className="w-full h-full object-cover absolute inset-0"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-iberia-dark/90 via-iberia-dark/50 to-iberia-dark/20" />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <p className="text-white font-bold text-xl mb-3">
+            <div className="absolute inset-0 bg-gradient-to-b from-iberia-dark/60 via-iberia-dark/20 to-iberia-dark/80" />
+            <div className="absolute top-0 left-0 right-0 p-6">
+              <p className="text-white font-bold text-xl">
                 Батуми посещает более 3.6 млн туристов ежегодно
               </p>
-              <p className="text-white/70 text-sm leading-relaxed mb-5">
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <p className="text-white text-sm leading-relaxed mb-5">
                 Батуми - это европейские улицы и площади старая и новая архитектура, исторический порт, семикилометровая набережная уникальный Ботанический сад, гостиницы международных брендов, бары и рестораны
               </p>
               <button className="w-full bg-[#f08274] text-white font-bold py-3 rounded-full hover:bg-[#e26e60] transition-colors tracking-wider text-sm">
@@ -29,13 +31,13 @@ const BatumiSection = () => {
           </div>
 
           <div className="bg-white rounded-3xl p-6 flex flex-col justify-between min-h-[160px]">
-            <p className="text-iberia-dark font-semibold text-lg">Отсутствие налога на недвижимость для нерезидентов</p>
-            <p className="text-6xl font-bold text-[#bcdcf3] mt-4">0%</p>
+            <p className="text-iberia-dark font-bold text-xl">Отсутствие налога на недвижимость для нерезидентов</p>
+            <p className="text-[8rem] font-bold text-[#bcdcf3] leading-none mt-2">0%</p>
           </div>
 
           <div className="bg-[#e8f5d8] rounded-3xl p-6 min-h-[160px]">
-            <p className="font-bold text-iberia-dark text-lg mb-2">Динамика роста цен на недвижимость</p>
-            <p className="text-sm text-iberia-dark/70 mb-4">Рынок недвижимость в Грузии ежегодно растет за счет повышенного спроса и выгодных условий</p>
+            <p className="font-bold text-iberia-dark text-xl mb-2">Динамика роста цен на недвижимость</p>
+            <p className="text-sm text-iberia-dark mb-4">Рынок недвижимость в Грузии ежегодно растет за счет повышенного спроса и выгодных условий</p>
             <div className="flex items-center justify-between">
               <span className="text-sm text-iberia-dark/60">Рост цены за м.кв</span>
               <span className="bg-[#c5e89c] text-iberia-dark font-bold text-sm px-3 py-1 rounded-full">+36%</span>
@@ -46,20 +48,20 @@ const BatumiSection = () => {
                 <path d="M0 35 Q20 30 40 28 Q60 26 70 25 Q90 23 100 20 Q120 15 140 12 Q160 8 180 5 L200 3 L200 40 L0 40 Z" fill="#3a8fd1" fillOpacity="0.15"/>
               </svg>
             </div>
-            <p className="text-xs text-iberia-dark/40 mt-1">*Данные приведены TBC Capital за 2022-2023</p>
+            <p className="text-xs text-iberia-dark mt-1">*Данные приведены TBC Capital за 2022-2023</p>
           </div>
 
           <div className="bg-iberia-dark rounded-3xl p-6 min-h-[180px]">
-            <p className="text-white font-bold text-lg mb-2">Выгодные условия покупки</p>
-            <p className="text-white/60 text-sm mb-5">Застройщики в Батуми предоставляют рассрочку под 0% с минимальным первоначальным взносом</p>
+            <p className="text-white font-bold text-xl mb-2">Выгодные условия покупки</p>
+            <p className="text-white text-sm mb-5">Застройщики в Батуми предоставляют рассрочку под 0% с минимальным первоначальным взносом</p>
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-[#e8f5d8] rounded-xl p-3">
                 <p className="text-iberia-dark font-bold text-lg">от 10.500$</p>
-                <p className="text-iberia-dark/60 text-xs">Первый взнос от 20%</p>
+                <p className="text-iberia-dark text-sm font-medium">Первый взнос от 20%</p>
               </div>
               <div className="bg-[#cfe7f7] rounded-xl p-3">
                 <p className="text-iberia-dark font-bold text-lg">до 46 мес.</p>
-                <p className="text-iberia-dark/60 text-xs">Беспроцентная рассрочка</p>
+                <p className="text-iberia-dark text-sm font-medium">Беспроцентная рассрочка</p>
               </div>
             </div>
           </div>
@@ -70,10 +72,10 @@ const BatumiSection = () => {
               alt="Пляж в Батуми"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/60 to-white/20" />
             <div className="relative">
-              <p className="font-bold text-iberia-dark text-lg mb-2">Экология</p>
-              <p className="text-iberia-dark/70 text-sm">Горы, море и чистый воздух</p>
+              <p className="font-bold text-iberia-dark text-xl mb-2">Экология</p>
+              <p className="text-iberia-dark text-sm">Горы, море и чистый воздух</p>
             </div>
           </div>
         </div>
