@@ -10,11 +10,11 @@ const BatumiSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <div className="relative rounded-3xl overflow-hidden min-h-[380px] bg-iberia-dark row-span-2 md:row-span-1 lg:row-span-2">
             <img
-              src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=600&q=80"
-              alt="Батуми"
+              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/89c2fe0a-a049-4ce3-9c36-ba0594776c6a.jpg"
+              alt="Статуи Али и Нино, Батуми"
               className="w-full h-full object-cover absolute inset-0"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-iberia-dark/80 via-iberia-dark/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-iberia-dark/90 via-iberia-dark/50 to-iberia-dark/20" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <p className="text-white font-bold text-xl mb-3">
                 Батуми посещает более 3.6 млн туристов ежегодно
@@ -64,14 +64,17 @@ const BatumiSection = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl p-6 min-h-[180px]">
-            <p className="font-bold text-iberia-dark text-lg mb-2">Экология</p>
-            <p className="text-iberia-dark/60 text-sm">Горы, море и чистый воздух</p>
+          <div className="relative rounded-3xl overflow-hidden p-6 min-h-[180px]">
             <img
-              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
-              alt="Море"
-              className="w-full h-24 object-cover rounded-xl mt-4"
+              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/563446d8-d4ca-4a24-98a4-eccc66c7ef77.jpg"
+              alt="Пляж в Батуми"
+              className="absolute inset-0 w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/30" />
+            <div className="relative">
+              <p className="font-bold text-iberia-dark text-lg mb-2">Экология</p>
+              <p className="text-iberia-dark/70 text-sm">Горы, море и чистый воздух</p>
+            </div>
           </div>
         </div>
       </div>
