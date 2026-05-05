@@ -39,9 +39,9 @@ const ReviewsSection = () => {
           <span className="text-iberia-orange">Видео-отзывы</span> наших клиентов
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-iberia-orange/40 scrollbar-track-transparent">
           {reviews.map((r) => (
-            <div key={r.name} className="group cursor-pointer">
+            <div key={r.name} className="group cursor-pointer flex-shrink-0 w-[320px] md:w-[380px] snap-start">
               <div className="relative rounded-3xl overflow-hidden aspect-video bg-gray-100 mb-4">
                 {r.videoUrl ? (
                   <iframe
