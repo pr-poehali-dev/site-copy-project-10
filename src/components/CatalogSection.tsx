@@ -102,7 +102,7 @@ const CatalogSection = () => {
           </div>
 
           {/* Десктоп: каталог — третий план */}
-          <div className="absolute hidden md:block" style={{ bottom: '-40px', right: '-310px', zIndex: 5 }}>
+          <div className="absolute hidden md:block" style={{ bottom: '-40px', right: '20px', zIndex: 5 }}>
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7b7e3f5-309b-4fe7-a15f-240eeca75040.png"
               alt="Каталог"
