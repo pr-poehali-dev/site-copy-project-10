@@ -72,31 +72,32 @@ const ReviewsSection = () => {
   }, []);
 
   return (
-    <section id="reviews" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-iberia-dark mb-12">
+    <section id="reviews" className="py-16 bg-white" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div className="max-w-7xl mx-auto px-6 mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-iberia-dark">
           <span className="text-iberia-orange">Видео-отзывы</span> наших клиентов
         </h2>
       </div>
 
       <div
         ref={trackRef}
-        className="flex gap-6 overflow-x-auto px-6 select-none"
+        className="flex gap-6 overflow-x-auto px-6 select-none flex-1"
         style={{
           cursor: 'grab',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
+          alignItems: 'flex-start',
         }}
       >
         {reviews.map((r) => (
           <div
             key={r.name}
             className="flex-shrink-0 flex flex-col"
-            style={{ width: 'calc(100vw * 0.55)', maxWidth: '680px', minWidth: '280px' }}
+            style={{ width: 'calc((100vh - 260px) * 9 / 16)', maxWidth: '380px', minWidth: '200px' }}
           >
             <div
-              className="relative rounded-3xl overflow-hidden bg-gray-100 mb-4"
-              style={{ height: 'calc(100vh - 280px)', minHeight: '320px' }}
+              className="relative rounded-3xl overflow-hidden bg-gray-100 mb-3"
+              style={{ height: 'calc(100vh - 260px)', minHeight: '280px' }}
             >
               {r.videoUrl ? (
                 <iframe
