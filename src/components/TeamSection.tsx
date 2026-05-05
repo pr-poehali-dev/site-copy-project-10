@@ -72,8 +72,14 @@ const TeamSection = () => {
 
       <div
         ref={trackRef}
-        className="flex gap-6 px-6 overflow-x-auto select-none"
-        style={{ cursor: 'grab', scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}
+        className="flex gap-6 overflow-x-auto select-none"
+        style={{
+          paddingLeft: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
+          paddingRight: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
+          cursor: 'grab',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        } as React.CSSProperties}
       >
         {team.map((member) => (
           <div key={member.name} className="flex-shrink-0 w-64 md:w-72">

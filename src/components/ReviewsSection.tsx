@@ -81,8 +81,10 @@ const ReviewsSection = () => {
 
       <div
         ref={trackRef}
-        className="flex gap-6 overflow-x-auto px-6 select-none"
+        className="flex gap-6 overflow-x-auto select-none"
         style={{
+          paddingLeft: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
+          paddingRight: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
           cursor: 'grab',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
