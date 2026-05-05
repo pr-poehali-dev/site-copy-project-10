@@ -71,22 +71,22 @@ const SelectionSection = () => {
           </div>
 
           {/* Коллаж из 3 фото */}
-          <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden lg:block" style={{ width: '420px', height: '340px' }}>
-            {/* Левая карточка — повёрнута влево, сзади */}
+          <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden lg:block" style={{ width: '480px', height: '380px' }}>
+            {/* Левая карточка */}
             <div className="absolute rounded-2xl overflow-hidden shadow-2xl"
-              style={{ width: '180px', height: '260px', left: '0px', top: '30px', transform: 'rotate(-8deg)', zIndex: 1 }}>
+              style={{ width: '210px', height: '300px', left: '0px', top: '40px', transform: 'rotate(-8deg)', zIndex: 1 }}>
               <img src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/d88eb9d9-9825-4de4-aa28-3ff7cc43bc45.jpg"
                 alt="Проект" className="w-full h-full object-cover" draggable={false} />
             </div>
-            {/* Средняя карточка — вертикальная, по центру */}
+            {/* Средняя карточка */}
             <div className="absolute rounded-2xl overflow-hidden shadow-2xl"
-              style={{ width: '180px', height: '280px', left: '115px', top: '15px', transform: 'rotate(-2deg)', zIndex: 2 }}>
+              style={{ width: '210px', height: '320px', left: '135px', top: '20px', transform: 'rotate(-2deg)', zIndex: 2 }}>
               <img src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/31d8c948-74f4-48b7-9352-1032073070cd.jpg"
                 alt="Проект" className="w-full h-full object-cover" draggable={false} />
             </div>
-            {/* Правая карточка — горизонтальная, повёрнута вправо, выходит вперёд */}
+            {/* Правая карточка — вертикальная */}
             <div className="absolute rounded-2xl overflow-hidden shadow-2xl"
-              style={{ width: '200px', height: '150px', right: '0px', bottom: '10px', transform: 'rotate(4deg)', zIndex: 3 }}>
+              style={{ width: '210px', height: '300px', right: '0px', top: '50px', transform: 'rotate(6deg)', zIndex: 3 }}>
               <img src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/7ed6da7d-84ea-4da7-aee3-2d97dd3a5f19.jpg"
                 alt="Проект" className="w-full h-full object-cover" draggable={false} />
             </div>
