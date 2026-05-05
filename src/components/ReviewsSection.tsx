@@ -60,14 +60,26 @@ const ReviewsSection = () => {
       el.style.cursor = 'grab';
     };
 
+    const onWheel = (e: WheelEvent) => {
+      const atStart = el.scrollLeft === 0;
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+      const scrollingLeft = e.deltaY < 0;
+      const scrollingRight = e.deltaY > 0;
+      if ((atStart && scrollingLeft) || (atEnd && scrollingRight)) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    };
+
     el.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
+    el.addEventListener('wheel', onWheel, { passive: false });
 
     return () => {
       el.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
+      el.removeEventListener('wheel', onWheel);
     };
   }, []);
 
