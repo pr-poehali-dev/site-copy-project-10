@@ -25,7 +25,7 @@ const SelectionSection = () => {
   }, []);
 
   return (
-    <section id="consultation" className="py-10 bg-iberia-light-bg">
+    <section id="consultation" className="py-10" style={{ backgroundColor: '#b8d9f0' }}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="relative bg-iberia-dark rounded-3xl overflow-hidden p-10 md:p-16 min-h-[480px] flex items-center">
 
