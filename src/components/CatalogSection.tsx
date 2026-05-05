@@ -107,7 +107,7 @@ const CatalogSection = () => {
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7b7e3f5-309b-4fe7-a15f-240eeca75040.png"
               alt="Каталог"
               className="object-contain drop-shadow-xl"
-              style={{ width: '660px', transform: 'rotate(4deg)', display: 'block' }}
+              style={{ width: '520px', transform: 'rotate(4deg)', display: 'block' }}
             />
           </div>
           {/* Десктоп: Горгий — прижат к правому краю, на всю высоту */}
