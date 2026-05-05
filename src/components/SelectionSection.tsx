@@ -24,16 +24,16 @@ const SelectionSection = () => {
             <div className="grid grid-cols-2 gap-x-8 gap-y-6 mb-10">
               {steps.map((s) => (
                 <div key={s.num} className="flex items-start gap-4">
-                  <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center bg-white/15 rounded-full text-white font-bold text-base">
+                  <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center bg-white rounded-full text-iberia-dark font-bold text-base">
                     {s.num}
                   </div>
-                  <p className="text-white/80 text-base leading-snug">{s.text}</p>
+                  <p className="text-white text-base leading-snug">{s.text}</p>
                 </div>
               ))}
             </div>
 
-            <button className="flex items-center gap-2 bg-iberia-orange text-white font-bold px-10 py-4 rounded-xl hover:bg-[#e26e60] transition-colors uppercase tracking-wider text-sm">
-              <Icon name="ArrowDownLeft" size={20} />
+            <button className="wave-btn flex items-center gap-2 bg-iberia-orange text-white font-semibold px-6 py-3 rounded-full hover:bg-[#e26e60] transition-colors">
+              <Icon name="ArrowDownLeft" size={18} />
               Получить подборку
             </button>
           </div>
