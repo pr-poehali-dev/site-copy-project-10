@@ -102,7 +102,7 @@ const CatalogSection = () => {
           </div>
 
           {/* Десктоп: каталог — третий план (за текстом и Горгием) */}
-          <div className="absolute hidden md:block" style={{ bottom: '-40px', right: '180px', zIndex: 5 }}>
+          <div className="absolute hidden md:block" style={{ bottom: '-40px', right: '280px', zIndex: 5 }}>
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7b7e3f5-309b-4fe7-a15f-240eeca75040.png"
               alt="Каталог"
@@ -111,7 +111,7 @@ const CatalogSection = () => {
             />
           </div>
           {/* Десктоп: Горгий — прижат к правому краю, на всю высоту */}
-          <div className="absolute bottom-0 z-20 hidden md:block" style={{ right: '-20px' }}>
+          <div className="absolute bottom-0 z-20 hidden md:block" style={{ right: '-50px' }}>
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/c791f8c0-9231-4f01-ab41-d6440ff2fe60.png"
               alt="Менеджер"
