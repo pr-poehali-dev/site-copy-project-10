@@ -60,26 +60,37 @@ const ReviewsSection = () => {
       el.style.cursor = 'grab';
     };
 
+    let isHovered = false;
+
+    const onMouseEnter = () => { isHovered = true; };
+    const onMouseLeave = () => { isHovered = false; };
+
     const onWheel = (e: WheelEvent) => {
-      const atStart = el.scrollLeft === 0;
+      if (!isHovered) return;
+      const atStart = el.scrollLeft <= 0;
       const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
-      const scrollingLeft = e.deltaY < 0;
-      const scrollingRight = e.deltaY > 0;
-      if ((atStart && scrollingLeft) || (atEnd && scrollingRight)) return;
+      const goingLeft = e.deltaY < 0;
+      const goingRight = e.deltaY > 0;
+      if ((atStart && goingLeft) || (atEnd && goingRight)) return;
       e.preventDefault();
-      el.scrollLeft += e.deltaY;
+      e.stopPropagation();
+      el.scrollLeft += e.deltaY * 1.5;
     };
 
+    el.addEventListener('mouseenter', onMouseEnter);
+    el.addEventListener('mouseleave', onMouseLeave);
     el.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
-    el.addEventListener('wheel', onWheel, { passive: false });
+    window.addEventListener('wheel', onWheel, { passive: false });
 
     return () => {
+      el.removeEventListener('mouseenter', onMouseEnter);
+      el.removeEventListener('mouseleave', onMouseLeave);
       el.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
-      el.removeEventListener('wheel', onWheel);
+      window.removeEventListener('wheel', onWheel);
     };
   }, []);
 
