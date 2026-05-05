@@ -9,11 +9,11 @@ const steps = [
 
 const SelectionSection = () => {
   return (
-    <section id="consultation" className="py-20 bg-iberia-light-bg">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="relative bg-iberia-dark rounded-3xl overflow-hidden p-8 md:p-12">
+    <section id="consultation" className="bg-iberia-dark" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
+      <div className="w-full max-w-7xl mx-auto px-6 py-20">
+        <div className="relative overflow-hidden p-8 md:p-16">
           <div className="relative z-10 max-w-lg">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-10">
               Получите{' '}
               <span className="text-iberia-orange">индивидуальную</span>
               <br />подборку недвижимости
