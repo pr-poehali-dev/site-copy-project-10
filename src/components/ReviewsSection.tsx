@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 
 const reviews = [
@@ -32,48 +33,106 @@ const reviews = [
 ];
 
 const ReviewsSection = () => {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+
+    const onMouseDown = (e: MouseEvent) => {
+      isDragging.current = true;
+      startX.current = e.pageX - el.offsetLeft;
+      scrollLeft.current = el.scrollLeft;
+      el.style.cursor = 'grabbing';
+    };
+    const onMouseMove = (e: MouseEvent) => {
+      if (!isDragging.current) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const walk = (x - startX.current) * 1.2;
+      el.scrollLeft = scrollLeft.current - walk;
+    };
+    const onMouseUp = () => {
+      isDragging.current = false;
+      el.style.cursor = 'grab';
+    };
+
+    el.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+
+    return () => {
+      el.removeEventListener('mousedown', onMouseDown);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+    };
+  }, []);
+
   return (
     <section id="reviews" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-iberia-dark mb-12">
           <span className="text-iberia-orange">Видео-отзывы</span> наших клиентов
         </h2>
-
-        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-iberia-orange/40 scrollbar-track-transparent">
-          {reviews.map((r) => (
-            <div key={r.name} className="group cursor-pointer flex-shrink-0 w-[320px] md:w-[380px] snap-start">
-              <div className="relative rounded-3xl overflow-hidden aspect-video bg-gray-100 mb-4">
-                {r.videoUrl ? (
-                  <iframe
-                    src={r.videoUrl}
-                    className="w-full h-full"
-                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-                    allowFullScreen
-                    frameBorder="0"
-                  />
-                ) : (
-                  <>
-                    <img
-                      src={r.img}
-                      alt={r.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-iberia-orange rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                        <Icon name="Play" size={24} className="text-white ml-1" />
-                      </div>
-                    </div>
-                  </>
-                )}
-              </div>
-              <h3 className="font-bold text-iberia-dark text-lg">{r.name}</h3>
-              <p className="text-gray-500 text-sm mb-1">{r.subtitle}</p>
-              <p className="text-gray-600 text-sm">{r.desc}</p>
-            </div>
-          ))}
-        </div>
       </div>
+
+      <div
+        ref={trackRef}
+        className="flex gap-6 overflow-x-auto px-6 select-none"
+        style={{
+          cursor: 'grab',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
+        {reviews.map((r) => (
+          <div
+            key={r.name}
+            className="flex-shrink-0 flex flex-col"
+            style={{ width: 'calc(100vw * 0.55)', maxWidth: '680px', minWidth: '280px' }}
+          >
+            <div
+              className="relative rounded-3xl overflow-hidden bg-gray-100 mb-4"
+              style={{ height: 'calc(100vh - 280px)', minHeight: '320px' }}
+            >
+              {r.videoUrl ? (
+                <iframe
+                  src={r.videoUrl}
+                  className="w-full h-full"
+                  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  frameBorder="0"
+                />
+              ) : (
+                <>
+                  <img
+                    src={r.img}
+                    alt={r.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-iberia-orange rounded-full flex items-center justify-center shadow-xl">
+                      <Icon name="Play" size={24} className="text-white ml-1" />
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+            <h3 className="font-bold text-iberia-dark text-lg">{r.name}</h3>
+            <p className="text-gray-500 text-sm mb-1">{r.subtitle}</p>
+            <p className="text-gray-600 text-sm">{r.desc}</p>
+          </div>
+        ))}
+        <div className="flex-shrink-0 w-6" />
+      </div>
+
+      <style>{`
+        #reviews [style*="cursor"]::-webkit-scrollbar { display: none; }
+      `}</style>
     </section>
   );
 };
