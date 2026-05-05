@@ -31,12 +31,13 @@ const SelectionSection = () => {
 
           {/* Текст + шаги */}
           <div className="relative z-10 w-full max-w-xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
-              Получите <span className="text-iberia-orange">индивидуальную</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+              Получите{' '}
+              <span className="text-iberia-orange">индивидуальную</span>
               <br />подборку недвижимости
             </h2>
 
-            <div className="grid grid-cols-2 gap-x-8 gap-y-5 mb-5">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-5 mb-8">
               {steps.map((s) => (
                 <div key={s.num} className="flex items-start gap-4">
                   <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center bg-white rounded-full text-iberia-dark font-bold text-xl">
