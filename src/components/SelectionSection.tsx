@@ -84,13 +84,9 @@ const SelectionSection = () => {
               <img src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/31d8c948-74f4-48b7-9352-1032073070cd.jpg"
                 alt="Проект" className="w-full h-full object-cover" draggable={false} />
             </div>
-            {/* Правая карточка — вертикальная с логотипом */}
+            {/* Правая карточка — вертикальная */}
             <div className="absolute rounded-2xl overflow-hidden shadow-2xl"
               style={{ width: '210px', height: '300px', right: '0px', top: '50px', transform: 'rotate(6deg)', zIndex: 3 }}>
-              <div className="absolute top-0 left-0 right-0 z-10 bg-white flex items-center justify-center py-2 px-3" style={{ height: '64px' }}>
-                <img src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/ac9556fc-56ac-47af-b179-858290223145.png"
-                  alt="Логотип" className="h-10 object-contain" draggable={false} />
-              </div>
               <img src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/7ed6da7d-84ea-4da7-aee3-2d97dd3a5f19.jpg"
                 alt="Проект" className="w-full h-full object-cover" draggable={false} />
             </div>
