@@ -66,7 +66,7 @@ const TeamSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-white">
           Saginadze Estate — это команда{' '}
           <span className="text-iberia-orange">экспертов недвижимости</span>{' '}
-          из 5 стран
+
         </h2>
       </div>
 
