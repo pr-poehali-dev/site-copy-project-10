@@ -142,11 +142,7 @@ const CatalogSection = () => {
 
         </div>
 
-        <div className="mt-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
-            Лучшие инвестиционные проекты <span className="text-iberia-orange">Батуми</span>
-          </h2>
-        </div>
+
       </div>
     </section>
   );
