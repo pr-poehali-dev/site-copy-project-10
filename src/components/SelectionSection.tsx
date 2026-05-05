@@ -32,9 +32,9 @@ const SelectionSection = () => {
           {/* Текст + шаги */}
           <div className="relative z-10 w-full max-w-xl">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
-              Получите{' '}
-              <span className="text-iberia-orange">индивидуальную</span>
-              <br />подборку недвижимости
+              <span className="whitespace-nowrap">Получите <span className="text-iberia-orange">индивидуальную</span></span>
+              <br />
+              <span className="whitespace-nowrap">подборку недвижимости</span>
             </h2>
 
             <div className="grid grid-cols-2 gap-x-8 gap-y-5 mb-8">
