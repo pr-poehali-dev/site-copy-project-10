@@ -45,8 +45,8 @@ const CatalogSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative bg-[#f0b8a8] rounded-3xl overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 min-h-[420px] md:min-h-[400px]">
 
-          {/* Иконка Group_35 — только для десктопа, правый верхний угол */}
-          <div className="absolute hidden md:block" style={{ top: '20px', right: '20px', zIndex: 30 }}>
+          {/* Иконка Group_35 в правом верхнем углу */}
+          <div className="absolute top-5 right-5 z-20" style={{ top: '20px', right: '20px' }}>
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/33068750-22a7-4d07-9014-f977933239a0.png"
               alt="PDF"
@@ -101,8 +101,8 @@ const CatalogSection = () => {
             </div>
           </div>
 
-          {/* Десктоп: каталог — третий план */}
-          <div className="absolute hidden md:block" style={{ bottom: '-40px', right: '-310px', zIndex: 5 }}>
+          {/* Десктоп: каталог — третий план (за текстом и Горгием) */}
+          <div className="absolute hidden md:block" style={{ bottom: '-40px', right: '80px', zIndex: 5 }}>
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7b7e3f5-309b-4fe7-a15f-240eeca75040.png"
               alt="Каталог"
@@ -110,8 +110,8 @@ const CatalogSection = () => {
               style={{ width: '660px', transform: 'rotate(4deg)', display: 'block' }}
             />
           </div>
-          {/* Десктоп: Горгий — прижат к правому краю */}
-          <div className="absolute bottom-0 z-20 hidden md:block" style={{ right: '-50px' }}>
+          {/* Десктоп: Горгий — прижат к правому краю, на всю высоту */}
+          <div className="absolute bottom-0 z-20 hidden md:block" style={{ right: '-20px' }}>
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/c791f8c0-9231-4f01-ab41-d6440ff2fe60.png"
               alt="Менеджер"
@@ -121,32 +121,21 @@ const CatalogSection = () => {
           </div>
 
           {/* Мобильная версия изображений */}
-          <div className="relative md:hidden w-full" style={{ height: '320px' }}>
-            {/* Каталог — третий план, снизу справа */}
-            <div className="absolute" style={{ bottom: '-20px', right: '60px', zIndex: 5 }}>
+          <div className="relative md:hidden w-full" style={{ height: '240px' }}>
+            <div className="absolute bottom-0 right-8 z-10">
               <img
                 src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7b7e3f5-309b-4fe7-a15f-240eeca75040.png"
                 alt="Каталог"
                 className="object-contain drop-shadow-xl"
-                style={{ width: '260px', transform: 'rotate(4deg)' }}
+                style={{ width: '130px', transform: 'rotate(4deg)' }}
               />
             </div>
-            {/* Георгий — на всю высоту, прижат к правому краю */}
-            <div className="absolute bottom-0 right-0" style={{ zIndex: 20 }}>
+            <div className="absolute bottom-0 right-0 z-20">
               <img
                 src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/c791f8c0-9231-4f01-ab41-d6440ff2fe60.png"
                 alt="Менеджер"
                 className="object-contain drop-shadow-2xl"
-                style={{ height: '310px', width: 'auto' }}
-              />
-            </div>
-            {/* Иконка Group_35 — слева от Георгия, на уровне головы */}
-            <div className="absolute" style={{ bottom: '210px', right: '155px', zIndex: 25 }}>
-              <img
-                src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/33068750-22a7-4d07-9014-f977933239a0.png"
-                alt="PDF"
-                className="object-contain drop-shadow-lg"
-                style={{ width: '80px', height: '80px' }}
+                style={{ height: '220px', width: 'auto' }}
               />
             </div>
           </div>
