@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import SerеnadeModal from '@/components/SerеnadeModal';
 
 type Project = {
@@ -140,6 +141,7 @@ const SHOW_STEP = 6;
 const ProjectsSection = () => {
   const [showCount, setShowCount] = useState(SHOW_STEP);
   const [serеnadeOpen, setSerеnadeOpen] = useState(false);
+  const navigate = useNavigate();
   const visible = projects.slice(0, showCount);
 
   return (
@@ -156,7 +158,7 @@ const ProjectsSection = () => {
             <div
               key={p.name}
               className="group cursor-pointer"
-              onClick={() => p.modal ? setSerеnadeOpen(true) : undefined}
+              onClick={() => p.modal ? navigate('/serenade') : undefined}
             >
               <div className="relative rounded-3xl overflow-hidden mb-4 aspect-[4/3] bg-gray-100">
                 <img
