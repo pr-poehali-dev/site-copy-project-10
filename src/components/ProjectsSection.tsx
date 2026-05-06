@@ -1,6 +1,17 @@
 import { useState } from 'react';
+import SerеnadeModal from '@/components/SerеnadeModal';
 
-const projects = [
+type Project = {
+  name: string;
+  location: string;
+  price: string;
+  tag: string | null;
+  tagColor: string;
+  img: string;
+  modal?: boolean;
+};
+
+const projects: Project[] = [
   {
     name: 'Shekvetili Forest Beach',
     location: 'Шекветили',
@@ -85,9 +96,10 @@ const projects = [
     name: 'Serenade',
     location: 'Батуми',
     price: '$44 280',
-    tag: null,
-    tagColor: '',
-    img: 'https://images.unsplash.com/photo-1596436889106-be35e843f974?w=500&q=80',
+    tag: 'Премиум',
+    tagColor: 'bg-iberia-orange',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/bf62a60f-575d-44a1-bf76-99fcae9de129.jpg',
+    modal: true,
   },
   {
     name: 'Summer 365',
@@ -127,6 +139,7 @@ const SHOW_STEP = 6;
 
 const ProjectsSection = () => {
   const [showCount, setShowCount] = useState(SHOW_STEP);
+  const [serеnadeOpen, setSerеnadeOpen] = useState(false);
   const visible = projects.slice(0, showCount);
 
   return (
@@ -136,9 +149,15 @@ const ProjectsSection = () => {
           Лучшие инвестиционные проекты <span className="text-iberia-orange">Батуми</span>
         </h2>
 
+        <SerеnadeModal open={serеnadeOpen} onClose={() => setSerеnadeOpen(false)} />
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {visible.map((p) => (
-            <div key={p.name} className="group cursor-pointer">
+            <div
+              key={p.name}
+              className="group cursor-pointer"
+              onClick={() => p.modal ? setSerеnadeOpen(true) : undefined}
+            >
               <div className="relative rounded-3xl overflow-hidden mb-4 aspect-[4/3] bg-gray-100">
                 <img
                   src={p.img}
