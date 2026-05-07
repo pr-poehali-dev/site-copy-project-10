@@ -149,10 +149,12 @@ const projects: Project[] = [
   {
     name: 'Batumi Villas',
     location: 'Батуми',
-    price: '$109 890',
-    tag: null,
-    tagColor: '',
-    img: 'https://images.unsplash.com/photo-1598228723793-52759bba239c?w=500&q=80',
+    price: 'Таунхаусы',
+    tag: 'Собственный гараж',
+    tagColor: 'bg-iberia-orange',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/73514e30-f7f7-41ea-aa9a-7f2ef22b9f7a.jpg',
+    modal: true,
+    route: '/batumi-villas',
   },
   {
     name: 'Riviera Grand',
