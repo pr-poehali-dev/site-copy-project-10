@@ -160,7 +160,7 @@ const ProjectsSection = () => {
               className="group cursor-pointer"
               onClick={() => p.modal ? navigate('/serenade') : undefined}
             >
-              <div className="relative rounded-3xl overflow-hidden mb-4 aspect-[4/3] bg-gray-100">
+              <div className="relative rounded-3xl overflow-hidden mb-4 aspect-square bg-gray-100">
                 <img
                   src={p.img}
                   alt={p.name}
