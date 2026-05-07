@@ -172,6 +172,16 @@ const projects: Project[] = [
     modal: true,
     route: '/ambassadori-island',
   },
+  {
+    name: 'Sunrise Palace',
+    location: 'Батуми, Аллея героев',
+    price: 'От $69 000',
+    tag: '39 этажей',
+    tagColor: 'bg-iberia-orange',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/cb93355b-40d5-4002-9c04-13a770f45eab.jpg',
+    modal: true,
+    route: '/sunrise-palace',
+  },
 ];
 
 const SHOW_STEP = 6;
