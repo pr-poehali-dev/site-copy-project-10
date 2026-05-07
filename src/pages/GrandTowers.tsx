@@ -28,7 +28,7 @@ const images = [
 
 const specs = [
   { label: 'Локация', value: 'Батуми, центр' },
-  { label: 'Стоимость квартир', value: 'По запросу' },
+  { label: 'Стоимость квартир', value: 'От $43 840' },
   { label: 'Размер ПВ', value: '20%' },
   { label: 'Беспроцентная рассрочка', value: 'До 36 мес' },
   { label: 'Планировки', value: 'Студия, 1 спальня, 2 спальни' },
@@ -191,7 +191,7 @@ const GrandTowers = () => {
               >
                 Grand Towers
               </h1>
-              <p className="text-3xl font-bold text-iberia-dark mb-5">Батуми, центр</p>
+              <p className="text-3xl font-bold text-iberia-dark mb-5">От $43 840</p>
 
               <a
                 href="tel:+995599254769"
