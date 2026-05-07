@@ -15,12 +15,14 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: 'Shekvetili Forest Beach',
+    name: 'Shekvetili Forest Beach by Paragraph',
     location: 'Шекветили',
-    price: '$66 190',
-    tag: 'Премиум резорт',
+    price: 'От $67 353',
+    tag: 'Свой пляж 46 м',
     tagColor: 'bg-iberia-orange',
-    img: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=500&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/f414d436-fbe1-405d-9211-ae6fc45d19c2.jpg',
+    modal: true,
+    route: '/shekvetili-forest-beach',
   },
   {
     name: 'Dreamland Oasis',
