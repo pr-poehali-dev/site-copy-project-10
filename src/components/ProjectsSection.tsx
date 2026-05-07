@@ -123,12 +123,14 @@ const projects: Project[] = [
     img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500&q=80',
   },
   {
-    name: 'Piazza',
+    name: 'Piazza Batumi',
     location: 'Батуми, Старый город',
-    price: '$100 620',
-    tag: 'Формат курорта',
+    price: 'От $100 620',
+    tag: 'Рассрочка до 48 мес.',
     tagColor: 'bg-iberia-orange',
-    img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/3b3dce3c-0676-4ffd-9b2b-4414a2f42b2f.jpg',
+    modal: true,
+    route: '/piazza-batumi',
   },
   {
     name: 'Batumi Villas',
