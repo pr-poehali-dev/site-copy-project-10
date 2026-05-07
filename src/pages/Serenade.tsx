@@ -20,6 +20,10 @@ const images = [
     src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/fc3537e0-49b2-42fc-a262-2ca5f80ccb2e.jpg',
     alt: 'Serenade — ночной вид',
   },
+  {
+    src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/f18a5184-128d-43a8-8120-566c0e6c91c2.jpg',
+    alt: 'Serenade — бассейн на крыше',
+  },
 ];
 
 const specs = [
