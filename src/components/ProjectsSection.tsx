@@ -65,7 +65,7 @@ const projects: Project[] = [
   {
     name: 'Grand Towers',
     location: 'Батуми, центр',
-    price: 'По запросу',
+    price: 'От $43 840',
     tag: 'Панорамные виды',
     tagColor: 'bg-iberia-orange',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/3672359d-c111-4006-a14e-22b6d6fbd4d1.jpg',
