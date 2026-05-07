@@ -159,6 +159,16 @@ const projects: Project[] = [
     route: '/batumi-villas',
   },
   {
+    name: 'Gonio Yachts & Marina',
+    location: 'Гонио, побережье',
+    price: 'По запросу',
+    tag: '180 яхт-мест',
+    tagColor: 'bg-iberia-orange',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/1733e1fa-f06c-49a8-add9-aee4e23544d9.jpg',
+    modal: true,
+    route: '/gonio-yachts-marina',
+  },
+  {
     name: 'Riviera Grand',
     location: 'Квариати',
     price: '$697 545',
