@@ -9,6 +9,7 @@ import Serenade from "./pages/Serenade";
 import Address from "./pages/Address";
 import AmbassadoriIsland from "./pages/AmbassadoriIsland";
 import GrandTowers from "./pages/GrandTowers";
+import Ikon from "./pages/Ikon";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/address" element={<Address />} />
           <Route path="/ambassadori-island" element={<AmbassadoriIsland />} />
           <Route path="/grand-towers" element={<GrandTowers />} />
+          <Route path="/ikon" element={<Ikon />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

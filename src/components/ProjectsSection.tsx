@@ -74,11 +74,13 @@ const projects: Project[] = [
   },
   {
     name: 'Ikon',
-    location: 'Батуми',
-    price: '$51 102',
-    tag: 'Для жизни, аренды',
+    location: 'Батуми, Новый бульвар',
+    price: 'От $61 300',
+    tag: 'Сдача май 2027',
     tagColor: 'bg-iberia-orange',
-    img: 'https://images.unsplash.com/photo-1555636222-cae831e670b3?w=500&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/c8eea22a-017a-47fc-9236-d66db1ccadb8.jpg',
+    modal: true,
+    route: '/ikon',
   },
   {
     name: 'Nite',
