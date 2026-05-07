@@ -85,6 +85,16 @@ const projects: Project[] = [
     route: '/ikon',
   },
   {
+    name: "Queen's Residence",
+    location: 'Батуми, Новый бульвар',
+    price: 'От $49 000',
+    tag: 'Ипотека для иностранцев',
+    tagColor: 'bg-iberia-orange',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/2967ac3b-0081-4800-a9ce-872dd840439c.jpg',
+    modal: true,
+    route: '/queens-residence',
+  },
+  {
     name: 'Intourist',
     location: 'Батуми',
     price: 'От $47 124',

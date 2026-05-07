@@ -13,6 +13,7 @@ import Ikon from "./pages/Ikon";
 import Intourist from "./pages/Intourist";
 import Parkline from "./pages/Parkline";
 import PiazzaBatumi from "./pages/PiazzaBatumi";
+import QueensResidence from "./pages/QueensResidence";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/intourist" element={<Intourist />} />
           <Route path="/parkline" element={<Parkline />} />
           <Route path="/piazza-batumi" element={<PiazzaBatumi />} />
+          <Route path="/queens-residence" element={<QueensResidence />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
