@@ -202,18 +202,18 @@ const Parkline = () => {
 
               <a
                 href="tel:+995599254769"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-iberia-orange text-white font-semibold rounded-xl hover:bg-[#e26e60] transition-all mb-8 text-base"
+                className="inline-flex items-center gap-2 bg-iberia-orange hover:bg-[#e26e60] text-white font-semibold px-8 py-3 rounded-full transition mb-8 w-full sm:w-auto text-sm tracking-wide uppercase justify-center sm:justify-start"
               >
-                <Icon name="Phone" size={18} />
-                Узнать подробнее
+                <Icon name="Phone" size={16} />
+                Получить каталог
               </a>
 
               {/* Характеристики */}
-              <div className="divide-y divide-gray-100">
+              <div className="divide-y divide-gray-200">
                 {specs.map((s, i) => (
-                  <div key={i} className="flex justify-between gap-4 py-3">
-                    <span className="text-sm text-gray-500 flex-shrink-0">{s.label}</span>
-                    <span className="text-sm font-medium text-iberia-dark text-right">{s.value}</span>
+                  <div key={i} className="flex flex-col gap-0.5 py-3">
+                    <span className="text-iberia-dark font-bold text-sm">{s.label}</span>
+                    <span className="text-iberia-dark font-normal text-sm leading-snug">{s.value}</span>
                   </div>
                 ))}
               </div>
