@@ -67,10 +67,12 @@ const projects: Project[] = [
   {
     name: 'Solana',
     location: 'Кобулети',
-    price: '$42 000',
+    price: 'От $42 000',
     tag: 'Рассрочка до 60 мес.',
     tagColor: 'bg-iberia-orange',
-    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=500&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/bdd16b6b-b7ae-4b2b-a41a-08599ade192c.jpg',
+    modal: true,
+    route: '/solana',
   },
   {
     name: 'Grand Towers',
