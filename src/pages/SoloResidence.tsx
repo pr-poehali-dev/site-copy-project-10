@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import Footer from '@/components/Footer';
+import ProjectCatalogButton from '@/components/ProjectCatalogButton';
 
 const images = [
   {
@@ -197,6 +198,10 @@ const SoloResidence = () => {
                 Solo Residence
               </h1>
               <p className="text-3xl font-bold text-iberia-dark mb-5">От $29 802</p>
+
+              <div className="mb-6">
+                <ProjectCatalogButton />
+              </div>
 
               <a
                 href="tel:+995599254769"

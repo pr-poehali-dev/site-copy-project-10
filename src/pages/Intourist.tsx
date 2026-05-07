@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import Footer from '@/components/Footer';
+import ProjectCatalogButton from '@/components/ProjectCatalogButton';
 
 const images = [
   {
@@ -44,10 +45,6 @@ const Intourist = () => {
   const [lightbox, setLightbox] = useState(false);
 
   const touchStartX = useRef<number | null>(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -103,13 +100,13 @@ const Intourist = () => {
           </Link>
 
           <div className="flex items-center gap-3">
-            <Link
-              to="/"
+            <button
+              onClick={() => window.history.back()}
               className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-iberia-dark hover:text-iberia-orange transition-colors"
             >
               <Icon name="ArrowLeft" size={16} />
               Назад к проектам
-            </Link>
+            </button>
             <a
               href="tel:+995599254769"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-iberia-orange text-white text-sm font-semibold rounded-xl hover:bg-[#e26e60] transition-all"
@@ -193,6 +190,10 @@ const Intourist = () => {
               <div className="inline-flex items-center gap-2 bg-iberia-orange/10 text-iberia-orange text-sm font-semibold px-4 py-2 rounded-full mb-5">
                 <Icon name="Tag" size={14} />
                 Рассрочка 0% до 50 месяцев
+              </div>
+
+              <div className="mb-6">
+                <ProjectCatalogButton />
               </div>
 
               <a

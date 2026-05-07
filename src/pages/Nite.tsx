@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import Footer from '@/components/Footer';
+import ProjectCatalogButton from '@/components/ProjectCatalogButton';
 
 const images = [
   {
@@ -206,6 +207,10 @@ const Nite = () => {
                   <Icon name="Percent" size={13} />
                   от 10,5% годовых
                 </div>
+              </div>
+
+              <div className="mb-6">
+                <ProjectCatalogButton />
               </div>
 
               <a

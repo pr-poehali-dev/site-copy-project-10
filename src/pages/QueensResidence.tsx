@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import Footer from '@/components/Footer';
+import ProjectCatalogButton from '@/components/ProjectCatalogButton';
 
 const images = [
   {
@@ -53,10 +54,6 @@ const QueensResidence = () => {
   const [activeImg, setActiveImg] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const touchStartX = useRef<number | null>(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -113,13 +110,13 @@ const QueensResidence = () => {
           </Link>
 
           <div className="flex items-center gap-3">
-            <Link
-              to="/"
+            <button
+              onClick={() => window.history.back()}
               className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-iberia-dark hover:text-iberia-orange transition-colors"
             >
               <Icon name="ArrowLeft" size={16} />
               Назад к проектам
-            </Link>
+            </button>
             <a
               href="tel:+995599254769"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-iberia-orange text-white text-sm font-semibold rounded-xl hover:bg-[#e26e60] transition-all"
@@ -204,6 +201,10 @@ const QueensResidence = () => {
                 Queen's Residence
               </h1>
               <p className="text-3xl font-bold text-iberia-dark mb-5">От $49 000</p>
+
+              <div className="mb-6">
+                <ProjectCatalogButton />
+              </div>
 
               <a
                 href="tel:+995599254769"

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
@@ -11,6 +12,16 @@ import SelectionSection from '@/components/SelectionSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    const saved = sessionStorage.getItem('scrollY');
+    if (saved) {
+      sessionStorage.removeItem('scrollY');
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: parseInt(saved, 10), behavior: 'instant' });
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />

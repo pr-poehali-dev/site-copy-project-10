@@ -248,7 +248,12 @@ const ProjectsSection = () => {
             <div
               key={p.name}
               className="group cursor-pointer"
-              onClick={() => p.route ? navigate(p.route) : undefined}
+              onClick={() => {
+                if (p.route) {
+                  sessionStorage.setItem('scrollY', String(window.scrollY));
+                  navigate(p.route);
+                }
+              }}
             >
               <div className="relative rounded-3xl overflow-hidden mb-4 aspect-square bg-gray-100">
                 <img
