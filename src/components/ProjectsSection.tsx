@@ -25,12 +25,14 @@ const projects: Project[] = [
     route: '/shekvetili-forest-beach',
   },
   {
-    name: 'Dreamland Oasis',
+    name: 'Nite',
     location: 'Чакви',
-    price: '$70 732',
-    tag: 'Рассрочка $500/мес.',
+    price: 'От $50 700',
+    tag: 'Доходность 10,5%',
     tagColor: 'bg-iberia-orange',
-    img: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=500&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/c16ff710-80f8-408e-bc4c-248c761713e1.jpg',
+    modal: true,
+    route: '/nite',
   },
   {
     name: 'Solo Residence',
