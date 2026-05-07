@@ -195,6 +195,16 @@ const projects: Project[] = [
     route: '/tbilisi-waterfront',
   },
   {
+    name: 'Montemar',
+    location: 'Гонио',
+    price: 'От $60 495',
+    tag: 'Старт продаж!',
+    tagColor: 'bg-iberia-orange',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/58787c58-ebe3-49f3-9bec-0f0d1fb69f85.jpg',
+    modal: true,
+    route: '/montemar',
+  },
+  {
     name: 'Ambassadori Island',
     location: 'Батуми, Порт',
     price: 'От $110 447',

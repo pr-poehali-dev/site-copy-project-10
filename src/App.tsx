@@ -25,6 +25,7 @@ import PetraSeaResort from "./pages/PetraSeaResort";
 import Solana from "./pages/Solana";
 import SoloResidence from "./pages/SoloResidence";
 import TbilisiWaterfront from "./pages/TbilisiWaterfront";
+import Montemar from "./pages/Montemar";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -57,6 +58,7 @@ const App = () => (
           <Route path="/solana" element={<Solana />} />
           <Route path="/solo-residence" element={<SoloResidence />} />
           <Route path="/tbilisi-waterfront" element={<TbilisiWaterfront />} />
+          <Route path="/montemar" element={<Montemar />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
