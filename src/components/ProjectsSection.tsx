@@ -128,11 +128,13 @@ const projects: Project[] = [
   },
   {
     name: 'Summer 365',
-    location: 'Батуми',
-    price: '$41 243',
-    tag: null,
-    tagColor: '',
-    img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500&q=80',
+    location: 'Батуми, Новый бульвар',
+    price: 'От $70 000',
+    tag: 'Сдача 2026',
+    tagColor: 'bg-iberia-orange',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/f84ddc83-3df8-4af7-91b2-d852da103465.jpg',
+    modal: true,
+    route: '/summer-365',
   },
   {
     name: 'Piazza Batumi',
