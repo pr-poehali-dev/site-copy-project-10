@@ -149,7 +149,7 @@ const projects: Project[] = [
   {
     name: 'Batumi Villas',
     location: 'Батуми',
-    price: 'Таунхаусы',
+    price: 'От $109 890',
     tag: 'Собственный гараж',
     tagColor: 'bg-iberia-orange',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/73514e30-f7f7-41ea-aa9a-7f2ef22b9f7a.jpg',

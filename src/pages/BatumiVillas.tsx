@@ -196,7 +196,7 @@ const BatumiVillas = () => {
               >
                 Batumi Villas
               </h1>
-              <p className="text-3xl font-bold text-iberia-dark mb-5">Таунхаусы в Батуми</p>
+              <p className="text-3xl font-bold text-iberia-dark mb-5">От $109 890</p>
 
               <a
                 href="tel:+995599254769"
