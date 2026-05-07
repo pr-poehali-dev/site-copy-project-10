@@ -49,10 +49,12 @@ const projects: Project[] = [
   {
     name: 'Parkline',
     location: 'Батуми',
-    price: '$48 471',
+    price: 'От $48 471',
     tag: 'Рассрочка до 50 мес.',
     tagColor: 'bg-iberia-orange',
-    img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/fcc08d71-e86c-49d0-aab7-19bec3ca0dc3.jpg',
+    modal: true,
+    route: '/parkline',
   },
   {
     name: 'Solana',
