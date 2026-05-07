@@ -17,6 +17,7 @@ import QueensResidence from "./pages/QueensResidence";
 import ShekvetiliForestBeach from "./pages/ShekvetiliForestBeach";
 import Summer365 from "./pages/Summer365";
 import SunrisePalace from "./pages/SunrisePalace";
+import BatumiVillas from "./pages/BatumiVillas";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/shekvetili-forest-beach" element={<ShekvetiliForestBeach />} />
           <Route path="/summer-365" element={<Summer365 />} />
           <Route path="/sunrise-palace" element={<SunrisePalace />} />
+          <Route path="/batumi-villas" element={<BatumiVillas />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
