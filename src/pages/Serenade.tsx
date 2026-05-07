@@ -202,7 +202,7 @@ const Serenade = () => {
             {/* Правая колонка — инфо */}
             <div className="flex-1 min-w-0">
               <h1
-                className="font-bold text-iberia-dark mb-1"
+                className="font-bold text-iberia-orange mb-1"
                 style={{ fontSize: '2rem', lineHeight: '1.2' }}
               >
                 Serenade
@@ -214,9 +214,9 @@ const Serenade = () => {
               </button>
 
               {/* Характеристики */}
-              <div className="space-y-4">
+              <div className="divide-y divide-gray-200">
                 {specs.map((s) => (
-                  <div key={s.label} className="flex flex-col gap-0.5">
+                  <div key={s.label} className="flex flex-col gap-0.5 py-3">
                     <span className="text-iberia-dark font-bold text-sm">{s.label}</span>
                     <span className="text-iberia-dark font-normal text-sm leading-snug">{s.value}</span>
                   </div>
