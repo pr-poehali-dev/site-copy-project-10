@@ -42,11 +42,13 @@ const projects: Project[] = [
   },
   {
     name: 'Buknari Resort',
-    location: 'Буквари',
-    price: '$96 040',
-    tag: 'Старт продаж!',
+    location: 'Букнари',
+    price: 'От $66 000',
+    tag: '20 м до моря',
     tagColor: 'bg-iberia-orange',
-    img: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=500&q=80',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/848fa05f-75d9-419c-9d38-282993caf4cf.jpg',
+    modal: true,
+    route: '/buknari-resort',
   },
   {
     name: 'Parkline',
