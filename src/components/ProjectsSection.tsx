@@ -10,6 +10,7 @@ type Project = {
   tagColor: string;
   img: string;
   modal?: boolean;
+  route?: string;
 };
 
 const projects: Project[] = [
@@ -88,10 +89,12 @@ const projects: Project[] = [
   {
     name: 'Address',
     location: 'Батуми',
-    price: '$43 800',
-    tag: null,
-    tagColor: '',
-    img: 'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=500&q=80',
+    price: 'От $56 110',
+    tag: 'Рассрочка до 4 лет',
+    tagColor: 'bg-iberia-orange',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/82547b47-b3ce-4f97-8087-8646a5ca8eb6.jpg',
+    modal: true,
+    route: '/address',
   },
   {
     name: 'Serenade',
@@ -101,6 +104,7 @@ const projects: Project[] = [
     tagColor: 'bg-iberia-orange',
     img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/bf62a60f-575d-44a1-bf76-99fcae9de129.jpg',
     modal: true,
+    route: '/serenade',
   },
   {
     name: 'Summer 365',
@@ -158,7 +162,7 @@ const ProjectsSection = () => {
             <div
               key={p.name}
               className="group cursor-pointer"
-              onClick={() => p.modal ? navigate('/serenade') : undefined}
+              onClick={() => p.route ? navigate(p.route) : undefined}
             >
               <div className="relative rounded-3xl overflow-hidden mb-4 aspect-square bg-gray-100">
                 <img
