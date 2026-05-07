@@ -117,10 +117,10 @@ const projects: Project[] = [
   {
     name: 'Serenade',
     location: 'Батуми',
-    price: '$44 280',
-    tag: 'Премиум',
+    price: 'От $46 900',
+    tag: 'Рассрочка до 40 мес.',
     tagColor: 'bg-iberia-orange',
-    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/bf62a60f-575d-44a1-bf76-99fcae9de129.jpg',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/5e516d5f-a4f5-425e-8b2b-44fce2b6e7f7.jpg',
     modal: true,
     route: '/serenade',
   },

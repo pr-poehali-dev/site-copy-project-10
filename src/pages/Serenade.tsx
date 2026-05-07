@@ -5,24 +5,24 @@ import Footer from '@/components/Footer';
 
 const images = [
   {
-    src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/bf62a60f-575d-44a1-bf76-99fcae9de129.jpg',
-    alt: 'Serenade — фасад',
+    src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/5e516d5f-a4f5-425e-8b2b-44fce2b6e7f7.jpg',
+    alt: 'Serenade — вид с улицы',
   },
   {
-    src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/4f7cb17e-3639-4320-967c-502616b8782f.jpg',
-    alt: 'Serenade — крыша',
+    src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/46bb5000-293d-4b30-b738-9281eea4db83.jpg',
+    alt: 'Serenade — главный вход',
   },
   {
-    src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/1bc1185f-070a-43df-b421-cef6b6384077.jpg',
-    alt: 'Serenade — вид сверху',
+    src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/fe0a01cb-eb41-439c-8ed3-aa9cfcd2f621.jpg',
+    alt: 'Serenade — фасад крупный план',
   },
   {
-    src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/fc3537e0-49b2-42fc-a262-2ca5f80ccb2e.jpg',
-    alt: 'Serenade — ночной вид',
+    src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/2c150207-33d0-4cfb-b747-c49deae1229a.jpg',
+    alt: 'Serenade — инфинити-бассейн на крыше',
   },
   {
-    src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/f18a5184-128d-43a8-8120-566c0e6c91c2.jpg',
-    alt: 'Serenade — бассейн на крыше',
+    src: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/33d6d1af-e7a3-4ee1-8767-838c31855a06.jpg',
+    alt: 'Serenade — лаунж на крыше',
   },
 ];
 
@@ -207,11 +207,15 @@ const Serenade = () => {
               >
                 Serenade
               </h1>
-              <p className="text-3xl font-bold text-iberia-dark mb-5">$46 900</p>
+              <p className="text-3xl font-bold text-iberia-dark mb-5">От $46 900</p>
 
-              <button className="bg-iberia-orange hover:bg-[#e26e60] text-white font-semibold px-8 py-3 rounded-full transition mb-8 w-full sm:w-auto text-sm tracking-wide uppercase">
+              <a
+                href="tel:+995599254769"
+                className="inline-flex items-center gap-2 bg-iberia-orange hover:bg-[#e26e60] text-white font-semibold px-8 py-3 rounded-full transition mb-8 w-full sm:w-auto text-sm tracking-wide uppercase justify-center sm:justify-start"
+              >
+                <Icon name="Phone" size={16} />
                 Получить каталог
-              </button>
+              </a>
 
               {/* Характеристики */}
               <div className="divide-y divide-gray-200">
