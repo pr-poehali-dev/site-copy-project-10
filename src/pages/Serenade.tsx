@@ -34,18 +34,18 @@ const specs = [
   { label: 'Беспроцентная рассрочка', value: 'До 40 месяцев' },
   { label: 'Срок сдачи', value: '4 кв-л 2028' },
   { label: 'Планировки', value: 'Студия, 1 спальня, 2 спальни' },
-  { label: 'Площадь', value: '32 м2 – 105,8 м2' },
+  { label: 'Площадь', value: '32 м² – 105,8 м²' },
   { label: 'Этажность', value: '16 этажей' },
   { label: 'До моря', value: '700 м' },
   { label: 'Виды', value: 'Море, горы' },
   {
     label: 'Отделка',
-    value: '«зеленый каркас», «с отделкой», «под ключ с мебелью», «под ключ с мебелью и техникой»',
+    value: '«зелёный каркас», «с отделкой», «под ключ с мебелью», «под ключ с мебелью и техникой»',
   },
   {
     label: 'Инфраструктура',
     value:
-      'Панорамные лифты, инфинити-бассейн на крыше, терраса на крыше с лаунж-зоной, кафе, коворкинг, детская развлекательная комната, ветеринарная клиника, салон красоты, аптека, магазины , паркинг с современной системой парковки',
+      'Панорамные лифты, инфинити-бассейн на крыше, терраса на крыше с лаунж-зоной, кафе, коворкинг, детская развлекательная комната, ветеринарная клиника, салон красоты, аптека, магазины, паркинг с современной системой парковки',
   },
 ];
 
@@ -202,7 +202,7 @@ const Serenade = () => {
             {/* Правая колонка — инфо */}
             <div className="flex-1 min-w-0">
               <h1
-                className="font-bold text-iberia-orange mb-1"
+                className="font-bold text-iberia-dark mb-1"
                 style={{ fontSize: '2rem', lineHeight: '1.2' }}
               >
                 Serenade
@@ -217,8 +217,8 @@ const Serenade = () => {
               <div className="space-y-4">
                 {specs.map((s) => (
                   <div key={s.label} className="flex flex-col gap-0.5">
-                    <span className="text-iberia-dark font-semibold text-sm">{s.label}</span>
-                    <span className="text-iberia-orange text-sm leading-snug">{s.value}</span>
+                    <span className="text-iberia-dark font-bold text-sm">{s.label}</span>
+                    <span className="text-iberia-dark font-normal text-sm leading-snug">{s.value}</span>
                   </div>
                 ))}
               </div>
