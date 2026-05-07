@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
+import Footer from '@/components/Footer';
 
 const images = [
   {
@@ -46,12 +47,45 @@ const specs = [
 
 const Serenade = () => {
   const [activeImg, setActiveImg] = useState(0);
+  const [lightbox, setLightbox] = useState(false);
+
+  const touchStartX = useRef<number | null>(null);
+
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Close lightbox on Escape
+  useEffect(() => {
+    if (!lightbox) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(false);
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [lightbox, activeImg]);
 
   const prev = () => setActiveImg((i) => (i - 1 + images.length) % images.length);
   const next = () => setActiveImg((i) => (i + 1) % images.length);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) { next(); } else { prev(); }
+    }
+    touchStartX.current = null;
+  };
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
@@ -98,7 +132,7 @@ const Serenade = () => {
       </header>
 
       {/* Контент */}
-      <main className="pt-24 pb-16">
+      <main className="pt-24 pb-16 flex-1">
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Хлебные крошки */}
@@ -115,20 +149,25 @@ const Serenade = () => {
             {/* Левая колонка — галерея */}
             <div className="lg:w-[55%] flex-shrink-0">
               {/* Главное фото */}
-              <div className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-gray-100 mb-3">
+              <div
+                className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-gray-100 mb-3 cursor-zoom-in"
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+              >
                 <img
                   src={images[activeImg].src}
                   alt={images[activeImg].alt}
                   className="w-full h-full object-cover"
+                  onClick={() => setLightbox(true)}
                 />
                 <button
-                  onClick={prev}
+                  onClick={(e) => { e.stopPropagation(); prev(); }}
                   className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md transition"
                 >
                   <Icon name="ChevronLeft" size={22} />
                 </button>
                 <button
-                  onClick={next}
+                  onClick={(e) => { e.stopPropagation(); next(); }}
                   className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md transition"
                 >
                   <Icon name="ChevronRight" size={22} />
@@ -184,12 +223,45 @@ const Serenade = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-iberia-dark py-8">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-white/60 text-sm">© 2024 Saginadze Estate. Все права защищены.</p>
+      <Footer />
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center"
+          onClick={() => setLightbox(false)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <button
+            className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 rounded-full w-10 h-10 flex items-center justify-center text-white transition"
+            onClick={() => setLightbox(false)}
+          >
+            <Icon name="X" size={20} />
+          </button>
+          <button
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full w-10 h-10 flex items-center justify-center text-white transition"
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+          >
+            <Icon name="ChevronLeft" size={24} />
+          </button>
+          <img
+            src={images[activeImg].src}
+            alt={images[activeImg].alt}
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl select-none"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full w-10 h-10 flex items-center justify-center text-white transition"
+            onClick={(e) => { e.stopPropagation(); next(); }}
+          >
+            <Icon name="ChevronRight" size={24} />
+          </button>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white text-xs px-3 py-1 rounded-full">
+            {activeImg + 1} / {images.length}
+          </div>
         </div>
-      </footer>
+      )}
     </div>
   );
 };
