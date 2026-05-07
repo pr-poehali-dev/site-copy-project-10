@@ -45,6 +45,16 @@ const projects: Project[] = [
     route: '/petra-sea-resort',
   },
   {
+    name: 'Solo Residence',
+    location: 'Чакви',
+    price: 'От $29 802',
+    tag: 'От $500/мес.',
+    tagColor: 'bg-iberia-orange',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/7590daf0-84f4-4f3d-8ae4-865378f2e3ed.jpg',
+    modal: true,
+    route: '/solo-residence',
+  },
+  {
     name: 'Buknari Resort',
     location: 'Букнари',
     price: 'От $66 000',

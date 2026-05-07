@@ -23,6 +23,7 @@ import GonioYachtsMarina from "./pages/GonioYachtsMarina";
 import Nite from "./pages/Nite";
 import PetraSeaResort from "./pages/PetraSeaResort";
 import Solana from "./pages/Solana";
+import SoloResidence from "./pages/SoloResidence";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/nite" element={<Nite />} />
           <Route path="/petra-sea-resort" element={<PetraSeaResort />} />
           <Route path="/solana" element={<Solana />} />
+          <Route path="/solo-residence" element={<SoloResidence />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
