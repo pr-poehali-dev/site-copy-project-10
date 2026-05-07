@@ -138,6 +138,16 @@ const projects: Project[] = [
     tagColor: '',
     img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&q=80',
   },
+  {
+    name: 'Ambassadori Island',
+    location: 'Батуми, Порт',
+    price: 'От $110 447',
+    tag: 'Первая линия',
+    tagColor: 'bg-iberia-orange',
+    img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/a738dc14-7095-46cf-a7d1-2f98ffc06879.jpg',
+    modal: true,
+    route: '/ambassadori-island',
+  },
 ];
 
 const SHOW_STEP = 6;
