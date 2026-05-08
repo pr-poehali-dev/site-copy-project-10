@@ -168,7 +168,7 @@ const ReviewsSection = () => {
               className="flex-shrink-0"
               style={{ width: cardWidth > 0 ? cardWidth : undefined }}
             >
-              <div className="rounded-3xl overflow-hidden mb-4 bg-gray-100" style={{ aspectRatio: '9/16' }}>
+              <div className="rounded-3xl overflow-hidden mb-4 bg-gray-100 relative" style={{ aspectRatio: '9/16' }}>
                 <iframe
                   src={r.videoUrl}
                   className="w-full h-full"
@@ -177,6 +177,9 @@ const ReviewsSection = () => {
                   frameBorder="0"
                   draggable={false}
                 />
+                {isMobile && (
+                  <div className="absolute inset-0" style={{ zIndex: 10 }} />
+                )}
               </div>
               <p className="text-iberia-dark font-bold text-lg leading-tight">{r.name}</p>
               <p className="text-gray-500 text-sm mt-1">{r.subtitle}</p>
