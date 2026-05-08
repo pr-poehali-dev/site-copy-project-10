@@ -72,16 +72,16 @@ const ReviewsSection = () => {
         ref={trackRef}
         className="flex overflow-x-auto select-none"
         style={{
-          paddingLeft: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
-          paddingRight: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
           cursor: 'grab',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
           gap: '1rem',
+          paddingLeft: '1rem',
+          paddingRight: '1rem',
         } as React.CSSProperties}
       >
         {reviews.map((r) => (
-          <div key={r.name} className="flex-shrink-0" style={{ width: 'calc((min(100vw, 80rem) - max(3rem, 100vw - 80rem + 3rem) - 3rem) / 4)' }}>
+          <div key={r.name} className="flex-shrink-0" style={{ width: 'calc(25vw - 1.25rem)' }}>
             <div className="rounded-3xl overflow-hidden mb-4 bg-gray-100" style={{ aspectRatio: '9/16' }}>
               <iframe
                 src={r.videoUrl}
@@ -96,7 +96,6 @@ const ReviewsSection = () => {
             <p className="text-gray-500 text-sm mt-1">{r.subtitle}</p>
           </div>
         ))}
-        <div className="flex-shrink-0 w-2" />
       </div>
 
       <style>{`#reviews div[style*="grab"]::-webkit-scrollbar { display: none; }`}</style>
