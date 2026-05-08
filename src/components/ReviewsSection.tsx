@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 const reviews = [
   {
@@ -23,11 +23,28 @@ const reviews = [
   },
 ];
 
+const GAP = 16;
+
 const ReviewsSection = () => {
   const trackRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
+  const [cardWidth, setCardWidth] = useState(0);
+
+  // Считаем ширину карточки по реальному размеру враппера
+  useEffect(() => {
+    const calc = () => {
+      if (!wrapperRef.current) return;
+      const totalWidth = wrapperRef.current.offsetWidth;
+      const w = (totalWidth - GAP * (reviews.length - 1)) / reviews.length;
+      setCardWidth(w);
+    };
+    calc();
+    window.addEventListener('resize', calc);
+    return () => window.removeEventListener('resize', calc);
+  }, []);
 
   useEffect(() => {
     const el = trackRef.current;
@@ -61,40 +78,46 @@ const ReviewsSection = () => {
   }, []);
 
   return (
-    <section id="reviews" className="py-20 bg-white overflow-hidden">
+    <section id="reviews" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-iberia-dark">
           <span className="text-iberia-orange">Видео-отзывы</span> наших клиентов
         </h2>
       </div>
 
-      <div
-        ref={trackRef}
-        className="flex gap-4 overflow-x-auto select-none"
-        style={{
-          paddingLeft: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
-          paddingRight: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
-          cursor: 'grab',
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-        } as React.CSSProperties}
-      >
-        {reviews.map((r) => (
-          <div key={r.name} className="flex-shrink-0" style={{ width: 'calc((min(100vw, 80rem) - max(3rem, 100vw - 80rem + 3rem) - 4.5rem) / 4)' }}>
-            <div className="rounded-3xl overflow-hidden mb-4 bg-gray-100" style={{ aspectRatio: '9/16' }}>
-              <iframe
-                src={r.videoUrl}
-                className="w-full h-full"
-                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-                allowFullScreen
-                frameBorder="0"
-                draggable={false}
-              />
+      {/* Враппер точно совпадает с max-w-7xl — по нему считаем ширину */}
+      <div ref={wrapperRef} className="max-w-7xl mx-auto px-6">
+        <div
+          ref={trackRef}
+          className="flex overflow-x-auto select-none"
+          style={{
+            gap: GAP,
+            cursor: 'grab',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+          } as React.CSSProperties}
+        >
+          {reviews.map((r) => (
+            <div
+              key={r.name}
+              className="flex-shrink-0"
+              style={{ width: cardWidth > 0 ? cardWidth : '23%' }}
+            >
+              <div className="rounded-3xl overflow-hidden mb-4 bg-gray-100" style={{ aspectRatio: '9/16' }}>
+                <iframe
+                  src={r.videoUrl}
+                  className="w-full h-full"
+                  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  frameBorder="0"
+                  draggable={false}
+                />
+              </div>
+              <p className="text-iberia-dark font-bold text-lg leading-tight">{r.name}</p>
+              <p className="text-gray-500 text-sm mt-1">{r.subtitle}</p>
             </div>
-            <p className="text-iberia-dark font-bold text-lg leading-tight">{r.name}</p>
-            <p className="text-gray-500 text-sm mt-1">{r.subtitle}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <style>{`#reviews div[style*="grab"]::-webkit-scrollbar { display: none; }`}</style>
