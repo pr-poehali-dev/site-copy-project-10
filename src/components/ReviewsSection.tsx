@@ -28,63 +28,115 @@ const GAP = 16;
 const ReviewsSection = () => {
   const trackRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeftRef = useRef(0);
   const [cardWidth, setCardWidth] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const isMobileRef = useRef(false);
+  const cardWidthRef = useRef(0);
+
+  // текущий индекс (для мобила)
+  const currentIndex = useRef(0);
+  // drag/touch
+  const dragStartX = useRef(0);
+  const dragStartScroll = useRef(0);
+  const isDragging = useRef(false);
+  const touchStartX = useRef(0);
 
   useEffect(() => {
     const calc = () => {
       const mobile = window.innerWidth < 768;
+      isMobileRef.current = mobile;
       setIsMobile(mobile);
       if (!wrapperRef.current) return;
-      if (mobile) {
-        // На мобиле — карточка на всю ширину экрана минус паддинги
-        const style = getComputedStyle(wrapperRef.current);
-        const pl = parseFloat(style.paddingLeft) || 0;
-        const pr = parseFloat(style.paddingRight) || 0;
-        setCardWidth(wrapperRef.current.offsetWidth - pl - pr);
-      } else {
-        // На десктопе — 4 карточки в ряд
-        const style = getComputedStyle(wrapperRef.current);
-        const pl = parseFloat(style.paddingLeft) || 0;
-        const pr = parseFloat(style.paddingRight) || 0;
-        const innerWidth = wrapperRef.current.offsetWidth - pl - pr;
-        setCardWidth((innerWidth - GAP * (reviews.length - 1)) / reviews.length);
-      }
+      const style = getComputedStyle(wrapperRef.current);
+      const pl = parseFloat(style.paddingLeft) || 0;
+      const pr = parseFloat(style.paddingRight) || 0;
+      const innerWidth = wrapperRef.current.offsetWidth - pl - pr;
+      const w = mobile
+        ? innerWidth
+        : (innerWidth - GAP * (reviews.length - 1)) / reviews.length;
+      cardWidthRef.current = w;
+      setCardWidth(w);
     };
     calc();
     window.addEventListener('resize', calc);
     return () => window.removeEventListener('resize', calc);
   }, []);
 
+  const scrollToIndex = (idx: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const clamped = Math.max(0, Math.min(reviews.length - 1, idx));
+    currentIndex.current = clamped;
+    el.scrollTo({ left: clamped * (cardWidthRef.current + GAP), behavior: 'smooth' });
+  };
+
+  // Mouse drag (десктоп)
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
 
     const onMouseDown = (e: MouseEvent) => {
       isDragging.current = true;
-      startX.current = e.pageX - el.offsetLeft;
-      scrollLeftRef.current = el.scrollLeft;
+      dragStartX.current = e.pageX;
+      dragStartScroll.current = el.scrollLeft;
       el.style.cursor = 'grabbing';
     };
     const onMouseMove = (e: MouseEvent) => {
       if (!isDragging.current) return;
       e.preventDefault();
-      const x = e.pageX - el.offsetLeft;
-      el.scrollLeft = scrollLeftRef.current - (x - startX.current) * 1.2;
+      if (!isMobileRef.current) {
+        el.scrollLeft = dragStartScroll.current - (e.pageX - dragStartX.current);
+      }
     };
-    const onMouseUp = () => {
+    const onMouseUp = (e: MouseEvent) => {
+      if (!isDragging.current) return;
       isDragging.current = false;
       el.style.cursor = 'grab';
+      if (isMobileRef.current) {
+        const diff = e.pageX - dragStartX.current;
+        if (Math.abs(diff) > 30) {
+          scrollToIndex(currentIndex.current + (diff < 0 ? 1 : -1));
+        } else {
+          scrollToIndex(currentIndex.current);
+        }
+      }
+    };
+
+    // Touch (мобил) — перехватываем и не даём браузеру инерцию
+    const onTouchStart = (e: TouchEvent) => {
+      touchStartX.current = e.touches[0].clientX;
+      dragStartScroll.current = el.scrollLeft;
+    };
+    const onTouchEnd = (e: TouchEvent) => {
+      if (!isMobileRef.current) return;
+      const diff = e.changedTouches[0].clientX - touchStartX.current;
+      if (Math.abs(diff) > 30) {
+        scrollToIndex(currentIndex.current + (diff < 0 ? 1 : -1));
+      } else {
+        scrollToIndex(currentIndex.current);
+      }
+      e.preventDefault();
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      if (!isMobileRef.current) return;
+      // двигаем вручную, без инерции
+      const dx = e.touches[0].clientX - touchStartX.current;
+      el.scrollLeft = dragStartScroll.current - dx;
+      e.preventDefault();
     };
 
     el.addEventListener('mousedown', onMouseDown);
+    el.addEventListener('touchstart', onTouchStart, { passive: true });
+    el.addEventListener('touchmove', onTouchMove, { passive: false });
+    el.addEventListener('touchend', onTouchEnd, { passive: false });
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
+
     return () => {
       el.removeEventListener('mousedown', onMouseDown);
+      el.removeEventListener('touchstart', onTouchStart);
+      el.removeEventListener('touchmove', onTouchMove);
+      el.removeEventListener('touchend', onTouchEnd);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
     };
@@ -101,28 +153,22 @@ const ReviewsSection = () => {
       <div ref={wrapperRef} className="max-w-7xl mx-auto px-6">
         <div
           ref={trackRef}
-          className="flex overflow-x-auto select-none"
+          className="flex select-none"
           style={{
             gap: GAP,
             cursor: 'grab',
+            overflowX: isMobile ? 'hidden' : 'auto',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
-            scrollSnapType: isMobile ? 'x mandatory' : 'none',
           } as React.CSSProperties}
         >
           {reviews.map((r) => (
             <div
               key={r.name}
               className="flex-shrink-0"
-              style={{
-                width: cardWidth > 0 ? cardWidth : undefined,
-                scrollSnapAlign: isMobile ? 'start' : 'none',
-              }}
+              style={{ width: cardWidth > 0 ? cardWidth : undefined }}
             >
-              <div
-                className="rounded-3xl overflow-hidden mb-4 bg-gray-100"
-                style={{ aspectRatio: '9/16' }}
-              >
+              <div className="rounded-3xl overflow-hidden mb-4 bg-gray-100" style={{ aspectRatio: '9/16' }}>
                 <iframe
                   src={r.videoUrl}
                   className="w-full h-full"
