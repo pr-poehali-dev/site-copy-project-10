@@ -61,9 +61,9 @@ const ReviewsSection = () => {
   }, []);
 
   return (
-    <section id="reviews" className="py-20 bg-iberia-dark overflow-hidden">
+    <section id="reviews" className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-iberia-dark">
           <span className="text-iberia-orange">Видео-отзывы</span> наших клиентов
         </h2>
       </div>
@@ -81,7 +81,7 @@ const ReviewsSection = () => {
       >
         {reviews.map((r) => (
           <div key={r.name} className="flex-shrink-0 w-56 md:w-64">
-            <div className="aspect-[3/4] rounded-3xl overflow-hidden mb-4 bg-white/10">
+            <div className="aspect-[3/4] rounded-3xl overflow-hidden mb-4 bg-gray-100">
               <iframe
                 src={r.videoUrl}
                 className="w-full h-full"
@@ -91,8 +91,8 @@ const ReviewsSection = () => {
                 draggable={false}
               />
             </div>
-            <p className="text-white font-bold text-lg leading-tight">{r.name}</p>
-            <p className="text-iberia-orange text-sm mt-1">{r.subtitle}</p>
+            <p className="text-iberia-dark font-bold text-lg leading-tight">{r.name}</p>
+            <p className="text-gray-500 text-sm mt-1">{r.subtitle}</p>
           </div>
         ))}
         <div className="flex-shrink-0 w-2" />
