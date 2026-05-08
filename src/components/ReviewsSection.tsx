@@ -1,34 +1,25 @@
 import { useRef, useEffect } from 'react';
-import Icon from '@/components/ui/icon';
 
 const reviews = [
   {
     name: 'Сергей',
     subtitle: 'Тайланд',
-    desc: 'Благодарность за помощь в подборе инвестиционной недвижимости',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
-    videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239018&hd=2',
+    videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239029&hd=2',
   },
   {
     name: 'Эдгар',
     subtitle: 'Москва',
-    desc: 'Благодарность за помощь в подборе инвестиционной недвижимости',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
-    videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239020&hd=2',
+    videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239030&hd=2',
   },
   {
     name: 'Сергей и Светлана',
     subtitle: 'Литва',
-    desc: 'Благодарность за помощь в подборе инвестиционной недвижимости',
-    img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80',
-    videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239019&hd=2',
+    videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239031&hd=2',
   },
   {
     name: 'Самуил',
     subtitle: 'Израиль',
-    desc: 'Благодарность за помощь в подборе инвестиционной недвижимости',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
-    videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239017&hd=2',
+    videoUrl: 'https://vkvideo.ru/video_ext.php?oid=-236888951&id=456239032&hd=2',
   },
 ];
 
@@ -52,52 +43,27 @@ const ReviewsSection = () => {
       if (!isDragging.current) return;
       e.preventDefault();
       const x = e.pageX - el.offsetLeft;
-      const walk = (x - startX.current) * 1.2;
-      el.scrollLeft = scrollLeft.current - walk;
+      el.scrollLeft = scrollLeft.current - (x - startX.current) * 1.2;
     };
     const onMouseUp = () => {
       isDragging.current = false;
       el.style.cursor = 'grab';
     };
 
-    let isHovered = false;
-
-    const onMouseEnter = () => { isHovered = true; };
-    const onMouseLeave = () => { isHovered = false; };
-
-    const onWheel = (e: WheelEvent) => {
-      if (!isHovered) return;
-      const atStart = el.scrollLeft <= 0;
-      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
-      const goingLeft = e.deltaY < 0;
-      const goingRight = e.deltaY > 0;
-      if ((atStart && goingLeft) || (atEnd && goingRight)) return;
-      e.preventDefault();
-      e.stopPropagation();
-      el.scrollLeft += e.deltaY * 1.5;
-    };
-
-    el.addEventListener('mouseenter', onMouseEnter);
-    el.addEventListener('mouseleave', onMouseLeave);
     el.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
-    window.addEventListener('wheel', onWheel, { passive: false });
-
     return () => {
-      el.removeEventListener('mouseenter', onMouseEnter);
-      el.removeEventListener('mouseleave', onMouseLeave);
       el.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
-      window.removeEventListener('wheel', onWheel);
     };
   }, []);
 
   return (
-    <section id="reviews" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-iberia-dark mb-12">
+    <section id="reviews" className="py-20 bg-iberia-dark overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-white">
           <span className="text-iberia-orange">Видео-отзывы</span> наших клиентов
         </h2>
       </div>
@@ -111,53 +77,28 @@ const ReviewsSection = () => {
           cursor: 'grab',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
-        }}
+        } as React.CSSProperties}
       >
         {reviews.map((r) => (
-          <div
-            key={r.name}
-            className="flex-shrink-0 flex flex-col"
-            style={{ width: 'calc(100vw * 0.55)', maxWidth: '680px', minWidth: '280px' }}
-          >
-            <div
-              className="relative rounded-3xl overflow-hidden bg-gray-100 mb-4"
-              style={{ height: 'calc(100vh - 280px)', minHeight: '320px' }}
-            >
-              {r.videoUrl ? (
-                <iframe
-                  src={r.videoUrl}
-                  className="w-full h-full"
-                  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  frameBorder="0"
-                />
-              ) : (
-                <>
-                  <img
-                    src={r.img}
-                    alt={r.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-iberia-orange rounded-full flex items-center justify-center shadow-xl">
-                      <Icon name="Play" size={24} className="text-white ml-1" />
-                    </div>
-                  </div>
-                </>
-              )}
+          <div key={r.name} className="flex-shrink-0 w-56 md:w-64">
+            <div className="aspect-[3/4] rounded-3xl overflow-hidden mb-4 bg-white/10">
+              <iframe
+                src={r.videoUrl}
+                className="w-full h-full"
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                allowFullScreen
+                frameBorder="0"
+                draggable={false}
+              />
             </div>
-            <h3 className="font-bold text-iberia-dark text-lg">{r.name}</h3>
-            <p className="text-gray-500 text-sm mb-1">{r.subtitle}</p>
-            <p className="text-gray-600 text-sm">{r.desc}</p>
+            <p className="text-white font-bold text-lg leading-tight">{r.name}</p>
+            <p className="text-iberia-orange text-sm mt-1">{r.subtitle}</p>
           </div>
         ))}
-        <div className="flex-shrink-0 w-6" />
+        <div className="flex-shrink-0 w-2" />
       </div>
 
-      <style>{`
-        #reviews [style*="cursor"]::-webkit-scrollbar { display: none; }
-      `}</style>
+      <style>{`#reviews div[style*="grab"]::-webkit-scrollbar { display: none; }`}</style>
     </section>
   );
 };
