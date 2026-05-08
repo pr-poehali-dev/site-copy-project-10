@@ -229,7 +229,10 @@ const projects: Project[] = [
 const SHOW_STEP = 6;
 
 const ProjectsSection = () => {
-  const [showCount, setShowCount] = useState(SHOW_STEP);
+  const [showCount, setShowCount] = useState(() => {
+    const saved = sessionStorage.getItem('projectsShowCount');
+    return saved ? parseInt(saved, 10) : SHOW_STEP;
+  });
   const [serеnadeOpen, setSerеnadeOpen] = useState(false);
   const navigate = useNavigate();
   const visible = projects.slice(0, showCount);
@@ -277,7 +280,11 @@ const ProjectsSection = () => {
         {showCount < projects.length && (
           <div className="text-center mt-12">
             <button
-              onClick={() => setShowCount((c) => Math.min(c + SHOW_STEP, projects.length))}
+              onClick={() => setShowCount((c) => {
+                const next = Math.min(c + SHOW_STEP, projects.length);
+                sessionStorage.setItem('projectsShowCount', String(next));
+                return next;
+              })}
               className="px-8 py-3 border-2 border-iberia-dark text-iberia-dark font-semibold rounded-xl hover:bg-iberia-dark hover:text-white transition-all"
             >
               Показать ещё
