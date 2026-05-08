@@ -33,12 +33,15 @@ const ReviewsSection = () => {
   const scrollLeft = useRef(0);
   const [cardWidth, setCardWidth] = useState(0);
 
-  // Считаем ширину карточки по реальному размеру враппера
+  // Считаем ширину карточки по реальному внутреннему размеру враппера (без паддингов)
   useEffect(() => {
     const calc = () => {
       if (!wrapperRef.current) return;
-      const totalWidth = wrapperRef.current.offsetWidth;
-      const w = (totalWidth - GAP * (reviews.length - 1)) / reviews.length;
+      const style = getComputedStyle(wrapperRef.current);
+      const pl = parseFloat(style.paddingLeft) || 0;
+      const pr = parseFloat(style.paddingRight) || 0;
+      const innerWidth = wrapperRef.current.offsetWidth - pl - pr;
+      const w = (innerWidth - GAP * (reviews.length - 1)) / reviews.length;
       setCardWidth(w);
     };
     calc();
