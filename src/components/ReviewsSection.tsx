@@ -40,6 +40,7 @@ const ReviewsSection = () => {
   const dragStartScroll = useRef(0);
   const isDragging = useRef(false);
   const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
 
   useEffect(() => {
     const calc = () => {
@@ -102,13 +103,18 @@ const ReviewsSection = () => {
       }
     };
 
-    // Touch (мобил) — перехватываем и не даём браузеру инерцию
+    let isHorizontalSwipe: boolean | null = null;
+
+    // Touch (мобил) — перехватываем только горизонтальные жесты
     const onTouchStart = (e: TouchEvent) => {
       touchStartX.current = e.touches[0].clientX;
+      touchStartY.current = e.touches[0].clientY;
       dragStartScroll.current = el.scrollLeft;
+      isHorizontalSwipe = null;
     };
+
     const onTouchEnd = (e: TouchEvent) => {
-      if (!isMobileRef.current) return;
+      if (!isMobileRef.current || !isHorizontalSwipe) return;
       const diff = e.changedTouches[0].clientX - touchStartX.current;
       if (Math.abs(diff) > 30) {
         scrollToIndex(currentIndex.current + (diff < 0 ? 1 : -1));
@@ -119,8 +125,14 @@ const ReviewsSection = () => {
     };
     const onTouchMove = (e: TouchEvent) => {
       if (!isMobileRef.current) return;
-      // двигаем вручную, без инерции
       const dx = e.touches[0].clientX - touchStartX.current;
+      const dy = e.touches[0].clientY - touchStartY.current;
+      // определяем направление по первому движению
+      if (isHorizontalSwipe === null) {
+        isHorizontalSwipe = Math.abs(dx) > Math.abs(dy);
+      }
+      // если вертикальный — не перехватываем, даём браузеру скроллить страницу
+      if (!isHorizontalSwipe) return;
       el.scrollLeft = dragStartScroll.current - dx;
       e.preventDefault();
     };
