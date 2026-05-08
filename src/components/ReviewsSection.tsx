@@ -53,7 +53,7 @@ const ReviewsSection = () => {
       const pr = parseFloat(style.paddingRight) || 0;
       const innerWidth = wrapperRef.current.offsetWidth - pl - pr;
       const w = mobile
-        ? innerWidth * 0.78
+        ? innerWidth * 0.68
         : (innerWidth - GAP * (reviews.length - 1)) / reviews.length;
       cardWidthRef.current = w;
       setCardWidth(w);
