@@ -1,9 +1,22 @@
 
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    // Для главной — восстанавливаем сохранённую позицию (обрабатывается в Index.tsx)
+    // Для всех остальных страниц — всегда в начало
+    if (pathname !== '/') {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
+  return null;
+};
 import Index from "./pages/Index";
 import Serenade from "./pages/Serenade";
 import Address from "./pages/Address";
@@ -36,6 +49,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/serenade" element={<Serenade />} />
