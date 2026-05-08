@@ -30,19 +30,29 @@ const ReviewsSection = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
-  const scrollLeft = useRef(0);
+  const scrollLeftRef = useRef(0);
   const [cardWidth, setCardWidth] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Считаем ширину карточки по реальному внутреннему размеру враппера (без паддингов)
   useEffect(() => {
     const calc = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
       if (!wrapperRef.current) return;
-      const style = getComputedStyle(wrapperRef.current);
-      const pl = parseFloat(style.paddingLeft) || 0;
-      const pr = parseFloat(style.paddingRight) || 0;
-      const innerWidth = wrapperRef.current.offsetWidth - pl - pr;
-      const w = (innerWidth - GAP * (reviews.length - 1)) / reviews.length;
-      setCardWidth(w);
+      if (mobile) {
+        // На мобиле — карточка на всю ширину экрана минус паддинги
+        const style = getComputedStyle(wrapperRef.current);
+        const pl = parseFloat(style.paddingLeft) || 0;
+        const pr = parseFloat(style.paddingRight) || 0;
+        setCardWidth(wrapperRef.current.offsetWidth - pl - pr);
+      } else {
+        // На десктопе — 4 карточки в ряд
+        const style = getComputedStyle(wrapperRef.current);
+        const pl = parseFloat(style.paddingLeft) || 0;
+        const pr = parseFloat(style.paddingRight) || 0;
+        const innerWidth = wrapperRef.current.offsetWidth - pl - pr;
+        setCardWidth((innerWidth - GAP * (reviews.length - 1)) / reviews.length);
+      }
     };
     calc();
     window.addEventListener('resize', calc);
@@ -56,14 +66,14 @@ const ReviewsSection = () => {
     const onMouseDown = (e: MouseEvent) => {
       isDragging.current = true;
       startX.current = e.pageX - el.offsetLeft;
-      scrollLeft.current = el.scrollLeft;
+      scrollLeftRef.current = el.scrollLeft;
       el.style.cursor = 'grabbing';
     };
     const onMouseMove = (e: MouseEvent) => {
       if (!isDragging.current) return;
       e.preventDefault();
       const x = e.pageX - el.offsetLeft;
-      el.scrollLeft = scrollLeft.current - (x - startX.current) * 1.2;
+      el.scrollLeft = scrollLeftRef.current - (x - startX.current) * 1.2;
     };
     const onMouseUp = () => {
       isDragging.current = false;
@@ -88,7 +98,6 @@ const ReviewsSection = () => {
         </h2>
       </div>
 
-      {/* Враппер точно совпадает с max-w-7xl — по нему считаем ширину */}
       <div ref={wrapperRef} className="max-w-7xl mx-auto px-6">
         <div
           ref={trackRef}
@@ -98,15 +107,22 @@ const ReviewsSection = () => {
             cursor: 'grab',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
+            scrollSnapType: isMobile ? 'x mandatory' : 'none',
           } as React.CSSProperties}
         >
           {reviews.map((r) => (
             <div
               key={r.name}
               className="flex-shrink-0"
-              style={{ width: cardWidth > 0 ? cardWidth : '23%' }}
+              style={{
+                width: cardWidth > 0 ? cardWidth : undefined,
+                scrollSnapAlign: isMobile ? 'start' : 'none',
+              }}
             >
-              <div className="rounded-3xl overflow-hidden mb-4 bg-gray-100" style={{ aspectRatio: '9/16' }}>
+              <div
+                className="rounded-3xl overflow-hidden mb-4 bg-gray-100"
+                style={{ aspectRatio: '9/16' }}
+              >
                 <iframe
                   src={r.videoUrl}
                   className="w-full h-full"
