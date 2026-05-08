@@ -70,18 +70,17 @@ const ReviewsSection = () => {
 
       <div
         ref={trackRef}
-        className="flex overflow-x-auto select-none"
+        className="flex gap-4 overflow-x-auto select-none"
         style={{
+          paddingLeft: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
+          paddingRight: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
           cursor: 'grab',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
-          gap: '1rem',
-          paddingLeft: '1rem',
-          paddingRight: '1rem',
         } as React.CSSProperties}
       >
         {reviews.map((r) => (
-          <div key={r.name} className="flex-shrink-0" style={{ width: 'calc(25vw - 1.25rem)' }}>
+          <div key={r.name} className="flex-shrink-0" style={{ width: 'calc((min(100vw, 80rem) - max(3rem, 100vw - 80rem + 3rem) - 4.5rem) / 4)' }}>
             <div className="rounded-3xl overflow-hidden mb-4 bg-gray-100" style={{ aspectRatio: '9/16' }}>
               <iframe
                 src={r.videoUrl}
