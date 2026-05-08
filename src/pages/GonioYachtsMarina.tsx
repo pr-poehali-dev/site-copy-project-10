@@ -200,13 +200,7 @@ const GonioYachtsMarina = () => {
                 <ProjectCatalogButton />
               </div>
 
-              <a
-                href="tel:+995599254769"
-                className="inline-flex items-center gap-2 bg-iberia-orange hover:bg-[#e26e60] text-white font-semibold px-8 py-3 rounded-full transition mb-8 w-full sm:w-auto text-sm tracking-wide uppercase justify-center sm:justify-start"
-              >
-                <Icon name="Phone" size={16} />
-                Узнать стоимость
-              </a>
+
 
               <div className="space-y-0 divide-y divide-gray-100 border border-gray-100 rounded-2xl overflow-hidden">
                 {specs.map((spec) => (

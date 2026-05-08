@@ -198,9 +198,7 @@ const AmbassadoriIsland = () => {
                 <ProjectCatalogButton />
               </div>
 
-              <button className="bg-iberia-orange hover:bg-[#e26e60] text-white font-semibold px-8 py-3 rounded-full transition mb-8 w-full sm:w-auto text-sm tracking-wide uppercase">
-                Получить каталог
-              </button>
+
 
               <div className="divide-y divide-gray-200">
                 {specs.map((s) => (
