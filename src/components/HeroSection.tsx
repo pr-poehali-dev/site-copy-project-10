@@ -84,7 +84,8 @@ const HeroSection = () => {
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                 <Icon name="Tag" size={15} className="text-white" />
               </span>
-              <span style={{maxWidth: '90px'}}>Закрытые скидки от застройщиков</span>
+              <span className="md:hidden"><span className="block">Закрытые скидки</span><span className="block">от застройщиков</span></span>
+              <span className="hidden md:inline">Закрытые скидки<br />от застройщиков</span>
             </div>
 
             {/* В каталоге прайсы и планировки */}
