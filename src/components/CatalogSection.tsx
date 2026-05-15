@@ -132,7 +132,7 @@ const CatalogSection = () => {
             src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/cd8fafc0-e9de-4e29-8630-5ff2fab62908.png"
             alt="Георгий"
             className="absolute bottom-0 z-20 object-contain drop-shadow-2xl md:hidden"
-            style={{ height: '340px', width: 'auto', left: '50%', transform: 'translateX(-30%)' }}
+            style={{ height: '340px', width: 'auto', left: '50%', transform: 'translateX(-50%)' }}
           />
 
         </div>
