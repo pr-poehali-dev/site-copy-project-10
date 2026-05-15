@@ -43,7 +43,7 @@ const CatalogSection = () => {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="relative bg-[#f0b8a8] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 min-h-[800px] md:min-h-[400px]"  style={{overflow: 'clip'}}>
+        <div className="relative bg-[#f0b8a8] rounded-3xl overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 min-h-[420px] md:min-h-[400px]">
 
           {/* Иконка Group_35 в правом верхнем углу */}
           <div className="absolute top-5 right-5 z-20" style={{ top: '20px', right: '20px' }}>
@@ -121,19 +121,23 @@ const CatalogSection = () => {
           </div>
 
           {/* Мобильная версия изображений */}
-          <div className="relative md:hidden w-full" style={{ height: '420px' }}>
-            <img
-              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7b7e3f5-309b-4fe7-a15f-240eeca75040.png"
-              alt="Каталог"
-              className="absolute bottom-0 z-10 object-contain drop-shadow-xl"
-              style={{ width: '220px', right: '70px', transform: 'rotate(4deg)' }}
-            />
-            <img
-              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/c791f8c0-9231-4f01-ab41-d6440ff2fe60.png"
-              alt="Менеджер"
-              className="absolute bottom-0 right-0 z-20 object-contain drop-shadow-2xl"
-              style={{ height: '420px', width: 'auto' }}
-            />
+          <div className="relative md:hidden w-full" style={{ height: '240px' }}>
+            <div className="absolute bottom-0 right-8 z-10">
+              <img
+                src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7b7e3f5-309b-4fe7-a15f-240eeca75040.png"
+                alt="Каталог"
+                className="object-contain drop-shadow-xl"
+                style={{ width: '130px', transform: 'rotate(4deg)' }}
+              />
+            </div>
+            <div className="absolute bottom-0 right-0 z-20">
+              <img
+                src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/c791f8c0-9231-4f01-ab41-d6440ff2fe60.png"
+                alt="Менеджер"
+                className="object-contain drop-shadow-2xl"
+                style={{ height: '220px', width: 'auto' }}
+              />
+            </div>
           </div>
 
         </div>
