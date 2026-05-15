@@ -120,15 +120,7 @@ const CatalogSection = () => {
             />
           </div>
 
-          {/* Мобильная версия изображений */}
-          <div className="relative md:hidden w-full flex justify-center" style={{ height: '200px' }}>
-            <img
-              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7b7e3f5-309b-4fe7-a15f-240eeca75040.png"
-              alt="Каталог"
-              className="object-contain drop-shadow-xl"
-              style={{ width: '180px', transform: 'rotate(4deg)' }}
-            />
-          </div>
+
 
         </div>
 
