@@ -43,7 +43,7 @@ const CatalogSection = () => {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="relative bg-[#f0b8a8] rounded-3xl overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 min-h-[420px] md:min-h-[400px]">
+        <div className="relative bg-[#f0b8a8] rounded-3xl overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 min-h-[420px] md:min-h-[400px] pb-[360px] md:pb-12">
 
           {/* Иконка Group_35 в правом верхнем углу */}
           <div className="absolute top-5 right-5 z-20" style={{ top: '20px', right: '20px' }}>
