@@ -45,13 +45,21 @@ const CatalogSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative bg-[#f0b8a8] rounded-3xl overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 min-h-[420px] md:min-h-[400px] pb-[360px] md:pb-12">
 
-          {/* Иконка Group_35 в правом верхнем углу */}
-          <div className="absolute top-5 right-5 z-20" style={{ top: '20px', right: '20px' }}>
+          {/* Иконка Group_35 — десктоп: правый верхний угол, мобильный: над флажком Георгия */}
+          <div className="absolute z-30 hidden md:block" style={{ top: '20px', right: '20px' }}>
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/33068750-22a7-4d07-9014-f977933239a0.png"
               alt="PDF"
               className="object-contain drop-shadow-lg"
               style={{ width: '112px', height: '112px' }}
+            />
+          </div>
+          <div className="absolute z-30 md:hidden" style={{ bottom: '195px', left: '22%' }}>
+            <img
+              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/33068750-22a7-4d07-9014-f977933239a0.png"
+              alt="PDF"
+              className="object-contain drop-shadow-lg"
+              style={{ width: '56px', height: '56px' }}
             />
           </div>
 
