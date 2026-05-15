@@ -54,7 +54,7 @@ const CatalogSection = () => {
               style={{ width: '112px', height: '112px' }}
             />
           </div>
-          <div className="absolute z-30 md:hidden" style={{ bottom: '195px', left: '22%' }}>
+          <div className="absolute z-30 md:hidden" style={{ bottom: '279px', left: 'calc(22% - 56px)' }}>
             <img
               src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/33068750-22a7-4d07-9014-f977933239a0.png"
               alt="PDF"
