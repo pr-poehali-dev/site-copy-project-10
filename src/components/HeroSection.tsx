@@ -80,11 +80,11 @@ const HeroSection = () => {
             </div>
 
             {/* Закрытые скидки */}
-            <div className="flex items-center gap-2 text-white/90 text-sm justify-self-start">
+            <div className="flex items-center gap-2 text-white/90 text-sm md:justify-self-start -ml-4 md:ml-0">
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                 <Icon name="Tag" size={15} className="text-white" />
               </span>
-              <span className="md:hidden max-w-[90px]">Закрытые скидки от застройщиков</span>
+              <span className="md:hidden max-w-[80px]">Закрытые скидки от застройщиков</span>
               <span className="hidden md:inline">Закрытые скидки<br />от застройщиков</span>
             </div>
 
