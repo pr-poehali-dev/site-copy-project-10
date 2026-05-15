@@ -125,7 +125,7 @@ const CatalogSection = () => {
             src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/7e8bfed2-4a85-4812-9e8f-653238374f8d.png"
             alt="Каталог"
             className="absolute bottom-0 z-10 object-contain drop-shadow-xl md:hidden"
-            style={{ width: '360px', left: 'calc(60% - 60px)', bottom: '0px', transform: 'rotate(3deg)', transformOrigin: 'bottom left' }}
+            style={{ width: '360px', left: 'calc(60% - 60px)', bottom: '30px', transform: 'rotate(3deg)', transformOrigin: 'bottom left' }}
           />
           {/* Георгий — передний план, мобильный, прямо на розовой карточке */}
           <img
