@@ -121,23 +121,13 @@ const CatalogSection = () => {
           </div>
 
           {/* Мобильная версия изображений */}
-          <div className="relative md:hidden w-full" style={{ height: '240px' }}>
-            <div className="absolute bottom-0 right-8 z-10">
-              <img
-                src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7b7e3f5-309b-4fe7-a15f-240eeca75040.png"
-                alt="Каталог"
-                className="object-contain drop-shadow-xl"
-                style={{ width: '130px', transform: 'rotate(4deg)' }}
-              />
-            </div>
-            <div className="absolute bottom-0 right-0 z-20">
-              <img
-                src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/c791f8c0-9231-4f01-ab41-d6440ff2fe60.png"
-                alt="Менеджер"
-                className="object-contain drop-shadow-2xl"
-                style={{ height: '220px', width: 'auto' }}
-              />
-            </div>
+          <div className="relative md:hidden w-full flex justify-center" style={{ height: '200px' }}>
+            <img
+              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/b7b7e3f5-309b-4fe7-a15f-240eeca75040.png"
+              alt="Каталог"
+              className="object-contain drop-shadow-xl"
+              style={{ width: '180px', transform: 'rotate(4deg)' }}
+            />
           </div>
 
         </div>
