@@ -80,15 +80,15 @@ const HeroSection = () => {
             </div>
 
             {/* Закрытые скидки */}
-            <div className="flex items-center gap-2 text-white/90 text-sm">
+            <div className="flex items-center gap-2 text-white/90 text-sm justify-self-start">
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                 <Icon name="Tag" size={15} className="text-white" />
               </span>
-              <span>Закрытые скидки<br />от застройщиков</span>
+              <span>Закрытые<br />скидки<br />от застройщиков</span>
             </div>
 
             {/* В каталоге прайсы и планировки */}
-            <div className="flex items-center gap-2 text-white/90 text-sm col-span-2 md:col-span-1">
+            <div className="flex items-center gap-2 text-white/90 text-sm col-span-2 md:col-span-1 -mt-2 md:mt-0">
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                 <Icon name="FileText" size={15} className="text-white" />
               </span>
