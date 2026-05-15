@@ -49,12 +49,12 @@ const HeroSection = () => {
           backgroundPosition: 'center 20%',
         }}
       >
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(17,24,39,0.75) 0%, rgba(17,24,39,0.5) 50%, rgba(17,24,39,0) 100%)' }} />
+        <div className="absolute inset-0 hidden sm:block" style={{ background: 'linear-gradient(to bottom, rgba(17,24,39,0.75) 0%, rgba(17,24,39,0.5) 50%, rgba(17,24,39,0) 100%)' }} />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 w-full">
-        <div className="max-w-4xl mb-10">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-[55vw] sm:pt-24 pb-16 w-full">
+        <div className="max-w-4xl mb-6 sm:mb-10 bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 sm:bg-transparent sm:backdrop-blur-none sm:border-0 sm:rounded-none sm:p-0">
+          <h1 className="text-xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-0 sm:mb-4 text-center sm:text-left">
             Недвижимость в Грузии у моря
             <br />напрямую от застройщиков
             <br />в рассрочку 0% от{' '}
@@ -63,7 +63,7 @@ const HeroSection = () => {
         </div>
 
         {/* Форма каталога */}
-        <div className="relative bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6 w-fit mb-10 overflow-hidden">
+        <div className="relative bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl p-6 w-full sm:w-fit mb-10 overflow-hidden">
 
           <h3 className="text-white font-semibold text-lg mb-4">
             Получите каталог топ-15 новых проектов в Батуми!
