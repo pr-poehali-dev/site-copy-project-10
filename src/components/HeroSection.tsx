@@ -72,26 +72,25 @@ const HeroSection = () => {
           </h3>
 
           {/* Буллеты — 2 колонки на мобайл, на десктопе как было */}
-          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-4 mb-5">
+          <div className="grid grid-cols-3 md:flex md:flex-wrap gap-4 mb-5">
             {/* Для жизни и инвестиций */}
-            <div className="flex items-center gap-2 text-white/90 text-sm">
-              <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full relative flex-shrink-0">
+            <div className="flex flex-col items-center gap-2 text-white/90 text-sm text-center">
+              <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                 <Icon name="Home" size={15} className="text-white" />
               </span>
               <span>Для жизни<br />и инвестиций</span>
             </div>
 
             {/* Закрытые скидки */}
-            <div className="flex items-center gap-2 text-white/90 text-sm md:justify-self-start -ml-4 md:ml-0">
+            <div className="flex flex-col items-center gap-2 text-white/90 text-sm text-center">
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                 <Icon name="Tag" size={15} className="text-white" />
               </span>
-              <span className="md:hidden">Закрытые скидки<br />от застройщиков</span>
-              <span className="hidden md:inline">Закрытые скидки<br />от застройщиков</span>
+              <span>Закрытые скидки<br />от застройщиков</span>
             </div>
 
             {/* В каталоге прайсы и планировки */}
-            <div className="flex items-center gap-2 text-white/90 text-sm col-span-2 md:col-span-1 -mt-2 md:mt-0">
+            <div className="flex flex-col items-center gap-2 text-white/90 text-sm text-center">
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                 <Icon name="FileText" size={15} className="text-white" />
               </span>
