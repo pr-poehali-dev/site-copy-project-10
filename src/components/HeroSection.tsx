@@ -139,7 +139,7 @@ const HeroSection = () => {
           <button
             ref={btnRef}
             onClick={openQuiz}
-            className="wave-btn flex items-center gap-2 bg-iberia-orange text-white font-semibold px-6 py-3 rounded-full hover:bg-[#e26e60] transition-colors w-full sm:w-auto justify-center"
+            className="wave-btn flex items-center gap-2 bg-iberia-orange text-white font-semibold px-6 py-3 rounded-full hover:bg-[#e26e60] transition-colors w-[60%] sm:w-auto justify-center"
           >
             <Icon name="Download" size={18} />
             Получить каталог
