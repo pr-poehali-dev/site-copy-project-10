@@ -42,8 +42,9 @@ const HeroSection = () => {
         }
       `}</style>
 
+      <style>{`@media (max-width: 639px) { .hero-bg { background-position: 60% 20% !important; } }`}</style>
       <div
-        className="absolute inset-0 bg-cover bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat hero-bg"
         style={{
           backgroundImage: `url('https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/1727026b-13e9-4889-8549-bd3d767ae710.jpg')`,
           backgroundPosition: 'center 20%',
