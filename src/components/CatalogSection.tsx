@@ -64,7 +64,7 @@ const CatalogSection = () => {
           </div>
 
           {/* Левая часть — текст и форма */}
-          <div className="z-10 relative w-full md:w-[420px] md:flex-shrink-0">
+          <div className="z-10 relative w-full md:w-[420px] md:flex-shrink-0 md:self-start md:mt-8">
             <h2 className="text-xl md:text-3xl font-bold text-iberia-dark mb-3">
               Получите каталог новых
               <br />проектов у моря в Батуми
