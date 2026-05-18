@@ -48,16 +48,16 @@ const SelectionSection = () => {
             </div>
           </div>
 
-          <div className="relative flex items-center p-8 md:p-10 lg:p-16 min-h-[400px]">
+          <div className="relative flex items-center p-8 md:p-10 lg:p-12 min-h-0">
             {/* Текст + шаги */}
             <div className="relative z-10 w-full max-w-xl">
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
                 Получите <span className="text-iberia-orange">индивидуальную</span>
                 <br />
                 подборку недвижимости
               </h2>
 
-              <div className="flex flex-col gap-4 mb-8">
+              <div className="flex flex-col gap-3 mb-6">
                 {steps.map((s) => (
                   <div key={s.num} className="flex items-center gap-4">
                     <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-white rounded-full text-iberia-dark font-bold text-lg">
