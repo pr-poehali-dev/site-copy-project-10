@@ -21,7 +21,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[130vh] sm:min-h-screen flex flex-col justify-center overflow-hidden pb-16 sm:pb-0">
+    <section className="relative min-h-[170vh] sm:min-h-screen flex flex-col justify-end sm:justify-center overflow-hidden pb-16 sm:pb-0">
       <style>{`
         @keyframes wave-ltr {
           0% { transform: translateX(-110%) skewX(-15deg); opacity: 0.7; }
@@ -54,7 +54,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 hidden sm:block" style={{ background: 'linear-gradient(to bottom, rgba(17,24,39,0.75) 0%, rgba(17,24,39,0.5) 50%, rgba(17,24,39,0) 100%)' }} />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 pt-[55vw] sm:pt-24 pb-16 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 pt-0 sm:pt-24 pb-16 w-full">
         <div className="max-w-4xl mb-6 sm:mb-10 bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 sm:bg-transparent sm:backdrop-blur-none sm:border-0 sm:rounded-none sm:p-0">
           <h1 className="text-xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-0 sm:mb-4 text-center sm:text-left">
             Недвижимость в Грузии у моря
