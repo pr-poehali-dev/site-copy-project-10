@@ -1,3 +1,5 @@
+import { openConsult } from '@/components/ConsultModal';
+
 const BatumiSection = () => {
   return (
     <section id="batumi" className="py-20 bg-[#dbeefb]">
@@ -24,7 +26,7 @@ const BatumiSection = () => {
               <p className="text-white text-sm leading-relaxed mb-5">
                 Батуми - это европейские улицы и площади старая и новая архитектура, исторический порт, семикилометровая набережная уникальный Ботанический сад, гостиницы международных брендов, бары и рестораны
               </p>
-              <button className="w-full bg-[#f08274] text-white font-bold py-3 rounded-full hover:bg-[#e26e60] transition-colors tracking-wider text-sm">
+              <button onClick={openConsult} className="w-full bg-[#f08274] text-white font-bold py-3 rounded-full hover:bg-[#e26e60] transition-colors tracking-wider text-sm">
                 КОНСУЛЬТАЦИЯ
               </button>
             </div>
