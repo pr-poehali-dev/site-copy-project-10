@@ -54,8 +54,21 @@ const HeroSection = () => {
         <div className="absolute inset-0 hidden sm:block" style={{ background: 'linear-gradient(to bottom, rgba(17,24,39,0.75) 0%, rgba(17,24,39,0.5) 50%, rgba(17,24,39,0) 100%)' }} />
       </div>
 
+      {/* Заголовок — на мобайле абсолютно вверху под шапкой */}
+      <div className="absolute top-20 left-3 right-3 z-10 sm:hidden">
+        <div className="px-5 py-4">
+          <h1 className="text-xl font-bold text-white leading-tight text-center">
+            Недвижимость в Грузии у моря
+            <br />напрямую от застройщиков
+            <br />в рассрочку 0% от{' '}
+            <span className="text-iberia-orange">44.500$</span>
+          </h1>
+        </div>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 pt-0 sm:pt-24 pb-16 w-full">
-        <div className="max-w-4xl mb-6 sm:mb-10 bg-transparent backdrop-blur-none border-0 px-5 py-4 sm:bg-transparent sm:backdrop-blur-none sm:border-0 sm:rounded-none sm:p-0 -translate-y-[200%] sm:translate-y-0">
+        {/* Заголовок только на десктопе */}
+        <div className="hidden sm:block max-w-4xl mb-10">
           <h1 className="text-xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-0 sm:mb-4 text-center sm:text-left">
             Недвижимость в Грузии у моря
             <br />напрямую от застройщиков
