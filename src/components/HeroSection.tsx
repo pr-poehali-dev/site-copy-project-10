@@ -55,8 +55,7 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 pt-0 sm:pt-24 pb-16 w-full">
-        {/* Заголовок — на мобайле абсолютно вверху, на десктопе в потоке */}
-        <div className="absolute top-28 left-3 right-3 sm:static sm:max-w-4xl sm:mb-10 bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 sm:bg-transparent sm:backdrop-blur-none sm:border-0 sm:rounded-none sm:p-0">
+        <div className="max-w-4xl mb-6 sm:mb-10 bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 sm:bg-transparent sm:backdrop-blur-none sm:border-0 sm:rounded-none sm:p-0">
           <h1 className="text-xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-0 sm:mb-4 text-center sm:text-left">
             Недвижимость в Грузии у моря
             <br />напрямую от застройщиков
