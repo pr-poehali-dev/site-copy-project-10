@@ -240,8 +240,8 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-iberia-dark mb-12">
-          Лучшие инвестиционные проекты <span className="text-iberia-orange">Батуми</span>
+        <h2 className="text-xl md:text-4xl font-bold text-iberia-dark mb-12">
+          Лучшие инвестиционные<br className="md:hidden" /> проекты <span className="text-iberia-orange">Батуми</span>
         </h2>
 
         <SerеnadeModal open={serеnadeOpen} onClose={() => setSerеnadeOpen(false)} />
