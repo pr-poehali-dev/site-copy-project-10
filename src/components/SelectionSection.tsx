@@ -57,7 +57,7 @@ const SelectionSection = () => {
                 подборку недвижимости
               </h2>
 
-              <div className="flex flex-col gap-3 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                 {steps.map((s) => (
                   <div key={s.num} className="flex items-center gap-4">
                     <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-white rounded-full text-iberia-dark font-bold text-lg">
