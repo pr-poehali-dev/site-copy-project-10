@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import Icon from '@/components/ui/icon';
+import { openQuiz } from '@/components/QuizModal';
 
 const steps = [
   { num: '1', line1: 'Ответьте на', line2: 'несколько вопросов' },
@@ -70,6 +71,7 @@ const SelectionSection = () => {
 
               <button
                 ref={btnRef}
+                onClick={openQuiz}
                 className="wave-btn flex items-center gap-2 bg-iberia-orange text-white font-semibold px-6 py-3 rounded-full hover:bg-[#e26e60] transition-colors"
               >
                 <Icon name="Download" size={18} />

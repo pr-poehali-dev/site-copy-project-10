@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import Icon from '@/components/ui/icon';
+import { openQuiz } from '@/components/QuizModal';
 
 const HeroSection = () => {
   const btnRef = useRef<HTMLButtonElement>(null);
@@ -137,6 +138,7 @@ const HeroSection = () => {
           {/* Кнопка с волной */}
           <button
             ref={btnRef}
+            onClick={openQuiz}
             className="wave-btn flex items-center gap-2 bg-iberia-orange text-white font-semibold px-6 py-3 rounded-full hover:bg-[#e26e60] transition-colors w-full sm:w-auto justify-center"
           >
             <Icon name="Download" size={18} />

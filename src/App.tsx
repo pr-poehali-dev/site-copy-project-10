@@ -40,6 +40,7 @@ import SoloResidence from "./pages/SoloResidence";
 import TbilisiWaterfront from "./pages/TbilisiWaterfront";
 import Montemar from "./pages/Montemar";
 import NotFound from "./pages/NotFound";
+import QuizModal from "@/components/QuizModal";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <QuizModal />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/serenade" element={<Serenade />} />
