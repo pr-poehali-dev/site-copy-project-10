@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 
-const PHOTO = 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/c43304a0-48e7-4531-b98e-8b87540e5a3f.jpg';
+const PHOTO = 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/6c9786ba-13bc-4bc0-8f40-24497a883f15.jpg';
 
 const MESSENGERS = ['Whatsapp', 'Telegram', 'Звонок'];
 

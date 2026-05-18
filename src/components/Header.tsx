@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
+import { openConsult } from '@/components/ConsultModal';
 
 const navLinks = [
   { label: 'О компании', href: '#about' },
@@ -60,13 +61,13 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href="tel:+995599254769"
+          <button
+            onClick={openConsult}
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-iberia-orange text-white text-sm font-semibold rounded-xl hover:bg-[#e26e60] transition-all"
           >
             <Icon name="MessageCircle" size={16} />
             Консультация
-          </a>
+          </button>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 transition"
@@ -87,12 +88,12 @@ const Header = () => {
               {link.label}
             </button>
           ))}
-          <a
-            href="tel:+995599254769"
-            className="mt-3 block text-center px-5 py-2.5 bg-iberia-orange text-white text-sm font-semibold rounded-xl"
+          <button
+            onClick={() => { openConsult(); setMenuOpen(false); }}
+            className="mt-3 w-full text-center px-5 py-2.5 bg-iberia-orange text-white text-sm font-semibold rounded-xl"
           >
             Консультация
-          </a>
+          </button>
         </div>
       )}
     </header>

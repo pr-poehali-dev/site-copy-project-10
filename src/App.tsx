@@ -41,6 +41,7 @@ import TbilisiWaterfront from "./pages/TbilisiWaterfront";
 import Montemar from "./pages/Montemar";
 import NotFound from "./pages/NotFound";
 import QuizModal from "@/components/QuizModal";
+import ConsultModal from "@/components/ConsultModal";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <QuizModal />
+        <ConsultModal />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/serenade" element={<Serenade />} />
