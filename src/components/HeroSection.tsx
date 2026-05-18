@@ -106,8 +106,8 @@ const HeroSection = () => {
               <div
                 className="absolute rounded-full"
                 style={{
-                  width: '160px',
-                  height: '160px',
+                  width: '176px',
+                  height: '176px',
                   background: 'radial-gradient(circle, #0ea5e9 0%, #0891b2 60%, #0e7490 100%)',
                   top: '50%',
                   left: '50%',
@@ -119,7 +119,7 @@ const HeroSection = () => {
               <img
                 src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/594b66ac-cb3d-4f4f-b2c3-e1ebdaf60362.png"
                 alt="Каталог"
-                className="relative z-10 w-44 object-contain drop-shadow-2xl"
+                className="relative z-10 w-48 object-contain drop-shadow-2xl"
                 style={{ transform: 'rotate(4deg)' }}
               />
             </div>
