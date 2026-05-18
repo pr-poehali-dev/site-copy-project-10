@@ -72,16 +72,19 @@ const CatalogSection = () => {
 
             <div className="flex flex-wrap gap-3 mb-4">
               {[
-                'Топ-15 ЖК Батуми',
-                'В каталоге прайсы и планировки',
-                'Закрытые скидки от застройщиков',
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-2 w-[calc(50%-6px)]">
+                { mob: 'Топ-15 ЖК Батуми', desk: ['Топ-15', 'ЖК Батуми'] },
+                { mob: 'В каталоге прайсы и планировки', desk: ['В каталоге', 'прайсы и планировки'] },
+                { mob: 'Закрытые скидки от застройщиков', desk: ['Закрытые скидки', 'от застройщиков'] },
+              ].map(({ mob, desk }) => (
+                <div key={mob} className="flex items-start gap-2 w-[calc(50%-6px)]">
                   <div className="w-7 h-7 md:w-9 md:h-9 flex-shrink-0 flex items-center justify-center rounded-full border-2 border-iberia-dark/40 mt-0.5">
                     <Icon name="Check" size={14} className="text-iberia-dark md:hidden" />
                     <Icon name="Check" size={18} className="text-iberia-dark hidden md:block" />
                   </div>
-                  <span className="text-iberia-dark font-medium text-xs md:font-bold md:text-base leading-snug">{item}</span>
+                  <span className="text-iberia-dark font-medium text-xs md:font-bold md:text-base leading-snug">
+                    <span className="md:hidden">{mob}</span>
+                    <span className="hidden md:inline">{desk[0]}<br />{desk[1]}</span>
+                  </span>
                 </div>
               ))}
             </div>
