@@ -240,7 +240,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-xl md:text-4xl font-bold text-iberia-dark mb-12">
+        <h2 className="text-2xl md:text-4xl font-bold text-iberia-dark mb-12 uppercase">
           Лучшие инвестиционные<br className="md:hidden" /> проекты <span className="text-iberia-orange">Батуми</span>
         </h2>
 
