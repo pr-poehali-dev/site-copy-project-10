@@ -80,7 +80,7 @@ const CatalogSection = () => {
                   <div className="w-7 h-7 flex-shrink-0 flex items-center justify-center rounded-full border-2 border-iberia-dark/40 mt-0.5">
                     <Icon name="Check" size={14} className="text-iberia-dark" />
                   </div>
-                  <span className="text-iberia-dark font-medium text-xs leading-snug">{item}</span>
+                  <span className="text-iberia-dark font-medium text-xs md:font-bold md:text-base leading-snug">{item}</span>
                 </div>
               ))}
             </div>
