@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import Footer from '@/components/Footer';
 import ProjectCatalogButton from '@/components/ProjectCatalogButton';
+import Header from '@/components/Header';
 
 const images = [
   {
@@ -87,49 +88,7 @@ const SoloResidence = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-3">
-            <img
-              src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/73703746-f374-48ae-820b-9925f900d621.png"
-              alt="Saginadze Estate"
-              className="h-10 w-auto"
-            />
-            <div className="flex flex-col leading-tight">
-              <span
-                className="font-bold tracking-widest uppercase text-base"
-                style={{ color: '#C9A84C', fontFamily: "'Cinzel', serif", letterSpacing: '0.12em' }}
-              >
-                Saginadze
-              </span>
-              <span
-                className="font-light tracking-[0.3em] uppercase text-xs"
-                style={{ color: '#A07830', fontFamily: "'Cinzel', serif" }}
-              >
-                Estate
-              </span>
-            </div>
-          </Link>
-
-          <div className="flex items-center gap-3">
-            <Link
-              to="/"
-              className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-iberia-dark hover:text-iberia-orange transition-colors"
-            >
-              <Icon name="ArrowLeft" size={16} />
-              Назад к проектам
-            </Link>
-            <a
-              href="tel:+995599254769"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-iberia-orange text-white text-sm font-semibold rounded-xl hover:bg-[#e26e60] transition-all"
-            >
-              <Icon name="Phone" size={16} />
-              <span className="hidden sm:inline">+995-599-254-769</span>
-              <span className="sm:hidden">Позвонить</span>
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header backLink />
 
       <main className="pt-24 pb-16 flex-1">
         <div className="max-w-7xl mx-auto px-6">

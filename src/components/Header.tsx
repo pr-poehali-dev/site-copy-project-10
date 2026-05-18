@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import { openConsult } from '@/components/ConsultModal';
 
@@ -20,13 +21,28 @@ const scrollToSection = (href: string) => {
   }
 };
 
-const Header = () => {
+interface HeaderProps {
+  backLink?: boolean;
+}
+
+const Header = ({ backLink = false }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavClick = (href: string) => {
+    if (backLink) {
+      sessionStorage.setItem('scrollTarget', href.replace('#', ''));
+      navigate('/');
+    } else {
+      scrollToSection(href);
+    }
+    setMenuOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img
             src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/73703746-f374-48ae-820b-9925f900d621.png"
             alt="Saginadze Estate"
@@ -46,13 +62,13 @@ const Header = () => {
               Estate
             </span>
           </div>
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => (
             <button
               key={link.href}
-              onClick={() => scrollToSection(link.href)}
+              onClick={() => handleNavClick(link.href)}
               className="text-sm font-medium text-iberia-dark hover:text-iberia-orange transition-colors"
             >
               {link.label}
@@ -79,10 +95,20 @@ const Header = () => {
 
       {menuOpen && (
         <div className="bg-white border-t border-gray-100 px-6 py-4">
+          {backLink && (
+            <Link
+              to="/"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2 py-2.5 text-sm font-medium text-iberia-dark hover:text-iberia-orange mb-1"
+            >
+              <Icon name="ArrowLeft" size={14} />
+              Назад к проектам
+            </Link>
+          )}
           {navLinks.map((link) => (
             <button
               key={link.href}
-              onClick={() => { scrollToSection(link.href); setMenuOpen(false); }}
+              onClick={() => handleNavClick(link.href)}
               className="block w-full text-left py-2.5 text-sm font-medium text-iberia-dark hover:text-iberia-orange"
             >
               {link.label}
