@@ -94,6 +94,11 @@ const ConsultModal = () => {
           <button
             onClick={() => {
               if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'consalt_goal');
+              fetch('https://functions.poehali.dev/2fd7767f-03cc-4200-ad29-5888ffc15e92', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ source: 'consult', phone, messenger: selected }),
+              }).catch(() => {});
               setOpen(false);
             }}
             className="w-full bg-iberia-orange text-white font-bold py-3.5 rounded-full hover:bg-[#e26e60] transition-colors uppercase text-sm tracking-wide"

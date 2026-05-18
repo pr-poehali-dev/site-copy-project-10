@@ -72,6 +72,11 @@ const QuizModal = () => {
   const handleNext = () => {
     if (isLast) {
       if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'quiz_goal');
+      fetch('https://functions.poehali.dev/2fd7767f-03cc-4200-ad29-5888ffc15e92', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ source: 'quiz', phone, answers }),
+      }).catch(() => {});
       setOpen(false);
     } else {
       setStep(step + 1);

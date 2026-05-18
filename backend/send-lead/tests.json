@@ -1,0 +1,33 @@
+{
+  "tests": [
+    {
+      "name": "Quiz lead",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "source": "quiz",
+        "phone": "9991234567",
+        "answers": {
+          "0": ["Для инвестиций"],
+          "1": ["2 bdr (2 спальни)"],
+          "2": ["65.000 - 90.000$"],
+          "3": ["Telegram"]
+        }
+      },
+      "expectedStatus": 200,
+      "bodyMatcher": "none"
+    },
+    {
+      "name": "Consult lead",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "source": "consult",
+        "phone": "9997654321",
+        "messenger": "Whatsapp"
+      },
+      "expectedStatus": 200,
+      "bodyMatcher": "none"
+    }
+  ]
+}
