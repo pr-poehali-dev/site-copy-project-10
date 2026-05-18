@@ -43,7 +43,7 @@ const CatalogSection = () => {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="relative bg-[#f0b8a8] rounded-3xl overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 min-h-[420px] md:min-h-[400px] pb-[360px] md:pb-12">
+        <div className="relative bg-[#f0b8a8] rounded-3xl overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 min-h-[420px] md:min-h-[460px] pb-[360px] md:pb-12">
 
           {/* Иконка Group_35 — десктоп: правый верхний угол, мобильный: над флажком Георгия */}
           <div className="absolute z-30 hidden md:block" style={{ top: '20px', right: '20px' }}>
@@ -64,7 +64,7 @@ const CatalogSection = () => {
           </div>
 
           {/* Левая часть — текст и форма */}
-          <div className="flex-1 z-10 relative">
+          <div className="z-10 relative w-full md:w-[420px] md:flex-shrink-0">
             <h2 className="text-xl md:text-4xl font-bold text-iberia-dark mb-6">
               Получите каталог новых
               <br />проектов у моря в Батуми
