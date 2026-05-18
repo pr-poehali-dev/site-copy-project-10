@@ -51,7 +51,7 @@ const SelectionSection = () => {
           <div className="relative flex items-center p-8 md:p-10 lg:p-16 min-h-[400px]">
             {/* Текст + шаги */}
             <div className="relative z-10 w-full max-w-xl">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
                 Получите <span className="text-iberia-orange">индивидуальную</span>
                 <br />
                 подборку недвижимости
