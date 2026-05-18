@@ -42,7 +42,10 @@ const QuizModal = () => {
   const [phone, setPhone] = useState('');
 
   useEffect(() => {
-    const handler = () => { setOpen(true); setStep(0); setAnswers({}); setPhone(''); };
+    const handler = () => {
+      setOpen(true); setStep(0); setAnswers({}); setPhone('');
+      if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'quiz_open');
+    };
     window.addEventListener('open-quiz', handler);
     return () => window.removeEventListener('open-quiz', handler);
   }, []);
@@ -68,6 +71,7 @@ const QuizModal = () => {
 
   const handleNext = () => {
     if (isLast) {
+      if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'quiz_goal');
       setOpen(false);
     } else {
       setStep(step + 1);

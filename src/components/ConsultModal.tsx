@@ -15,7 +15,10 @@ const ConsultModal = () => {
   const [phone, setPhone] = useState('');
 
   useEffect(() => {
-    const handler = () => { setOpen(true); setSelected(''); setPhone(''); };
+    const handler = () => {
+      setOpen(true); setSelected(''); setPhone('');
+      if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'consalt_open');
+    };
     window.addEventListener('open-consult', handler);
     return () => window.removeEventListener('open-consult', handler);
   }, []);
@@ -89,7 +92,10 @@ const ConsultModal = () => {
           </div>
 
           <button
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'consalt_goal');
+              setOpen(false);
+            }}
             className="w-full bg-iberia-orange text-white font-bold py-3.5 rounded-full hover:bg-[#e26e60] transition-colors uppercase text-sm tracking-wide"
           >
             ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
