@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 import Icon from '@/components/ui/icon';
 
 const steps = [
-  { num: '1', text: 'Ответьте на несколько вопросов' },
-  { num: '2', text: 'Эксперт получит вводные данные' },
-  { num: '3', text: 'Подберет проекты под Ваш запрос' },
-  { num: '4', text: 'Вышлет вам подборку в мессенджер' },
+  { num: '1', line1: 'Ответьте на', line2: 'несколько вопросов' },
+  { num: '2', line1: 'Эксперт получит', line2: 'вводные данные' },
+  { num: '3', line1: 'Подберет проекты', line2: 'под Ваш запрос' },
+  { num: '4', line1: 'Вышлет вам подборку', line2: 'в мессенджер' },
 ];
 
 const SelectionSection = () => {
@@ -63,7 +63,7 @@ const SelectionSection = () => {
                     <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-white rounded-full text-iberia-dark font-bold text-lg">
                       {s.num}
                     </div>
-                    <p className="text-white text-base leading-snug">{s.text}</p>
+                    <p className="text-white text-base leading-snug">{s.line1}<br />{s.line2}</p>
                   </div>
                 ))}
               </div>
