@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import Footer from '@/components/Footer';
 import ProjectCatalogButton from '@/components/ProjectCatalogButton';
+import { openConsult } from '@/components/ConsultModal';
 
 const images = [
   {
