@@ -100,7 +100,7 @@ const HeroSection = () => {
           </div>
 
           {/* Буклет-каталог на мобайле — под буллетами */}
-          <div className="flex justify-center mb-5 md:hidden">
+          <div className="flex justify-center mb-5 md:hidden" style={{ paddingLeft: '10%' }}>
             <div className="relative">
               {/* Синебирюзовый кружок-подложка */}
               <div
