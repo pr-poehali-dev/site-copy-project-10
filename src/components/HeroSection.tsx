@@ -55,7 +55,7 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 pt-0 sm:pt-24 pb-16 w-full">
-        <div className="max-w-4xl mb-6 sm:mb-10 bg-transparent backdrop-blur-none border-0 px-5 py-4 sm:bg-transparent sm:backdrop-blur-none sm:border-0 sm:rounded-none sm:p-0 -translate-y-[170%] sm:translate-y-0">
+        <div className="max-w-4xl mb-6 sm:mb-10 bg-transparent backdrop-blur-none border-0 px-5 py-4 sm:bg-transparent sm:backdrop-blur-none sm:border-0 sm:rounded-none sm:p-0 sm:translate-y-0">
           <h1 className="text-[1.75rem] sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-0 sm:mb-4 text-center sm:text-left">
             Недвижимость в Грузии у моря
             <br />напрямую от застройщиков
