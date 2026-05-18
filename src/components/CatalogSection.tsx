@@ -70,7 +70,7 @@ const CatalogSection = () => {
               <br />проектов у моря в Батуми
             </h2>
 
-            <div className="flex flex-col gap-3 mb-8">
+            <div className="grid grid-cols-2 gap-3 mb-4">
               {[
                 ['Топ-15', 'ЖК Батуми'],
                 ['В каталоге', 'прайсы и планировки'],
