@@ -72,15 +72,15 @@ const CatalogSection = () => {
 
             <div className="flex flex-wrap gap-3 mb-4">
               {[
-                ['Топ-15', 'ЖК Батуми'],
-                ['В каталоге', 'прайсы и планировки'],
-                ['Закрытые скидки', 'от застройщиков'],
-              ].map(([line1, line2]) => (
-                <div key={line1} className="flex items-center gap-2 w-[calc(50%-6px)] md:w-[calc(50%-6px)]">
-                  <div className="w-7 h-7 flex-shrink-0 flex items-center justify-center rounded-full border-2 border-iberia-dark/40">
+                'Топ-15 ЖК Батуми',
+                'В каталоге прайсы и планировки',
+                'Закрытые скидки от застройщиков',
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2 w-[calc(50%-6px)]">
+                  <div className="w-7 h-7 flex-shrink-0 flex items-center justify-center rounded-full border-2 border-iberia-dark/40 mt-0.5">
                     <Icon name="Check" size={14} className="text-iberia-dark" />
                   </div>
-                  <span className="text-iberia-dark font-medium text-sm leading-snug">{line1}<br />{line2}</span>
+                  <span className="text-iberia-dark font-medium text-xs leading-snug">{item}</span>
                 </div>
               ))}
             </div>
