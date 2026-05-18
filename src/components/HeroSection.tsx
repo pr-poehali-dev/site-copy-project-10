@@ -106,8 +106,8 @@ const HeroSection = () => {
               <div
                 className="absolute rounded-full"
                 style={{
-                  width: '176px',
-                  height: '176px',
+                  width: '160px',
+                  height: '160px',
                   background: 'radial-gradient(circle, #0ea5e9 0%, #0891b2 60%, #0e7490 100%)',
                   top: '50%',
                   left: '50%',
