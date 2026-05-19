@@ -78,14 +78,14 @@ const HeroSection = () => {
         </div>
 
         {/* Форма каталога */}
-        <div className="relative bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl p-4 sm:p-6 w-full sm:w-fit mb-0 sm:mb-10 overflow-hidden">
+        <div className="relative bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl p-4 pb-8 sm:p-6 w-full sm:w-fit mb-0 sm:mb-10 overflow-hidden">
 
-          <h3 className="text-white font-semibold text-lg mb-4">
+          <h3 className="text-white font-semibold text-lg mb-6 sm:mb-4">
             Получите каталог топ-15 новых проектов в Батуми!
           </h3>
 
           {/* Буллеты — 2 колонки на мобайл, на десктопе как было */}
-          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-4 mb-5">
+          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-4 mb-6 sm:mb-5">
             {/* Для жизни и инвестиций */}
             <div className="flex items-center gap-2 text-white/90 text-sm">
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full relative flex-shrink-0">
