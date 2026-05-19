@@ -67,7 +67,7 @@ const HeroSection = () => {
       {/* Мобайл: тёмно-синяя подложка на всю ширину */}
       <div className="sm:hidden relative z-10 w-full" style={{ background: 'rgba(10,20,50,0.97)' }}>
         <div className="px-6 pt-6 pb-0">
-          <h1 className="text-xl font-bold text-white leading-tight text-left mb-5">
+          <h1 className="font-bold text-white leading-tight text-center mb-5" style={{ fontSize: 'clamp(1.35rem, 7vw, 2rem)' }}>
             Недвижимость в Грузии у моря
             <br />напрямую от застройщиков
             <br />в рассрочку 0% от{' '}
