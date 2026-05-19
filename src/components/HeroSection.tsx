@@ -174,7 +174,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-6 sm:mt-0 mb-6 sm:mb-0">
           {[
             { img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/f92e3d0a-1707-4882-96ae-870729782e50.png', text: 'Первый взнос от 10.500$' },
             { img: 'https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/85447260-b51b-4f13-a115-5735d6e4d765.png', text: 'Рассрочка 0% до 46 мес.' },
