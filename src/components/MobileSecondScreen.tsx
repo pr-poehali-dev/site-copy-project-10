@@ -23,11 +23,11 @@ const MobileSecondScreen = () => {
       {/* Буллеты у нижнего края */}
       <div className="absolute inset-x-0 bottom-6 px-6 flex flex-col gap-3">
         {bullets.map((item) => (
-          <div key={item.text} className="bg-white rounded-2xl px-3 py-3 flex flex-row items-center gap-2">
+          <div key={item.text} className="bg-white rounded-2xl px-3 py-4 flex flex-row items-center gap-2">
             <div className="w-9 h-9 flex items-center justify-center flex-shrink-0">
               <img src={item.img} alt="" className="w-9 h-9 object-contain" />
             </div>
-            <p className="font-semibold text-iberia-dark leading-tight" style={{ fontSize: '16px' }}>{item.text}</p>
+            <p className="font-semibold text-iberia-dark leading-tight" style={{ fontSize: '18px' }}>{item.text}</p>
           </div>
         ))}
       </div>
