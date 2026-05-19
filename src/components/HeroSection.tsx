@@ -46,7 +46,7 @@ const HeroSection = () => {
       <style>{`@media (max-width: 639px) { .hero-bg { background-position: 100% 20% !important; } }`}</style>
 
       {/* Фон: на мобайле — относительный блок с фиксированной высотой, на десктопе — absolute inset-0 */}
-      <div className="sm:hidden w-full flex-shrink-0" style={{ height: '55vw', minHeight: '220px', maxHeight: '320px', position: 'relative' }}>
+      <div className="sm:hidden w-full flex-shrink-0" style={{ height: '70vh', position: 'relative' }}>
         <img
           src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/1727026b-13e9-4889-8549-bd3d767ae710.jpg"
           alt=""
