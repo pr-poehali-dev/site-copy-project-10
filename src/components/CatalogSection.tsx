@@ -101,7 +101,7 @@ const CatalogSection = () => {
 
             {/* Подпись с иконками мессенджеров */}
             <div className="flex items-center gap-2 mt-3 flex-wrap">
-              <span className="text-iberia-dark/60 text-xs">PDF, 17 mb</span>
+              <span className="text-iberia-dark/60 text-xs">PDF, 18 mb</span>
               <span className="text-iberia-dark/40 text-xs">·</span>
               {/* WhatsApp */}
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-iberia-dark/60" xmlns="http://www.w3.org/2000/svg">
