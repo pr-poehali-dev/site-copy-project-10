@@ -78,7 +78,7 @@ const HeroSection = () => {
         </div>
 
         {/* Форма каталога */}
-        <div className="relative bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl p-4 sm:p-6 w-full sm:w-fit mb-0 sm:mb-10 overflow-hidden">
+        <div className="relative bg-iberia-dark/80 backdrop-blur-sm border border-white/10 rounded-2xl p-4 sm:p-6 w-full sm:w-fit mb-0 sm:mb-10 overflow-hidden origin-bottom-left scale-90 sm:scale-100">
 
           <h3 className="text-white font-semibold text-lg mb-4">
             Получите каталог топ-15 новых проектов в Батуми!
