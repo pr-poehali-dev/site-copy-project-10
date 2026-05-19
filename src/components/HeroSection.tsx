@@ -66,8 +66,8 @@ const HeroSection = () => {
 
       {/* Мобайл: тёмно-синяя подложка на всю ширину */}
       <div className="sm:hidden relative z-10 w-full" style={{ background: 'rgba(10,20,50,0.97)' }}>
-        <div className="px-6 pt-6 pb-0">
-          <h1 className="font-bold text-white leading-tight text-center mb-5 whitespace-nowrap" style={{ fontSize: 'clamp(0.8rem, 6.8vw, 1.4rem)' }}>
+        <div className="px-6 pt-3 pb-0">
+          <h1 className="font-bold text-white leading-tight text-center mb-3 whitespace-nowrap" style={{ fontSize: 'clamp(0.8rem, 6.8vw, 1.4rem)' }}>
             Недвижимость в Грузии у моря
             <br />напрямую от застройщиков
             <br />в рассрочку 0% от{' '}
@@ -76,9 +76,9 @@ const HeroSection = () => {
         </div>
 
         {/* Форма каталога — мобайл */}
-        <div className="relative bg-iberia-dark/60 backdrop-blur-sm border border-white/10 rounded-2xl mx-6 mb-5 p-4 overflow-visible">
+        <div className="relative bg-iberia-dark/60 backdrop-blur-sm border border-white/10 rounded-2xl mx-6 mb-5 p-4 pt-3 overflow-visible">
 
-          <h3 className="text-white font-semibold text-lg mb-4">
+          <h3 className="text-white font-semibold text-lg mb-3">
             Получите каталог топ-15 новых проектов в Батуми!
           </h3>
 
