@@ -21,7 +21,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative sm:min-h-screen flex flex-col sm:justify-center overflow-hidden pb-4 sm:pb-0">
+    <section className="relative sm:min-h-screen flex flex-col sm:justify-center overflow-hidden pb-4 sm:pb-0 hero-mobile-section">
       <style>{`
         @keyframes wave-ltr {
           0% { transform: translateX(-110%) skewX(-15deg); opacity: 0.7; }
@@ -43,16 +43,31 @@ const HeroSection = () => {
         }
       `}</style>
 
-      <style>{`@media (max-width: 639px) { .hero-bg { background-position: 100% 20% !important; } }`}</style>
+      <style>{`
+        @media (max-width: 639px) {
+          .hero-bg { background-position: 100% 20% !important; }
+          .hero-mobile-section { display: block; }
+          .hero-mobile-img { position: sticky; top: 0; height: 100vh; }
+        }
+      `}</style>
 
-      {/* Фон: на мобайле — относительный блок с фиксированной высотой, на десктопе — absolute inset-0 */}
-      <div className="sm:hidden w-full flex-shrink-0" style={{ height: '55vw', minHeight: '220px', maxHeight: '320px', position: 'relative' }}>
+      {/* Фон: на мобайле — на весь экран, на десктопе — absolute inset-0 */}
+      <div className="sm:hidden w-full flex-shrink-0" style={{ height: '100vh', position: 'relative' }}>
         <img
           src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/1727026b-13e9-4889-8549-bd3d767ae710.jpg"
           alt=""
           className="w-full h-full object-cover"
           style={{ objectPosition: '100% 20%' }}
         />
+        {/* Заголовок поверх фото */}
+        <div className="absolute inset-x-0 top-0 pt-8 px-6 z-10">
+          <h1 className="font-bold text-white leading-tight text-center whitespace-nowrap drop-shadow-lg" style={{ fontSize: 'clamp(0.8rem, 6.8vw, 1.4rem)', textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
+            Недвижимость в Грузии у моря
+            <br />напрямую от застройщиков
+            <br />в рассрочку 0% от{' '}
+            <span className="text-iberia-orange">44.500$</span>
+          </h1>
+        </div>
       </div>
       <div
         className="absolute inset-0 bg-cover bg-no-repeat hero-bg hidden sm:block"
@@ -64,23 +79,16 @@ const HeroSection = () => {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(17,24,39,0.75) 0%, rgba(17,24,39,0.5) 50%, rgba(17,24,39,0) 100%)' }} />
       </div>
 
-      {/* Мобайл: тёмно-синяя подложка на всю ширину */}
-      <div className="sm:hidden relative z-10 w-full" style={{ background: 'rgba(10,20,50,0.97)' }}>
+      {/* Мобайл: подложка с формой — заходит на второй экран */}
+      <div className="sm:hidden relative z-10 w-full" style={{ background: 'rgba(10,20,50,0.97)', marginTop: '-40vh' }}>
         <div className="px-6 pt-6 pb-0">
-          <h1 className="font-bold text-white leading-tight text-center mb-5 whitespace-nowrap" style={{ fontSize: 'clamp(0.8rem, 6.8vw, 1.4rem)' }}>
-            Недвижимость в Грузии у моря
-            <br />напрямую от застройщиков
-            <br />в рассрочку 0% от{' '}
-            <span className="text-iberia-orange">44.500$</span>
-          </h1>
+          <h3 className="text-white font-bold leading-tight text-center mb-5 whitespace-nowrap" style={{ fontSize: 'clamp(0.85rem, 5.5vw, 1.2rem)' }}>
+            Получите каталог топ-15 новых проектов в Батуми!
+          </h3>
         </div>
 
         {/* Форма каталога — мобайл */}
         <div className="relative bg-iberia-dark/60 backdrop-blur-sm border border-white/10 rounded-2xl mx-6 mb-5 p-4 overflow-visible">
-
-          <h3 className="text-white font-semibold text-lg mb-4">
-            Получите каталог топ-15 новых проектов в Батуми!
-          </h3>
 
           <div className="mb-5">
             {/* Строка 1: два буллета рядом */}
