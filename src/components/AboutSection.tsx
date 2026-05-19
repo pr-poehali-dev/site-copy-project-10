@@ -81,8 +81,8 @@ const AboutSection = () => {
             </div>
 
             <div className="bg-iberia-card-bg rounded-3xl p-6 relative overflow-hidden">
-              <p className="text-5xl font-bold text-iberia-dark mb-1">780+</p>
-              <p className="text-sm text-iberia-dark/70 mt-4">Более 780 объектов недвижимости продано с нашей помощью</p>
+              <p className="text-5xl font-bold text-iberia-dark mb-1">380+</p>
+              <p className="text-sm text-iberia-dark/70 mt-4">Более 380 объектов недвижимости продано с нашей помощью</p>
               <div className="absolute -right-4 -top-4 opacity-20">
                 <Icon name="Key" size={100} className="text-iberia-dark" />
               </div>
