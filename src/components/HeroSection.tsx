@@ -82,22 +82,22 @@ const HeroSection = () => {
             Получите каталог топ-15 новых проектов в Батуми!
           </h3>
 
-          <div className="grid grid-cols-2 gap-4 mb-5">
-            <div className="flex items-center gap-2 text-white/90 text-sm">
-              <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
-                <Icon name="Home" size={15} className="text-white" />
+          <div className="grid grid-cols-2 gap-2 mb-5">
+            <div className="flex items-center gap-2 text-white/90 text-xs">
+              <span className="w-7 h-7 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
+                <Icon name="Home" size={13} className="text-white" />
               </span>
               <span>Для жизни<br />и инвестиций</span>
             </div>
-            <div className="flex items-center gap-2 text-white/90 text-sm">
-              <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
-                <Icon name="Tag" size={15} className="text-white" />
+            <div className="flex items-center gap-2 text-white/90 text-xs">
+              <span className="w-7 h-7 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
+                <Icon name="Tag" size={13} className="text-white" />
               </span>
               <span>Закрытые скидки<br />от застройщиков</span>
             </div>
-            <div className="flex items-center gap-2 text-white/90 text-sm col-span-1">
-              <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
-                <Icon name="FileText" size={15} className="text-white" />
+            <div className="flex items-center gap-2 text-white/90 text-xs col-span-1">
+              <span className="w-7 h-7 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
+                <Icon name="FileText" size={13} className="text-white" />
               </span>
               <span>В каталоге прайсы<br />и планировки</span>
             </div>
