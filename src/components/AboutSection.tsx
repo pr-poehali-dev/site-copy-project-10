@@ -73,8 +73,8 @@ const AboutSection = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-iberia-card-bg rounded-3xl p-6 relative overflow-hidden">
-              <p className="text-5xl font-bold text-iberia-dark mb-1">8 лет</p>
-              <p className="text-sm text-iberia-dark/70 mt-4">С 2017 работаем с недвижимостью в замечательном городе Батуми</p>
+              <p className="text-5xl font-bold text-iberia-dark mb-1">5 лет</p>
+              <p className="text-sm text-iberia-dark/70 mt-4">С 2021 работаем с недвижимостью в замечательном городе Батуми</p>
               <div className="absolute -right-4 -top-4 opacity-20">
                 <Icon name="Ribbon" size={100} className="text-iberia-dark" />
               </div>
