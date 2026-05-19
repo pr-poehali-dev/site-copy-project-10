@@ -82,7 +82,19 @@ const HeroSection = () => {
             Получите каталог топ-15 новых проектов в Батуми!
           </h3>
 
-          <div className="mb-5">
+          <div className="relative mb-5">
+            {/* Буклет — абсолютно, не влияет на поток */}
+            <div className="absolute right-0 bottom-0" style={{ zIndex: 1 }}>
+              <div className="relative">
+                <div className="absolute rounded-full" style={{ width: '145px', height: '145px', background: 'radial-gradient(circle, #0ea5e9 0%, #0891b2 60%, #0e7490 100%)', top: '50%', left: '50%', transform: 'translate(-50%, -45%)', opacity: 0.85, zIndex: 0 }} />
+                <img
+                  src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/594b66ac-cb3d-4f4f-b2c3-e1ebdaf60362.png"
+                  alt="Каталог"
+                  className="relative z-10 w-[185px] object-contain drop-shadow-2xl"
+                  style={{ transform: 'rotate(4deg)' }}
+                />
+              </div>
+            </div>
             {/* Строка 1: два буллета рядом */}
             <div className="flex items-start gap-2 mb-4">
               <div className="flex items-center gap-2 text-white/90 text-sm w-1/2 flex-shrink-0">
@@ -98,24 +110,12 @@ const HeroSection = () => {
                 <span>Закрытые скидки<br />от застройщиков</span>
               </div>
             </div>
-            {/* Строка 2: третий буллет + буклет */}
-            <div className="flex items-start justify-between">
-              <div className="flex items-center gap-2 text-white/90 text-sm w-[155px] flex-shrink-0">
-                <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
-                  <Icon name="FileText" size={15} className="text-white" />
-                </span>
-                <span>В каталоге прайсы<br />и планировки</span>
-              </div>
-              {/* Буклет */}
-              <div className="relative flex-shrink-0">
-                <div className="absolute rounded-full" style={{ width: '145px', height: '145px', background: 'radial-gradient(circle, #0ea5e9 0%, #0891b2 60%, #0e7490 100%)', top: '50%', left: '50%', transform: 'translate(-50%, -45%)', opacity: 0.85, zIndex: 0 }} />
-                <img
-                  src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/594b66ac-cb3d-4f4f-b2c3-e1ebdaf60362.png"
-                  alt="Каталог"
-                  className="relative z-10 w-[185px] object-contain drop-shadow-2xl"
-                  style={{ transform: 'rotate(4deg)' }}
-                />
-              </div>
+            {/* Строка 2: третий буллет — независимо от буклета */}
+            <div className="flex items-center gap-2 text-white/90 text-sm">
+              <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
+                <Icon name="FileText" size={15} className="text-white" />
+              </span>
+              <span>В каталоге прайсы<br />и планировки</span>
             </div>
           </div>
 
