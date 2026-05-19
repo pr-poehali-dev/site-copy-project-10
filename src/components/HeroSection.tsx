@@ -21,7 +21,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[100svh] sm:min-h-screen flex flex-col justify-end sm:justify-center overflow-hidden pb-4 sm:pb-0">
+    <section className="relative min-h-[170vh] sm:min-h-screen flex flex-col justify-end sm:justify-center overflow-hidden pb-4 sm:pb-0">
       <style>{`
         @keyframes wave-ltr {
           0% { transform: translateX(-110%) skewX(-15deg); opacity: 0.7; }
