@@ -82,36 +82,42 @@ const HeroSection = () => {
             Получите каталог топ-15 новых проектов в Батуми!
           </h3>
 
-          <div className="grid grid-cols-2 gap-4 mb-5">
-            <div className="flex items-center gap-2 text-white/90 text-sm">
-              <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
-                <Icon name="Home" size={15} className="text-white" />
-              </span>
-              <span>Для жизни<br />и инвестиций</span>
+          <div className="mb-5">
+            {/* Строка 1: два буллета рядом + буклет справа */}
+            <div className="flex items-start gap-2 mb-3">
+              {/* Буллет 1 */}
+              <div className="flex items-center gap-2 text-white/90 text-sm w-[44%] flex-shrink-0">
+                <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
+                  <Icon name="Home" size={15} className="text-white" />
+                </span>
+                <span>Для жизни<br />и инвестиций</span>
+              </div>
+              {/* Буллет 2 */}
+              <div className="flex items-center gap-2 text-white/90 text-sm w-[44%] flex-shrink-0">
+                <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
+                  <Icon name="Tag" size={15} className="text-white" />
+                </span>
+                <span>Закрытые скидки<br />от застройщиков</span>
+              </div>
+              {/* Буклет */}
+              <div className="flex-1 flex justify-end items-end">
+                <div className="relative">
+                  <div className="absolute rounded-full" style={{ width: '100px', height: '100px', background: 'radial-gradient(circle, #0ea5e9 0%, #0891b2 60%, #0e7490 100%)', top: '50%', left: '50%', transform: 'translate(-50%, -45%)', opacity: 0.85, zIndex: 0 }} />
+                  <img
+                    src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/594b66ac-cb3d-4f4f-b2c3-e1ebdaf60362.png"
+                    alt="Каталог"
+                    className="relative z-10 w-32 object-contain drop-shadow-2xl"
+                    style={{ transform: 'rotate(4deg)' }}
+                  />
+                </div>
+              </div>
             </div>
+            {/* Строка 2: третий буллет отдельно */}
             <div className="flex items-center gap-2 text-white/90 text-sm">
-              <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
-                <Icon name="Tag" size={15} className="text-white" />
-              </span>
-              <span>Закрытые скидки<br />от застройщиков</span>
-            </div>
-            <div className="flex items-center gap-2 text-white/90 text-sm col-span-1">
               <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                 <Icon name="FileText" size={15} className="text-white" />
               </span>
               <span>В каталоге прайсы<br />и планировки</span>
-            </div>
-            {/* Буклет */}
-            <div className="flex justify-end items-end">
-              <div className="relative">
-                <div className="absolute rounded-full" style={{ width: '100px', height: '100px', background: 'radial-gradient(circle, #0ea5e9 0%, #0891b2 60%, #0e7490 100%)', top: '50%', left: '50%', transform: 'translate(-50%, -45%)', opacity: 0.85, zIndex: 0 }} />
-                <img
-                  src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/594b66ac-cb3d-4f4f-b2c3-e1ebdaf60362.png"
-                  alt="Каталог"
-                  className="relative z-10 w-32 object-contain drop-shadow-2xl"
-                  style={{ transform: 'rotate(4deg)' }}
-                />
-              </div>
             </div>
           </div>
 
