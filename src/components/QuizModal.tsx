@@ -40,10 +40,11 @@ const QuizModal = () => {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string[]>>({});
   const [phone, setPhone] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const handler = () => {
-      setOpen(true); setStep(0); setAnswers({}); setPhone('');
+      setOpen(true); setStep(0); setAnswers({}); setPhone(''); setSubmitted(false);
       if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'quiz_open');
     };
     window.addEventListener('open-quiz', handler);
@@ -77,7 +78,7 @@ const QuizModal = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ source: 'quiz', phone, answers }),
       }).catch(() => {});
-      setOpen(false);
+      setSubmitted(true);
     } else {
       setStep(step + 1);
     }
@@ -92,6 +93,24 @@ const QuizModal = () => {
         className="relative bg-white rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
+        {submitted && (
+          <div className="flex flex-col items-center justify-center px-8 py-14 text-center">
+            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-5">
+              <Icon name="Check" size={32} className="text-green-500" />
+            </div>
+            <h2 className="text-2xl font-bold text-iberia-dark mb-3">Спасибо за заявку!</h2>
+            <p className="text-gray-500 text-sm leading-relaxed mb-8">
+              Каталог топ-15 проектов уже готовится к отправке. Наш специалист свяжется с вами в ближайшее время и ответит на все вопросы.
+            </p>
+            <button
+              onClick={() => setOpen(false)}
+              className="bg-iberia-orange text-white font-semibold px-8 py-3 rounded-full hover:bg-[#e26e60] transition-colors"
+            >
+              Закрыть
+            </button>
+          </div>
+        )}
+        {!submitted && (<>
         {/* Шапка */}
         <div className="bg-[#eef4fb] px-6 py-4 flex items-start justify-between gap-4">
           <div className="flex items-start gap-3">
@@ -173,6 +192,7 @@ const QuizModal = () => {
             {!isLast && <Icon name="ArrowRight" size={14} />}
           </button>
         </div>
+        </>)}
       </div>
     </div>
   );

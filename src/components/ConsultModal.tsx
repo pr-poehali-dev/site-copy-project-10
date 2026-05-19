@@ -13,10 +13,11 @@ const ConsultModal = () => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState('');
   const [phone, setPhone] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const handler = () => {
-      setOpen(true); setSelected(''); setPhone('');
+      setOpen(true); setSelected(''); setPhone(''); setSubmitted(false);
       if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'consalt_open');
     };
     window.addEventListener('open-consult', handler);
@@ -99,13 +100,32 @@ const ConsultModal = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ source: 'consult', phone, messenger: selected }),
               }).catch(() => {});
-              setOpen(false);
+              setSubmitted(true);
             }}
             className="w-full bg-iberia-orange text-white font-bold py-3.5 rounded-full hover:bg-[#e26e60] transition-colors uppercase text-sm tracking-wide"
           >
             ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
           </button>
         </div>
+
+        {/* Экран успеха */}
+        {submitted && (
+          <div className="absolute inset-0 bg-white flex flex-col items-center justify-center px-8 py-10 text-center">
+            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-5">
+              <Icon name="Check" size={32} className="text-green-500" />
+            </div>
+            <h2 className="text-xl font-bold text-iberia-dark mb-3">Спасибо за обращение!</h2>
+            <p className="text-gray-500 text-sm leading-relaxed mb-8">
+              Ваша заявка принята. Георгий свяжется с вами в ближайшее время и проведёт персональную консультацию по всем вопросам.
+            </p>
+            <button
+              onClick={() => setOpen(false)}
+              className="bg-iberia-orange text-white font-semibold px-8 py-3 rounded-full hover:bg-[#e26e60] transition-colors"
+            >
+              Закрыть
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
