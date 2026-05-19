@@ -99,7 +99,7 @@ const HeroSection = () => {
               </div>
             </div>
             {/* Строка 2: третий буллет + буклет */}
-            <div className="flex items-end justify-between">
+            <div className="flex items-start justify-between">
               <div className="flex items-center gap-2 text-white/90 text-sm">
                 <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                   <Icon name="FileText" size={15} className="text-white" />
