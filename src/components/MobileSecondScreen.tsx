@@ -7,21 +7,22 @@ const bullets = [
 
 const MobileSecondScreen = () => {
   return (
-    <section className="sm:hidden w-full h-[100svh] relative overflow-hidden">
+    <section className="sm:hidden w-full relative overflow-hidden">
       <img
         src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/9b526e58-680b-4fd7-adcf-391d8cdb5c0f.jpg"
         alt="Батуми"
-        className="w-full h-full object-cover object-center"
+        className="w-full object-cover object-center"
+        style={{ height: '100%', position: 'absolute', inset: 0 }}
       />
 
       {/* Градиент снизу */}
       <div
-        className="absolute inset-x-0 bottom-0 h-2/5"
-        style={{ background: 'linear-gradient(to top, rgba(10,20,50,0.92) 0%, transparent 100%)' }}
+        className="absolute inset-x-0 bottom-0 h-full"
+        style={{ background: 'linear-gradient(to top, rgba(10,20,50,0.92) 0%, transparent 60%)' }}
       />
 
-      {/* Буллеты у нижнего края */}
-      <div className="absolute inset-x-0 bottom-6 px-6 flex flex-col gap-3">
+      {/* Буллеты — задают высоту секции */}
+      <div className="relative z-10 px-6 pt-10 pb-6 flex flex-col gap-3">
         {bullets.map((item) => (
           <div key={item.text} className="bg-white rounded-2xl px-3 py-4 flex flex-row items-center gap-2">
             <div className="w-9 h-9 flex items-center justify-center flex-shrink-0">
