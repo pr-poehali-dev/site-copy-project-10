@@ -27,7 +27,7 @@ const MobileSecondScreen = () => {
             <div className="w-9 h-9 flex items-center justify-center flex-shrink-0">
               <img src={item.img} alt="" className="w-9 h-9 object-contain" />
             </div>
-            <p className="font-semibold text-iberia-dark text-xs leading-tight">{item.text}</p>
+            <p className="font-semibold text-iberia-dark leading-tight" style={{ fontSize: '16px' }}>{item.text}</p>
           </div>
         ))}
       </div>
