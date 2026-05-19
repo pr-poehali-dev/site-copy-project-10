@@ -21,7 +21,7 @@ const MobileSecondScreen = () => {
       />
 
       {/* Буллеты у нижнего края */}
-      <div className="absolute inset-x-0 bottom-6 px-4 grid grid-cols-2 gap-3">
+      <div className="absolute inset-x-0 bottom-6 px-4 flex flex-col gap-3">
         {bullets.map((item) => (
           <div key={item.text} className="bg-white rounded-2xl px-3 py-3 flex flex-row items-center gap-2">
             <div className="w-9 h-9 flex items-center justify-center flex-shrink-0">
