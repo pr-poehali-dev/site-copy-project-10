@@ -84,7 +84,7 @@ const HeroSection = () => {
 
           <div className="mb-5">
             {/* Строка 1: два буллета рядом */}
-            <div className="flex items-start gap-2 mb-3">
+            <div className="flex items-start gap-2 mb-4">
               <div className="flex items-center gap-2 text-white/90 text-sm w-1/2 flex-shrink-0">
                 <span className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                   <Icon name="Home" size={15} className="text-white" />
