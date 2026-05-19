@@ -114,7 +114,7 @@ const HeroSection = () => {
 
           {/* Буклет-каталог на мобайле — под буллетами */}
           <div className="flex justify-center mb-5 md:hidden" style={{ paddingLeft: '40%', marginTop: '-20%' }}>
-            <div className="relative">
+            <div className="relative" style={{ transform: 'scale(0.9)', transformOrigin: 'center center' }}>
               {/* Синебирюзовый кружок-подложка */}
               <div
                 className="absolute rounded-full"
