@@ -108,11 +108,11 @@ const HeroSection = () => {
               </div>
               {/* Буклет */}
               <div className="relative flex-shrink-0">
-                <div className="absolute rounded-full" style={{ width: '100px', height: '100px', background: 'radial-gradient(circle, #0ea5e9 0%, #0891b2 60%, #0e7490 100%)', top: '50%', left: '50%', transform: 'translate(-50%, -45%)', opacity: 0.85, zIndex: 0 }} />
+                <div className="absolute rounded-full" style={{ width: '110px', height: '110px', background: 'radial-gradient(circle, #0ea5e9 0%, #0891b2 60%, #0e7490 100%)', top: '50%', left: '50%', transform: 'translate(-50%, -45%)', opacity: 0.85, zIndex: 0 }} />
                 <img
                   src="https://cdn.poehali.dev/projects/74f1ecd7-61ba-46bf-89dc-14348c0bc87a/bucket/594b66ac-cb3d-4f4f-b2c3-e1ebdaf60362.png"
                   alt="Каталог"
-                  className="relative z-10 w-32 object-contain drop-shadow-2xl"
+                  className="relative z-10 w-[140px] object-contain drop-shadow-2xl"
                   style={{ transform: 'rotate(4deg)' }}
                 />
               </div>
