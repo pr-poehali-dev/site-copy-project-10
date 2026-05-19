@@ -65,9 +65,9 @@ const HeroSection = () => {
       </div>
 
       {/* Мобайл: тёмно-синяя подложка на всю ширину */}
-      <div className="sm:hidden relative z-10 w-full" style={{ background: 'rgba(10,20,50,0.97)' }}>
+      <div className="sm:hidden relative z-10 w-full" style={{ background: '#dce9f5' }}>
         <div className="px-6 pt-6 pb-0">
-          <h1 className="font-bold text-white leading-tight text-center mb-5 whitespace-nowrap" style={{ fontSize: 'clamp(0.8rem, 6.8vw, 1.4rem)' }}>
+          <h1 className="font-bold text-iberia-dark leading-tight text-center mb-5 whitespace-nowrap" style={{ fontSize: 'clamp(0.8rem, 6.8vw, 1.4rem)' }}>
             Недвижимость в Грузии у моря
             <br />напрямую от застройщиков
             <br />в рассрочку 0% от{' '}
