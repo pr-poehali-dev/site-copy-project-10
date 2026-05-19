@@ -21,7 +21,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-end sm:justify-center overflow-hidden pb-4 sm:pb-0">
+    <section className="relative min-h-[170vh] sm:min-h-screen flex flex-col justify-end sm:justify-center overflow-hidden pb-4 sm:pb-0">
       <style>{`
         @keyframes wave-ltr {
           0% { transform: translateX(-110%) skewX(-15deg); opacity: 0.7; }
@@ -183,7 +183,7 @@ const HeroSection = () => {
           ].map((item) => (
             <div
               key={item.text}
-              className="bg-white rounded-2xl p-4 flex flex-row items-center gap-3"
+              className="bg-white rounded-2xl p-4 flex md:flex-col flex-row items-center md:items-start gap-3"
             >
               <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <img src={item.img} alt="" className="w-10 h-10 object-contain" />
