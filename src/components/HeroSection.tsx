@@ -43,7 +43,7 @@ const HeroSection = () => {
         }
       `}</style>
 
-      <style>{`@media (max-width: 639px) { .hero-bg { background-position: 85% 20% !important; } }`}</style>
+      <style>{`@media (max-width: 639px) { .hero-bg { background-position: 92% 20% !important; } }`}</style>
       <div
         className="absolute inset-0 bg-cover bg-no-repeat hero-bg"
         style={{
