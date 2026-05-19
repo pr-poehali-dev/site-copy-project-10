@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 pt-6 text-center">
-          <p className="text-white/30 text-xs">© 2025 Saginadze Estate. Все права защищены. Агентство недвижимости в Батуми, Грузия.</p>
+          <p className="text-white/30 text-xs">© 2026 Saginadze Estate. Все права защищены. Агентство недвижимости в Батуми, Грузия.</p>
         </div>
       </div>
     </footer>
