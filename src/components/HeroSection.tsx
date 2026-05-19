@@ -188,7 +188,7 @@ const HeroSection = () => {
               <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
                 <img src={item.img} alt="" className="w-10 h-10 object-contain" />
               </div>
-              <p className="font-semibold text-iberia-dark text-sm">{item.text}</p>
+              <p className="font-semibold md:font-semibold font-extrabold text-iberia-dark text-sm">{item.text}</p>
             </div>
           ))}
         </div>
