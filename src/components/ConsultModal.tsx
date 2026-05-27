@@ -11,9 +11,19 @@ export function openConsult() {
 
 const isPhoneValid = (p: string) => {
   const digits = p.replace(/\D/g, '');
-  if (digits.length === 11 && (digits[0] === '7' || digits[0] === '8')) return true;
-  if (digits.length === 10 && digits[0] === '9') return true;
-  return false;
+  return digits.length === 10;
+};
+
+const formatPhone = (raw: string) => {
+  let digits = raw.replace(/\D/g, '');
+  if (digits.startsWith('7') || digits.startsWith('8')) digits = digits.slice(1);
+  digits = digits.slice(0, 10);
+  let result = '';
+  if (digits.length > 0) result += '(' + digits.slice(0, 3);
+  if (digits.length >= 4) result += ') ' + digits.slice(3, 6);
+  if (digits.length >= 7) result += '-' + digits.slice(6, 8);
+  if (digits.length >= 9) result += '-' + digits.slice(8, 10);
+  return result;
 };
 
 const ConsultModal = () => {
@@ -94,7 +104,7 @@ const ConsultModal = () => {
             <input
               type="tel"
               value={phone}
-              onChange={(e) => { setPhone(e.target.value); setPhoneError(false); }}
+              onChange={(e) => { setPhone(formatPhone(e.target.value)); setPhoneError(false); }}
               placeholder="(000) 000-00-00"
               className="flex-1 outline-none text-gray-800 bg-transparent text-sm"
             />
