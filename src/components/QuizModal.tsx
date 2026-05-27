@@ -35,16 +35,24 @@ export function openQuiz() {
   window.dispatchEvent(new CustomEvent('open-quiz'));
 }
 
+const isPhoneValid = (p: string) => {
+  const digits = p.replace(/\D/g, '');
+  if (digits.length === 11 && (digits[0] === '7' || digits[0] === '8')) return true;
+  if (digits.length === 10 && digits[0] === '9') return true;
+  return false;
+};
+
 const QuizModal = () => {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string[]>>({});
   const [phone, setPhone] = useState('');
+  const [phoneError, setPhoneError] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const handler = () => {
-      setOpen(true); setStep(0); setAnswers({}); setPhone(''); setSubmitted(false);
+      setOpen(true); setStep(0); setAnswers({}); setPhone(''); setPhoneError(false); setSubmitted(false);
       if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'quiz_open');
     };
     window.addEventListener('open-quiz', handler);
@@ -72,6 +80,8 @@ const QuizModal = () => {
 
   const handleNext = () => {
     if (isLast) {
+      if (!isPhoneValid(phone)) { setPhoneError(true); return; }
+      setPhoneError(false);
       if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'quiz_goal');
       fetch('https://functions.poehali.dev/2fd7767f-03cc-4200-ad29-5888ffc15e92', {
         method: 'POST',
@@ -141,17 +151,18 @@ const QuizModal = () => {
 
           {current.type === 'phone' ? (
             <div>
-              <div className="flex items-center border-2 border-gray-200 rounded-full px-5 py-3 focus-within:border-iberia-orange transition-colors">
+              <div className={`flex items-center border-2 rounded-full px-5 py-3 focus-within:border-iberia-orange transition-colors ${phoneError ? 'border-red-400' : 'border-gray-200'}`}>
                 <span className="text-lg mr-2">🇷🇺</span>
                 <span className="text-gray-500 mr-2">+7</span>
                 <input
                   type="tel"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => { setPhone(e.target.value); setPhoneError(false); }}
                   placeholder="(000) 000-00-00"
                   className="flex-1 outline-none text-gray-800 bg-transparent"
                 />
               </div>
+              {phoneError && <p className="text-red-500 text-sm mt-2 pl-2">Введите корректный номер телефона</p>}
             </div>
           ) : (
             <div className="flex flex-col gap-4">

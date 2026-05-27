@@ -9,15 +9,23 @@ export function openConsult() {
   window.dispatchEvent(new CustomEvent('open-consult'));
 }
 
+const isPhoneValid = (p: string) => {
+  const digits = p.replace(/\D/g, '');
+  if (digits.length === 11 && (digits[0] === '7' || digits[0] === '8')) return true;
+  if (digits.length === 10 && digits[0] === '9') return true;
+  return false;
+};
+
 const ConsultModal = () => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState('');
   const [phone, setPhone] = useState('');
+  const [phoneError, setPhoneError] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const handler = () => {
-      setOpen(true); setSelected(''); setPhone(''); setSubmitted(false);
+      setOpen(true); setSelected(''); setPhone(''); setPhoneError(false); setSubmitted(false);
       if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'consalt_open');
     };
     window.addEventListener('open-consult', handler);
@@ -80,20 +88,23 @@ const ConsultModal = () => {
           </div>
 
           {/* Телефон */}
-          <div className="flex items-center border-2 border-gray-200 rounded-full px-5 py-3 focus-within:border-iberia-orange transition-colors mb-4">
+          <div className={`flex items-center border-2 rounded-full px-5 py-3 focus-within:border-iberia-orange transition-colors mb-1 ${phoneError ? 'border-red-400' : 'border-gray-200'}`}>
             <span className="text-lg mr-2">🇷🇺</span>
             <span className="text-gray-400 mr-1 text-sm">+7</span>
             <input
               type="tel"
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={(e) => { setPhone(e.target.value); setPhoneError(false); }}
               placeholder="(000) 000-00-00"
               className="flex-1 outline-none text-gray-800 bg-transparent text-sm"
             />
           </div>
+          {phoneError && <p className="text-red-500 text-xs mb-3 pl-2">Введите корректный номер телефона</p>}
+          {!phoneError && <div className="mb-3" />}
 
           <button
             onClick={() => {
+              if (!isPhoneValid(phone)) { setPhoneError(true); return; }
               if (typeof window.ym === 'function') window.ym(109281441, 'reachGoal', 'consalt_goal');
               fetch('https://functions.poehali.dev/2fd7767f-03cc-4200-ad29-5888ffc15e92', {
                 method: 'POST',
